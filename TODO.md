@@ -6,6 +6,7 @@ Open items uit de strategische verbeterronde van 2026-05-21.
 
 - **Testimonials (1–2 quotes).** Naam, functie, bedrijf, citaat. Plaats in `.testimonials` op `index.html` (HTML-structuur staat al klaar als placeholder-comment tussen `klanten` en `pills`-secties).
 - **Mini-case (1 stuks).** Klant, situatie, aanpak, meetbaar resultaat. Format: korte alinea + 1 cijfer dat het verschil maakt. Plek: zelfde sectie als testimonials of als losse case-card.
+- **Odoo-case (1 stuks).** Klant, fase (vóór/tijdens/na implementatie of herstel), aanpak, resultaat. Placeholder-structuur staat klaar als HTML-comment op `odoo.html`. Vervangt dat blok zodra geleverd.
 - **Lead-magnet PDF.** Schrijven en leveren als `assets/checklist-7-signalen.pdf`. Titel: *"7 signalen dat je financiële functie je bedrijf remt"*. Wordt nu nog niet uitgeleverd — het formulier op de homepage stuurt alleen de aanvraag door via Web3Forms. Zodra de PDF er is: lever 'm handmatig per mail of automatiseer via Notion/Odoo flow.
 
 ## Latere kandidaten

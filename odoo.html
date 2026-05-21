@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Odoo voor MKB-finance — Cees de Controller</title>
+  <meta name="description" content="Fractioneel controller met Odoo-ervaring. Voor MKB-ondernemers die finance-grip willen tijdens of na een Odoo-implementatie." />
+  <link rel="canonical" href="https://www.ceesdecontroller.nl/odoo.html" />
+  <meta property="og:title" content="Odoo voor MKB-finance — Cees de Controller" />
+  <meta property="og:description" content="Fractioneel controller met Odoo-ervaring. Voor MKB-ondernemers die finance-grip willen tijdens of na een Odoo-implementatie." />
+  <meta property="og:url" content="https://www.ceesdecontroller.nl/odoo.html" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0c0d0c" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Odoo finance-begeleiding",
+    "serviceType": "Financial controlling voor Odoo-implementaties",
+    "description": "Fractioneel controller met Odoo-ervaring voor MKB-ondernemers die finance-grip willen tijdens of na een Odoo-implementatie.",
+    "url": "https://www.ceesdecontroller.nl/odoo.html",
+    "provider": {
+      "@type": "ProfessionalService",
+      "name": "Cees de Controller B.V.",
+      "url": "https://www.ceesdecontroller.nl/"
+    },
+    "areaServed": [
+      { "@type": "Country", "name": "Nederland" }
+    ]
+  }
+  </script>
+  <style>
+:root {
+  --bg: #0c0d0c;
+  --surface: #141513;
+  --surface-2: #1c1d1b;
+  --border: #25272a;
+  --text: #f1f2ef;
+  --muted: #7a7c78;
+  --faint: #2f3230;
+  --radius: 6px;
+  --max: 1080px;
+  --nav-h: 72px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+.container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+.container-narrow { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+
+h1, h2, h3, h4 { margin: 0; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 800; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); }
+h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
+h4 { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+p { margin: 0; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7a7c78;
+}
+.eyebrow::before {
+        content: '';
+        display: inline-block;
+        width: 18px; height: 1px;
+        background: #5b9069;
+        margin-right: 0.6rem;
+        vertical-align: middle;
+      }
+.muted { color: var(--muted); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 500; font-size: 0.95rem; line-height: 1;
+  border: 1px solid transparent;
+  transition: opacity 160ms ease, background 160ms ease, border-color 160ms ease, color 160ms ease;
+  white-space: nowrap;
+}
+.btn-primary { background: #4a7c59; color: #ffffff; }
+.btn-primary:hover { background: #5b9069; }
+.btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+.btn-secondary:hover { border-color: var(--text); }
+.btn-sm { padding: 0.65rem 1.05rem; font-size: 0.88rem; }
+.btn-block { width: 100%; }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  height: var(--nav-h);
+  background: rgba(12, 13, 12, 0.7);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+  height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+}
+.logo { font-weight: 700; letter-spacing: -0.01em; font-size: 1rem; display: flex; align-items: center; gap: 0.55rem; }
+.logo-dot { width: 6px; height: 6px; background: #4a7c59; border-radius: 50%; display: inline-block; }
+.nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+.nav-links a { font-size: 0.92rem; color: var(--muted); transition: color 160ms ease; }
+.nav-links a:hover, .nav-links a.current { color: var(--text); }
+.nav-cta { display: flex; align-items: center; gap: 0.75rem; }
+.nav-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--muted); width: 36px; height: 36px;
+  border-radius: var(--radius);
+  transition: color 160ms ease, background 160ms ease;
+}
+.nav-icon:hover { color: var(--text); background: var(--surface); }
+.hamburger {
+  display: none; background: transparent; border: 1px solid var(--border);
+  border-radius: var(--radius); width: 40px; height: 40px; padding: 0;
+  align-items: center; justify-content: center; color: var(--text);
+}
+.hamburger:hover { border-color: var(--text); }
+.hamburger svg { width: 18px; height: 18px; }
+.mobile-menu {
+  display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
+  background: var(--bg); border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem 1.5rem; z-index: 49;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu ul { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+.mobile-menu a { display: block; padding: 0.85rem 0; font-size: 1rem; border-bottom: 1px solid var(--border); color: var(--muted); }
+.mobile-menu a.current { color: var(--text); }
+.mobile-menu .btn { width: 100%; margin-top: 0.5rem; }
+
+/* Section spacing */
+section { padding: 5rem 0; }
+.section-head { margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+
+/* Two col */
+.two-col { display: grid; gap: 3rem; grid-template-columns: 1fr; }
+@media (min-width: 820px) {
+  .two-col { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 4rem; }
+}
+
+/* Check list (dashes) */
+.check-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.check-list li {
+  padding: 1.25rem 0; border-bottom: 1px solid var(--border);
+  display: grid; grid-template-columns: 1.5rem 1fr; gap: 0.75rem;
+}
+.check-list li:first-child { border-top: 1px solid var(--border); }
+.check-list li::before { content: '—'; color: #5b9069; font-weight: 600; }
+
+/* Features (vinkjes) */
+.feature-list { list-style: none; margin: 0 0 1.75rem; padding: 0; display: flex; flex-direction: column; gap: 0.65rem; }
+.feature-list li {
+  display: grid; grid-template-columns: 1.25rem 1fr; gap: 0.65rem;
+  align-items: baseline; font-size: 0.98rem;
+}
+.feature-list li::before { content: '✓'; color: #5b9069; font-weight: 600; }
+
+.text-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  color: var(--text); font-weight: 500;
+  border-bottom: 1px solid var(--border); padding-bottom: 2px;
+  transition: border-color 160ms ease;
+}
+.text-link:hover { border-color: var(--text); }
+
+/* Cards */
+.grid-2 { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .grid-2 { grid-template-columns: 1fr 1fr; gap: 1.25rem; } }
+.grid-3 { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+.card {
+  display: flex; flex-direction: column; gap: 0.85rem;
+  padding: 1.75rem; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text); transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+.card:hover { background: var(--surface-2); }
+.card h3 { font-size: 1.2rem; }
+.card p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+.card .card-eyebrow { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+
+/* Pills */
+.pills { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+.pill {
+  padding: 0.55rem 1rem; border: 1px solid var(--border);
+  border-radius: 999px; font-size: 0.88rem;
+  color: var(--text); background: var(--surface);
+}
+
+/* CTA bar */
+.cta-bar { padding: 5rem 0; border-top: 1px solid var(--border);  }
+.cta-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+  border-left: 2px solid #4a7c59; padding-left: 1.5rem;
+}
+.cta-inner h2 { max-width: 18ch; }
+
+/* Footer */
+footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
+.foot-inner { display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.foot-brand .name { font-weight: 700; }
+.foot-brand .tag { color: var(--muted); font-size: 0.9rem; margin-top: 0.25rem; max-width: 38ch; }
+.foot-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; font-size: 0.9rem; color: var(--muted); }
+.foot-links a { color: var(--muted); transition: color 160ms ease; }
+.foot-links a:hover { color: var(--text); }
+.foot-brand .foot-contact { color: var(--muted); font-size: 0.85rem; margin-top: 0.85rem; line-height: 1.7; max-width: 38ch; }
+.foot-brand .foot-contact a { color: var(--muted); transition: color 160ms ease; }
+.foot-brand .foot-contact a:hover { color: var(--text); }
+.foot-legal {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  margin-top: 2rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted); font-size: 0.82rem; letter-spacing: 0.02em;
+}
+
+/* Page hero (sub-pages) */
+.page-hero { padding: 5rem 0 3rem; }
+.page-hero h1 { max-width: 22ch; }
+.page-hero p.lead { color: var(--muted); font-size: 1.1rem; max-width: 56ch; margin-top: 1rem; }
+
+/* FAQ accordion */
+.faq { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+.faq details {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 0;
+}
+.faq summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  font-weight: 600; font-size: 1.05rem; color: var(--text);
+  padding: 0.25rem 0;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: '+'; font-size: 1.4rem; font-weight: 400; color: var(--muted);
+  transition: transform 200ms ease, color 200ms ease;
+  width: 24px; text-align: center;
+}
+.faq details[open] summary::after { content: '−'; color: var(--text); }
+.faq .faq-body { margin-top: 1rem; color: var(--muted); font-size: 0.98rem; line-height: 1.7; }
+.faq .faq-body a { color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+
+/* Process steps */
+.steps { list-style: none; counter-reset: step; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.steps li {
+  counter-increment: step;
+  display: grid; grid-template-columns: 32px 1fr; gap: 1rem;
+  padding: 1.5rem 0; border-top: 1px solid var(--border);
+}
+.steps li:last-child { border-bottom: 1px solid var(--border); }
+.steps li::before {
+  content: counter(step);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.85rem; color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.steps h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+.steps p { color: var(--muted); font-size: 0.95rem; }
+
+/* Callout */
+.callout {
+  background: transparent;
+  border-left: 2px solid #4a7c59;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  color: var(--text);
+  font-size: 0.98rem;
+}
+
+/* Responsive */
+@media (max-width: 760px) { .nav-links, .nav-cta .btn { display: none; } .hamburger { display: inline-flex; } }
+@media (max-width: 720px) { section { padding: 3rem 0; } .cta-bar { padding: 3rem 0; } .page-hero { padding: 3rem 0 2rem; } }
+</style>
+</head>
+<body>
+  <nav class="nav" aria-label="Hoofdnavigatie">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo"><span class="logo-dot"></span>Cees de Controller</a>
+      <ul class="nav-links">
+        <li><a href="diensten.html">Diensten</a></li>
+        <li><a href="odoo.html" class="current">Odoo</a></li>
+        <li><a href="over-cees.html">Over</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="nav-icon" href="https://www.linkedin.com/in/cees-van-de-vendel-1344b727/" target="_blank" rel="noopener" aria-label="Cees op LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.339 18.337V9.722H5.667v8.615h2.672zM7.003 8.546a1.548 1.548 0 1 0 0-3.096 1.548 1.548 0 0 0 0 3.096zm11.336 9.791v-4.72c0-2.557-1.366-3.747-3.187-3.747-1.468 0-2.124.807-2.49 1.374V9.722h-2.671c.035.754 0 8.615 0 8.615h2.671v-4.811c0-.24.018-.48.088-.652.193-.48.633-.978 1.371-.978.967 0 1.354.737 1.354 1.818v4.623h2.864z"/></svg>
+        </a>
+        <a class="btn btn-primary btn-sm" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een intake</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="diensten.html">Diensten</a></li>
+      <li><a href="odoo.html" class="current">Odoo</a></li>
+      <li><a href="over-cees.html">Over</a></li>
+      <li><a href="blog/index.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a class="btn btn-primary" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een intake</a>
+  </div>
+  <main>
+
+    <section class="page-hero">
+      <div class="container">
+        <span class="eyebrow">Odoo &amp; Finance</span>
+        <h1 style="margin-top: 0.75rem;">Odoo draait. Maar stuur je er ook op?</h1>
+        <p class="lead">De implementatiepartner heeft de software geïnstalleerd. Wie zorgt dat je er financieel grip mee krijgt — vóór, tijdens en na de implementatie?</p>
+      </div>
+    </section>
+
+    <section style="padding-top: 2rem;">
+      <div class="container two-col">
+        <div>
+          <span class="eyebrow">Situatie</span>
+          <h2 style="margin-top: 0.75rem;">Herken je dit?</h2>
+        </div>
+        <ul class="check-list">
+          <li><span>Odoo staat live, maar de cijfers kloppen nog niet — of de maandafsluiting komt niet rond.</span></li>
+          <li><span>Het rekeningschema is overgenomen, niet bewust ontworpen voor jouw rapportage.</span></li>
+          <li><span>De implementatiepartner is technisch sterk, maar pakt finance-vragen niet op.</span></li>
+          <li><span>Je hebt rapportages, maar je weet niet of je erop kunt sturen.</span></li>
+          <li><span>Je staat voor een Odoo-keuze en mist iemand die de finance-kant bewaakt.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Wat ik anders maak</span>
+          <h2>Odoo-partners zijn technisch sterk. Controllers kennen Odoo zelden.</h2>
+        </div>
+        <p class="muted" style="max-width: 64ch; margin-bottom: 2.5rem;">De Odoo-implementatiepartners in Nederland zijn goed in software. Maar finance is voor hen geen hoofdvak — chart of accounts, btw-flows, marge-analyses en management-rapportage worden vaak overgelaten aan jou en je boekhouder. Tegelijk hebben de meeste fractioneel controllers nooit met Odoo gewerkt. Die combinatie maakt finance-grip ná de implementatie lastig.</p>
+        <div class="grid-3">
+          <div class="card">
+            <span class="card-eyebrow">Implementatiepartner</span>
+            <h3>Sterk in techniek</h3>
+            <p>Modules, integraties, custom development. Maar finance wordt vaak afgevinkt zonder ontwerp.</p>
+          </div>
+          <div class="card">
+            <span class="card-eyebrow">Reguliere controller</span>
+            <h3>Sterk in cijfers</h3>
+            <p>Begrijpt sturing en rapportage. Maar zonder Odoo-ervaring loopt 'ie vast op het systeem.</p>
+          </div>
+          <div class="card" style="border-color: #4a7c59;">
+            <span class="card-eyebrow" style="color: #5b9069;">Cees</span>
+            <h3>Allebei</h3>
+            <p>Accountantsachtergrond bij PwC en KPMG, jarenlange controllerservaring, en Odoo van binnenuit gekend. Eén partij voor finance én systeem.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Wanneer ik instap</span>
+          <h2>Vier momenten waarop finance-grip op Odoo het verschil maakt</h2>
+        </div>
+        <ol class="steps">
+          <li>
+            <div>
+              <h3>Vóór de keuze</h3>
+              <p>Sparring over of Odoo bij je past, welke modules wel/niet, en wat finance-vereisten zijn die de implementatiepartner moet meenemen. Voorkomt herstelwerk achteraf.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Tijdens de implementatie</h3>
+              <p>Vertaler tussen jou en de implementatiepartner. Ik bewaak rekeningschema, btw-instellingen, kostenplaatsen, integraties met bank/loonadministratie en de structuur van rapportages.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Direct na go-live</h3>
+              <p>De eerste maandafsluiting werkend krijgen, openingsbalansen valideren, processen testen en de finale bijsturing doen voordat alles vastroest.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <h3>Herstel of doorlopend</h3>
+              <p>Odoo loopt al — maar niet zoals het zou moeten. Ik breng in kaart wat klopt en wat niet, lever een herstelplan en kan structureel meekijken als fractioneel controller.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <span class="eyebrow">Waar ik aan werk in Odoo</span>
+        <div class="pills">
+          <span class="pill">Rekeningschema ontwerpen</span>
+          <span class="pill">Btw- en intracom-flows</span>
+          <span class="pill">Maandafsluiting werkend krijgen</span>
+          <span class="pill">Cashflow- en marge-analyse</span>
+          <span class="pill">Bank- en betaalintegraties</span>
+          <span class="pill">Management-rapportage en KPI's</span>
+          <span class="pill">Project- en kostendragerstructuur</span>
+          <span class="pill">Audit trail en accountant-export</span>
+        </div>
+      </div>
+    </section>
+
+    <!--
+      ODOO-CASE — placeholder. Vul met een concreet voorbeeld zodra geleverd.
+      Zie TODO.md.
+
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Voorbeeld uit de praktijk</span>
+            <h2>Hoe het er in een traject uitziet</h2>
+          </div>
+          <div class="card">
+            <span class="card-eyebrow">Casus</span>
+            <h3>[Bedrijfsnaam of geanonimiseerd]</h3>
+            <p><strong>Situatie:</strong> [korte schets van het probleem]</p>
+            <p><strong>Aanpak:</strong> [wat Cees deed]</p>
+            <p><strong>Resultaat:</strong> [meetbaar gevolg: maandafsluiting van X naar Y dagen, marge-inzicht per klantcategorie, etc.]</p>
+          </div>
+        </div>
+      </section>
+    -->
+
+    <section>
+      <div class="container-narrow">
+        <div class="section-head">
+          <span class="eyebrow">Veelgestelde vragen</span>
+          <h2>Goed om te weten</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Ben jij een Odoo-implementatiepartner?</summary>
+            <div class="faq-body">Nee. Ik bouw de software niet zelf op. Ik werk samen met jouw implementatiepartner — of help je er een kiezen — en zorg dat het systeem finance-technisch klopt. Mijn rol is sturing en kwaliteitsbewaking, niet de technische installatie.</div>
+          </details>
+          <details>
+            <summary>Welke Odoo-versies en modules ken je?</summary>
+            <div class="faq-body">Ik werk vooral met Odoo Enterprise en Odoo.sh, in de finance- en accounting-modules. Daarnaast genoeg ervaring om het samenspel met sales, inkoop, projecten en voorraad te begrijpen.</div>
+          </details>
+          <details>
+            <summary>Wat als mijn implementatie al fout is gelopen?</summary>
+            <div class="faq-body">Daar word ik regelmatig voor gevraagd. We beginnen met een intake en korte analyse: wat klopt, wat niet, en wat is de snelste route naar grip. Daarna een herstelplan met prioriteiten — geen big bang, wel zichtbare voortgang per maand.</div>
+          </details>
+          <details>
+            <summary>Werk je met onze huidige implementatiepartner samen?</summary>
+            <div class="faq-body">Ja. Ik vervang je partner niet, ik vul aan. Veel trajecten lopen soepeler als er één finance-stem is die de partner uitdaagt op rekeningschema, rapportage en flows. Daar word ik als prettig en kritisch ervaren, niet als een blokkade.</div>
+          </details>
+          <details>
+            <summary>Doe je ook standaard controller-werk naast Odoo?</summary>
+            <div class="faq-body">Ja. Veel klanten beginnen met een Odoo-vraag en blijven daarna als reguliere klant op een controller- of CFO-pakket. Zie <a href="diensten.html">Diensten</a> voor de structurele samenwerkingen.</div>
+          </details>
+          <details>
+            <summary>Hoe gaat het met mijn financiële data?</summary>
+            <div class="faq-body">Toegang krijg ik via jouw eigen Odoo-omgeving, niet via gedeelde inboxen. Geheimhouding is contractueel vastgelegd en ik gebruik je data niet voor andere doeleinden. Geen AI-trainingsdata, geen doorverkoop.</div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-bar">
+      <div class="container">
+        <div class="cta-inner">
+          <h2>Even sparren over jouw Odoo-situatie?</h2>
+          <a class="btn btn-primary" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een gratis intake</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container foot-inner">
+      <div class="foot-brand">
+        <div class="name">Cees de Controller</div>
+        <div class="tag">Fractioneel controller en CFO voor MKB-ondernemers.</div>
+        <div class="foot-contact">
+          Heuveloord 25 J · 3523 CK Utrecht<br />
+          <a href="mailto:cees@ceesdecontroller.nl">cees@ceesdecontroller.nl</a> · <a href="tel:+31640582472">06 40 58 24 72</a>
+        </div>
+      </div>
+      <div class="foot-links">
+        <a href="https://www.linkedin.com/company/cees-de-controller-b-v" target="_blank" rel="noopener">LinkedIn (bedrijf)</a>
+        <a href="https://www.linkedin.com/in/cees-van-de-vendel-1344b727/" target="_blank" rel="noopener">LinkedIn (Cees)</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-statement.html">Privacy</a>
+        <a href="algemene-voorwaarden.html">Voorwaarden</a>
+      </div>
+    </div>
+    <div class="container foot-legal">
+      <span>KvK 95299238 · BTW NL867078261B01</span>
+      <span>© 2026 Cees de Controller B.V.</span>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var btn = document.getElementById('hamburger');
+      var menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function () {
+        var open = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          menu.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
