@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drie signalen dat je cijfers je bedrijf remmen — Cees de Controller</title>
+  <meta name="description" content="Een slechte financiële functie kost je meer dan je denkt. Drie concrete signalen met voorbeelden van wat het je kost." />
+  <link rel="canonical" href="https://www.ceesdecontroller.nl/blog/drie-signalen.html" />
+  <meta property="og:title" content="Drie signalen dat je cijfers je bedrijf remmen — Cees de Controller" />
+  <meta property="og:description" content="Een slechte financiële functie kost je meer dan je denkt. Drie concrete signalen met voorbeelden van wat het je kost." />
+  <meta property="og:url" content="https://www.ceesdecontroller.nl/blog/drie-signalen.html" />
+  <meta property="og:type" content="article" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --bg: #0c0d0c;
+  --surface: #141513;
+  --surface-2: #1c1d1b;
+  --border: #25272a;
+  --text: #f1f2ef;
+  --muted: #7a7c78;
+  --faint: #2f3230;
+  --radius: 6px;
+  --max: 1080px;
+  --nav-h: 72px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+.container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+.container-narrow { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+
+h1, h2, h3, h4 { margin: 0; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 800; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); }
+h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
+h4 { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+p { margin: 0; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #7a7c78;
+}
+.eyebrow::before {
+        content: '';
+        display: inline-block;
+        width: 18px; height: 1px;
+        background: #5b9069;
+        margin-right: 0.6rem;
+        vertical-align: middle;
+      }
+.muted { color: var(--muted); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 500; font-size: 0.95rem; line-height: 1;
+  border: 1px solid transparent;
+  transition: opacity 160ms ease, background 160ms ease, border-color 160ms ease, color 160ms ease;
+  white-space: nowrap;
+}
+.btn-primary { background: #4a7c59; color: #ffffff; }
+.btn-primary:hover { background: #5b9069; }
+.btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+.btn-secondary:hover { border-color: var(--text); }
+.btn-sm { padding: 0.65rem 1.05rem; font-size: 0.88rem; }
+.btn-block { width: 100%; }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  height: var(--nav-h);
+  background: rgba(12, 13, 12, 0.7);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border-bottom: 1px solid var(--border);
+  
+}
+.nav-inner {
+  height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+}
+.logo { font-weight: 700; letter-spacing: -0.01em; font-size: 1rem; display: flex; align-items: center; gap: 0.55rem; }
+.logo-dot { width: 6px; height: 6px; background: #4a7c59; border-radius: 50%; display: inline-block; }
+.nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+.nav-links a { font-size: 0.92rem; color: var(--muted); transition: color 160ms ease; }
+.nav-links a:hover, .nav-links a.current { color: var(--text); }
+.nav-cta { display: flex; align-items: center; gap: 0.75rem; }
+.hamburger {
+  display: none; background: transparent; border: 1px solid var(--border);
+  border-radius: var(--radius); width: 40px; height: 40px; padding: 0;
+  align-items: center; justify-content: center; color: var(--text);
+}
+.hamburger:hover { border-color: var(--text); }
+.hamburger svg { width: 18px; height: 18px; }
+.mobile-menu {
+  display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
+  background: var(--bg); border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem 1.5rem; z-index: 49;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu ul { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+.mobile-menu a { display: block; padding: 0.85rem 0; font-size: 1rem; border-bottom: 1px solid var(--border); color: var(--muted); }
+.mobile-menu a.current { color: var(--text); }
+.mobile-menu .btn { width: 100%; margin-top: 0.5rem; }
+
+/* Section spacing */
+section { padding: 5rem 0; }
+.section-head { margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+
+/* Hero */
+.hero { padding: 5rem 0 6rem; position: relative; }
+.hero-grid { display: grid; gap: 2rem; }
+.hero h1 { max-width: 18ch; }
+.hero-sub { max-width: 56ch; color: var(--muted); font-size: 1.1rem; }
+.hero-ctas { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 0.5rem; }
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.4rem 0.85rem; border: 1px solid var(--border);
+  background: transparent;
+  border-radius: 999px; font-size: 0.8rem; color: var(--muted);
+  letter-spacing: 0.02em; width: max-content;
+}
+.hero-tag::before { content: ''; width: 6px; height: 6px; background: #4a7c59; border-radius: 50%; }
+
+/* Two col */
+.two-col { display: grid; gap: 3rem; grid-template-columns: 1fr; }
+@media (min-width: 820px) {
+  .two-col { grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 4rem; }
+}
+.two-col-even { display: grid; gap: 3rem; grid-template-columns: 1fr; }
+@media (min-width: 820px) {
+  .two-col-even { grid-template-columns: 1fr 1fr; }
+}
+
+/* Check list (dashes) */
+.check-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.check-list li {
+  padding: 1.25rem 0; border-bottom: 1px solid var(--border);
+  display: grid; grid-template-columns: 1.5rem 1fr; gap: 0.75rem;
+}
+.check-list li:first-child { border-top: 1px solid var(--border); }
+.check-list li::before { content: '—'; color: #5b9069; font-weight: 600; }
+
+/* Photo placeholder */
+.photo {
+  aspect-ratio: 3 / 4; background: #141513;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  position: relative; overflow: hidden;
+}
+.photo::before {
+  content: ''; position: absolute; inset: 0;
+  background: repeating-linear-gradient(45deg, transparent 0 18px, rgba(255,255,255,0.018) 18px 19px);
+}
+.photo-label {
+  position: absolute; bottom: 1rem; left: 1rem;
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.72rem; color: var(--muted);
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
+
+/* Features (vinkjes) */
+.feature-list { list-style: none; margin: 0 0 1.75rem; padding: 0; display: flex; flex-direction: column; gap: 0.65rem; }
+.feature-list li {
+  display: grid; grid-template-columns: 1.25rem 1fr; gap: 0.65rem;
+  align-items: baseline; font-size: 0.98rem;
+}
+.feature-list li::before { content: '✓'; color: #5b9069; font-weight: 600; }
+
+.text-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  color: var(--text); font-weight: 500;
+  border-bottom: 1px solid var(--border); padding-bottom: 2px;
+  transition: border-color 160ms ease;
+}
+.text-link:hover { border-color: var(--text); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  color: var(--muted); font-size: 0.92rem; transition: color 160ms ease;
+  margin-bottom: 1.5rem;
+}
+.back-link:hover { color: var(--text); }
+
+/* Cards */
+.grid-2 { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .grid-2 { grid-template-columns: 1fr 1fr; gap: 1.25rem; } }
+.grid-3 { display: grid; gap: 1rem; grid-template-columns: 1fr; }
+@media (min-width: 720px) { .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 1.25rem; } }
+.card {
+  display: flex; flex-direction: column; gap: 0.85rem;
+  padding: 1.75rem; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text); transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+.card:hover { background: var(--surface-2); }
+
+.card-price { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
+.card h3 { font-size: 1.2rem; }
+.card p { color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+
+.grid-foot { margin-top: 2rem; }
+
+/* Klanten */
+.klanten { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.klanten-grid { display: grid; gap: 1.5rem; grid-template-columns: 1fr; margin-top: 2rem; }
+@media (min-width: 720px) { .klanten-grid { grid-template-columns: repeat(3, 1fr); } }
+.klant {
+  display: block; padding: 1.5rem; border: 1px solid var(--border);
+  border-radius: var(--radius); background: transparent;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+.klant:hover { background: var(--surface); }
+.klant-name { font-weight: 600; font-size: 1.05rem; margin-bottom: 0.25rem; }
+.klant-role { color: var(--muted); font-size: 0.88rem; }
+
+/* Pills */
+.pills { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2rem; }
+.pill {
+  padding: 0.55rem 1rem; border: 1px solid var(--border);
+  border-radius: 999px; font-size: 0.88rem;
+  color: var(--text); background: var(--surface);
+}
+
+/* Blog cards & blog list */
+.blog-head {
+  display: flex; align-items: flex-end; justify-content: space-between;
+  gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;
+}
+.blog-card {
+  display: flex; flex-direction: column; gap: 0.85rem;
+  padding: 1.75rem; background: var(--surface);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
+}
+.blog-card:hover { background: var(--surface-2); }
+
+.blog-meta { display: flex; align-items: center; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; }
+.blog-meta .dot { width: 3px; height: 3px; background: var(--faint); border-radius: 50%; }
+.blog-card h3 { font-size: 1.25rem; line-height: 1.3; }
+.blog-card p { color: var(--muted); font-size: 0.95rem; }
+
+/* Blog list rows */
+.blog-list { display: flex; flex-direction: column; margin-top: 2rem; border-top: 1px solid var(--border); }
+.blog-row {
+  display: grid; gap: 1rem;
+  grid-template-columns: 1fr;
+  padding: 1.75rem 0.5rem; border-bottom: 1px solid var(--border);
+  transition: background 200ms ease;
+}
+.blog-row:hover { background: var(--surface); }
+@media (min-width: 720px) {
+  .blog-row { grid-template-columns: 220px 1fr 80px; align-items: start; padding: 1.75rem; }
+}
+.blog-row .meta-col { display: flex; flex-direction: column; gap: 0.35rem; }
+.blog-row .meta-cat { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; }
+.blog-row .meta-time { font-size: 0.78rem; color: var(--muted); }
+.blog-row h3 { font-size: 1.25rem; line-height: 1.3; margin-bottom: 0.4rem; }
+.blog-row p { color: var(--muted); font-size: 0.95rem; }
+.blog-row .arrow { color: var(--text); align-self: start; font-size: 0.95rem; text-align: right; }
+
+/* CTA bar */
+.cta-bar { padding: 5rem 0; border-top: 1px solid var(--border);  }
+.cta-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+  border-left: 2px solid #4a7c59; padding-left: 1.5rem;
+}
+.cta-inner h2 { max-width: 18ch; }
+
+/* Footer */
+footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
+.foot-inner { display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.foot-brand .name { font-weight: 700; }
+.foot-brand .tag { color: var(--muted); font-size: 0.9rem; margin-top: 0.25rem; max-width: 38ch; }
+.foot-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; font-size: 0.9rem; color: var(--muted); }
+.foot-links a { color: var(--muted); transition: color 160ms ease; }
+.foot-links a:hover { color: var(--text); }
+
+/* Page hero (sub-pages) */
+.page-hero { padding: 5rem 0 3rem; }
+.page-hero h1 { max-width: 22ch; }
+.page-hero p.lead { color: var(--muted); font-size: 1.1rem; max-width: 56ch; margin-top: 1rem; }
+
+/* Dienst rows (diensten.html) */
+.dienst-row {
+  display: grid; gap: 2rem; grid-template-columns: 1fr;
+  padding: 2.5rem 0; border-top: 1px solid var(--border);
+}
+@media (min-width: 820px) {
+  .dienst-row { grid-template-columns: 1.4fr 1fr; gap: 3rem; }
+}
+.dienst-row:last-child { border-bottom: 1px solid var(--border); }
+.dienst-row .price-tag { font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 0.5rem; }
+.dienst-row h2 { font-size: 1.5rem; margin-bottom: 0.75rem; }
+.dienst-row p { color: var(--muted); }
+.dienst-row .bevat-title { font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 1rem; }
+.dienst-row ul.bevat-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
+.dienst-row ul.bevat-list li {
+  display: grid; grid-template-columns: 1.25rem 1fr; gap: 0.6rem;
+  align-items: baseline; font-size: 0.95rem;
+}
+.dienst-row ul.bevat-list li::before { content: '✓'; color: #5b9069; font-weight: 600; }
+
+/* FAQ accordion */
+.faq { display: flex; flex-direction: column; border-top: 1px solid var(--border); }
+.faq details {
+  border-bottom: 1px solid var(--border);
+  padding: 1.25rem 0;
+}
+.faq summary {
+  list-style: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  font-weight: 600; font-size: 1.05rem; color: var(--text);
+  padding: 0.25rem 0;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: '+'; font-size: 1.4rem; font-weight: 400; color: var(--muted);
+  transition: transform 200ms ease, color 200ms ease;
+  width: 24px; text-align: center;
+}
+.faq details[open] summary::after { content: '−'; color: var(--text); }
+.faq .faq-body { margin-top: 1rem; color: var(--muted); font-size: 0.98rem; line-height: 1.7; }
+.faq .faq-body a { color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+
+/* Article layout */
+.article-layout {
+  display: grid; gap: 3rem; grid-template-columns: 1fr;
+  padding: 3rem 0 5rem;
+}
+@media (min-width: 960px) {
+  .article-layout { grid-template-columns: minmax(0, 1fr) 260px; gap: 4rem; }
+}
+.article-content { max-width: 680px; }
+.article-content .meta-cat { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; display: inline-block; }
+.article-content h1 { font-size: clamp(2rem, 4vw, 2.75rem); margin-bottom: 1.5rem; max-width: 22ch; }
+.article-content h2 {
+  font-size: 1.5rem; margin: 2.5rem 0 1rem;
+  letter-spacing: -0.015em;
+}
+.article-content h3 { font-size: 1.15rem; margin: 1.5rem 0 0.75rem; }
+.article-content p { margin-bottom: 1.25rem; color: var(--text); }
+.article-content p.intro { font-size: 1.1rem; color: var(--text); }
+.article-content ul { padding-left: 1.4rem; margin: 0 0 1.25rem; }
+.article-content ul li { color: var(--text); margin-bottom: 0.35rem; }
+.article-content a { color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+
+.callout {
+  background: transparent;
+  border-left: 2px solid #4a7c59;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  color: var(--text);
+  font-size: 0.98rem;
+  
+}
+
+.kosten-tag {
+  display: inline-block; font-size: 0.8rem;
+  padding: 0.6rem 0.9rem; border: 1px solid var(--border);
+  border-radius: var(--radius); margin: 0.5rem 0 1.25rem;
+  color: #5b9069;
+}
+.kosten-tag strong { font-weight: 600; }
+
+.checklist-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.5rem;
+  margin: 1rem 0 1.5rem;
+}
+.checklist-block h4 { margin-bottom: 0.75rem; font-size: 1rem; color: var(--text); }
+.checklist-block ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.checklist-block ul li {
+  display: grid; grid-template-columns: 1.25rem 1fr; gap: 0.6rem;
+  font-size: 0.95rem; color: var(--text);
+}
+.checklist-block ul li::before { content: '—'; color: #5b9069; font-weight: 600; }
+
+.article-cta {
+  margin-top: 3rem; padding: 2rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 2px solid #4a7c59;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.article-cta h3 { font-size: 1.25rem; }
+.article-cta p { color: var(--muted); margin: 0; }
+.article-cta .btn { width: max-content; }
+
+/* Sidebar */
+.sidebar { display: flex; flex-direction: column; gap: 1rem; }
+@media (min-width: 960px) {
+  .sidebar { position: sticky; top: calc(var(--nav-h) + 1.5rem); align-self: start; max-height: calc(100vh - var(--nav-h) - 3rem); overflow-y: auto; }
+}
+.side-card {
+  padding: 1.25rem 1.35rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.side-card .eyebrow { margin-bottom: 0.85rem; }
+.side-card h4 { font-size: 0.92rem; margin-bottom: 0.75rem; font-weight: 600; }
+.toc { display: flex; flex-direction: column; gap: 0.5rem; list-style: none; margin: 0; padding: 0; }
+.toc li a { color: var(--muted); font-size: 0.88rem; line-height: 1.4; display: block; transition: color 160ms ease; }
+.toc li a:hover { color: var(--text); }
+.side-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.side-card .btn { width: 100%; }
+
+/* Contact layout */
+.contact-grid { display: grid; gap: 1.25rem; grid-template-columns: 1fr; }
+@media (min-width: 820px) { .contact-grid { grid-template-columns: 1fr 1fr; gap: 1.5rem; } }
+.contact-block {
+  padding: 2rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius);
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.contact-block h2 { font-size: 1.5rem; }
+.contact-block p { color: var(--muted); }
+.field { display: flex; flex-direction: column; gap: 0.4rem; }
+.field label { font-size: 0.85rem; color: var(--muted); font-weight: 500; }
+.field input, .field textarea {
+  width: 100%; padding: 0.7rem 0.85rem;
+  background: var(--bg);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  color: var(--text); font: inherit; font-size: 0.95rem;
+  transition: border-color 160ms ease;
+}
+.field input:focus, .field textarea:focus { outline: none; border-color: var(--text); }
+.field textarea { min-height: 120px; resize: vertical; }
+.form-success {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-left: 2px solid #4a7c59;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius);
+  color: var(--text); font-size: 0.95rem;
+  display: none;
+}
+.form-success.show { display: block; }
+form { display: flex; flex-direction: column; gap: 1rem; }
+
+/* Process steps */
+.steps { list-style: none; counter-reset: step; margin: 0; padding: 0; display: flex; flex-direction: column; }
+.steps li {
+  counter-increment: step;
+  display: grid; grid-template-columns: 32px 1fr; gap: 1rem;
+  padding: 1.5rem 0; border-top: 1px solid var(--border);
+}
+.steps li:last-child { border-bottom: 1px solid var(--border); }
+.steps li::before {
+  content: counter(step);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 0.85rem; color: var(--muted);
+  letter-spacing: 0.04em;
+}
+.steps h3 { font-size: 1.05rem; margin-bottom: 0.4rem; }
+.steps p { color: var(--muted); font-size: 0.95rem; }
+
+/* Responsive */
+@media (max-width: 760px) { .nav-links, .nav-cta .btn { display: none; } .hamburger { display: inline-flex; } }
+@media (max-width: 720px) { section { padding: 3rem 0; } .hero { padding: 3rem 0 4rem; } .cta-bar { padding: 3rem 0; } .page-hero { padding: 3rem 0 2rem; } .article-layout { padding: 2rem 0 3rem; } }
+</style>
+</head>
+<body>
+  <nav class="nav" aria-label="Hoofdnavigatie">
+    <div class="container nav-inner">
+      <a href="../index.html" class="logo"><span class="logo-dot"></span>Cees de Controller</a>
+      <ul class="nav-links">
+        <li><a href="../diensten.html">Diensten</a></li>
+        <li><a href="../over-cees.html">Over</a></li>
+        <li><a href="../blog/index.html" class="current">Blog</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-primary btn-sm" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een intake</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="../diensten.html">Diensten</a></li>
+      <li><a href="../over-cees.html">Over</a></li>
+      <li><a href="../blog/index.html" class="current">Blog</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a class="btn btn-primary" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een intake</a>
+  </div>
+  <main>
+
+    <div class="container">
+      <div class="article-layout">
+        <article class="article-content">
+          <a class="back-link" href="index.html">← Terug naar blog</a>
+          <span class="meta-cat">Reporting &amp; Inzicht · 4 min lezen</span>
+          <h1>Drie signalen dat je cijfers je bedrijf remmen</h1>
+
+          <p class="intro">Een goede financiële functie helpt je sneller en zekerder groeien. Je weet waar je staat, je ziet kansen, je voorkomt problemen voordat ze groot worden.</p>
+
+          <p>Maar een slechte of incomplete financiële functie doet het omgekeerde. Je twijfelt, je wacht, je maakt keuzes op basis van gevoel omdat de cijfers er niet zijn of niet te begrijpen zijn.</p>
+
+          <p>In dit artikel beschrijf ik drie duidelijke signalen dat je cijfers je bedrijf remmen in plaats van helpen — met concrete voorbeelden van wat het je kost als je niets doet.</p>
+
+          <h2 id="signaal-1">Signaal 1: je wacht weken op je maandcijfers</h2>
+
+          <p>Het is half maart. Je wilt weten hoe januari ging, maar je boekhouder is nog bezig. Eind maart krijg je eindelijk de cijfers. Tegen die tijd ben je alweer een maand verder.</p>
+
+          <p>Je neemt dus beslissingen in maart zonder te weten hoe januari was. In april doe je hetzelfde. En zo schuift het door.</p>
+
+          <div class="callout">Een bedrijf dat ik begeleidde zag pas na acht maanden dat ze cash aan het verbranden waren. Geen slecht bedrijf, gewoon geen actueel inzicht. Tegen de tijd dat ze het doorhadden: €40.000 minder op de rekening dan verwacht.</div>
+
+          <p>Een gezonde norm: maandcijfers binnen vijf tot tien werkdagen na maandafsluiting. Duurt het langer, dan zit er ergens een bottleneck — te weinig capaciteit bij de boekhouder, ontbrekende facturen, of systemen die niet goed gekoppeld zijn.</p>
+
+          <p>De snelste verbetering is meestal automatisering: boekhoudsoftware die direct koppelt met je bank (zoals Exact Online of Moneybird) scheelt al snel een week aan verwerkingstijd. Daarna is de vraag of er iemand is die de cijfers ook bewaakt en interpreteert. Dat is waar een controller het verschil maakt.</p>
+
+          <h2 id="signaal-2">Signaal 2: je snapt je eigen cijfers niet</h2>
+
+          <p>Je krijgt een winst-en-verliesrekening van je boekhouder. Je kijkt ernaar. Veel getallen, vaktermen, onduidelijke posten. Je ziet onderaan een getal dat winst of verlies moet zijn, maar hoe je daar bent gekomen? Geen idee. Je legt het weg.</p>
+
+          <p>Het probleem is niet dat je geen accountant bent. Het probleem is dat je zonder begrip niet kunt sturen. Je weet niet welke kostenposten het grootst zijn, waar je winst vandaan komt, of bepaalde klanten eigenlijk wel rendabel zijn.</p>
+
+          <div class="callout">Een dienstverlener rekende €75 per uur omdat “dat marktconform is.” Toen we de kostprijs berekenden — inclusief overhead, ziektedagen en verlof — bleek dat ze €68 moesten rekenen om break-even te zijn. Bij €75 was hun marge 9%. Na herbeprijzing naar €95: een marge van 28%.</div>
+
+          <p>Goede rapportages zijn niet dik, ze zijn begrijpelijk. Een overzicht met omzet, kosten, winst en cashflow per maand — meer heb je in de meeste gevallen niet nodig om te sturen.</p>
+
+          <h2 id="signaal-3">Signaal 3: je kunt simpele vragen niet beantwoorden</h2>
+
+          <p>Je overweegt een nieuwe medewerker aan te nemen. Iemand vraagt: “Kunnen we ons dat veroorloven?” Je antwoord: “Ik denk het wel.”</p>
+
+          <p>Of je wilt een offerte doen voor een groot project. Je moet een prijs noemen. Je gokt op basis van wat je eerder rekende, maar of het genoeg marge oplevert? Onbekend.</p>
+
+          <div class="callout">Een bedrijf had €50.000 op de rekening en verwachtte een grote klant. Ze durfden niet te investeren in een nieuwe medewerker omdat ze niet wisten of ze het konden betalen. Met een simpele cashflowplanning hadden ze gezien dat ze prima zes maanden vooruit konden. Die medewerker had €100.000 extra omzet kunnen brengen.</div>
+
+          <p>Vragen die je gewoon moet kunnen beantwoorden:</p>
+
+          <ul>
+            <li>Hoeveel cashflow heb ik de komende drie maanden?</li>
+            <li>Wat is mijn winstmarge per product of dienst?</li>
+            <li>Hoeveel omzet heb ik nodig om break-even te draaien?</li>
+            <li>Wat kost een extra medewerker mij echt, all-in?</li>
+          </ul>
+
+          <p>Als je deze vragen niet kunt beantwoorden, heb je geen financieel inzicht — je hebt alleen een administratie.</p>
+
+          <h2 id="conclusie">Conclusie</h2>
+
+          <p>Als je wekenlang wacht op cijfers, als je ze niet snapt, of als je simpele vragen niet kunt beantwoorden, dan werkt je financiële functie tegen je in plaats van voor je.</p>
+
+          <p>De oplossing is niet ingewikkeld: zorg voor snellere cijfers, maak ze begrijpelijk, en vertaal ze naar antwoorden die je kunt gebruiken. De kosten van niet weten zijn altijd hoger dan de kosten van wel weten.</p>
+
+          <div class="article-cta">
+            <h3>Herken je deze signalen?</h3>
+            <p>Plan een gratis intake en we bespreken samen wat er nodig is.</p>
+            <a class="btn btn-primary" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een gratis intake</a>
+          </div>
+        </article>
+
+        <aside class="sidebar">
+          <div class="side-card">
+            <h4>In dit artikel</h4>
+            <ul class="toc">
+              <li><a href="#signaal-1">Signaal 1: wachten op maandcijfers</a></li>
+              <li><a href="#signaal-2">Signaal 2: je snapt je cijfers niet</a></li>
+              <li><a href="#signaal-3">Signaal 3: simpele vragen onbeantwoord</a></li>
+              <li><a href="#conclusie">Conclusie</a></li>
+            </ul>
+          </div>
+          <div class="side-card">
+            <h4>Meer lezen</h4>
+            <p>Controller, boekhouder of accountant: wie heb jij nodig?</p>
+            <a class="text-link" href="controller-vs-boekhouder.html">Lees verder →</a>
+          </div>
+          <div class="side-card">
+            <h4>Gratis intake</h4>
+            <p>30 minuten, vrijblijvend. Video of telefoon.</p>
+            <a class="btn btn-primary" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan via Calendly</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container foot-inner">
+      <div class="foot-brand">
+        <div class="name">Cees de Controller</div>
+        <div class="tag">Fractioneel controller en CFO voor freelancers en MKB.</div>
+      </div>
+      <div class="foot-links">
+        <a href="https://linkedin.com/in/cees-van-de-vendel-1344b727" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="../contact.html">Contact</a>
+        <span>© 2026</span>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var btn = document.getElementById('hamburger');
+      var menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function () {
+        var open = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          menu.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
