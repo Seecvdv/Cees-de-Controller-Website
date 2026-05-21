@@ -479,6 +479,9 @@ footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
 }
 .form-error.show { display: block; }
 .form-error a { color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+.form-note { font-size: 0.82rem; color: var(--muted); margin: 0; line-height: 1.5; }
+.form-note a { color: var(--muted); border-bottom: 1px solid var(--border); transition: color 160ms ease, border-color 160ms ease; }
+.form-note a:hover { color: var(--text); border-color: var(--text); }
 form { display: flex; flex-direction: column; gap: 1rem; }
 
 /* Process steps */
@@ -584,6 +587,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
               <input type="hidden" name="from_name" value="Cees de Controller website" />
               <input type="hidden" name="subject" value="Nieuw bericht via contactformulier" />
               <button type="submit" class="btn btn-primary btn-block">Verstuur bericht</button>
+              <p class="form-note">Door te versturen ga je akkoord met onze <a href="privacy-statement.html">privacyverklaring</a>.</p>
               <div class="form-success" id="form-success">Bedankt, ik neem snel contact op.</div>
               <div class="form-error" id="form-error">Versturen lukte niet. Probeer het opnieuw of mail direct naar <a href="mailto:cees@ceesdecontroller.nl">cees@ceesdecontroller.nl</a>.</div>
             </form>
