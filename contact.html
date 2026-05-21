@@ -580,7 +580,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
                 <label for="bericht">Waar loop je tegenaan? *</label>
                 <textarea id="bericht" name="bericht" required></textarea>
               </div>
-              <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
+              <input type="hidden" name="from_name" value="Cees de Controller website" />
+              <input type="hidden" name="subject" value="Nieuw bericht via contactformulier" />
               <button type="submit" class="btn btn-primary btn-block">Verstuur bericht</button>
               <div class="form-success" id="form-success">Bedankt, ik neem snel contact op.</div>
               <div class="form-error" id="form-error">Versturen lukte niet. Probeer het opnieuw of mail direct naar <a href="mailto:cees@ceesdecontroller.nl">cees@ceesdecontroller.nl</a>.</div>
@@ -638,26 +640,29 @@ form { display: flex; flex-direction: column; gap: 1rem; }
           });
         });
       }
-      // FabForm endpoint — vervang de FORM_ID hieronder zodra je je account hebt aangemaakt op fabform.io
-      var FABFORM_ENDPOINT = 'https://fabform.io/f/REPLACE_WITH_YOUR_FABFORM_ID';
+      // Web3Forms — vervang REPLACE_WITH_YOUR_ACCESS_KEY door je access key (krijg je via web3forms.com)
+      var WEB3FORMS_ACCESS_KEY = 'REPLACE_WITH_YOUR_ACCESS_KEY';
+      var WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
       var form = document.getElementById('contact-form');
       var succ = document.getElementById('form-success');
       var err  = document.getElementById('form-error');
       if (form) {
-        form.setAttribute('action', FABFORM_ENDPOINT);
+        form.setAttribute('action', WEB3FORMS_ENDPOINT);
         form.addEventListener('submit', function (e) {
           e.preventDefault();
           if (!form.checkValidity()) { form.reportValidity(); return; }
           err.classList.remove('show');
           var btn = form.querySelector('button[type="submit"]');
           if (btn) { btn.disabled = true; btn.textContent = 'Versturen…'; }
-          fetch(FABFORM_ENDPOINT, {
+          var data = new FormData(form);
+          data.append('access_key', WEB3FORMS_ACCESS_KEY);
+          fetch(WEB3FORMS_ENDPOINT, {
             method: 'POST',
-            body: new FormData(form),
+            body: data,
             headers: { 'Accept': 'application/json' }
-          }).then(function (res) {
-            if (!res.ok) throw new Error('HTTP ' + res.status);
+          }).then(function (res) { return res.json(); }).then(function (json) {
+            if (!json.success) throw new Error(json.message || 'Onbekende fout');
             form.style.display = 'none';
             succ.classList.add('show');
           }).catch(function () {
