@@ -296,6 +296,15 @@ footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
 .foot-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; font-size: 0.9rem; color: var(--muted); }
 .foot-links a { color: var(--muted); transition: color 160ms ease; }
 .foot-links a:hover { color: var(--text); }
+.foot-brand .foot-contact { color: var(--muted); font-size: 0.85rem; margin-top: 0.85rem; line-height: 1.7; max-width: 38ch; }
+.foot-brand .foot-contact a { color: var(--muted); transition: color 160ms ease; }
+.foot-brand .foot-contact a:hover { color: var(--text); }
+.foot-legal {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  margin-top: 2rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted); font-size: 0.82rem; letter-spacing: 0.02em;
+}
 
 /* Page hero (sub-pages) */
 .page-hero { padding: 5rem 0 3rem; }
@@ -673,12 +682,21 @@ form { display: flex; flex-direction: column; gap: 1rem; }
       <div class="foot-brand">
         <div class="name">Cees de Controller</div>
         <div class="tag">Fractioneel controller en CFO voor freelancers en MKB.</div>
+        <div class="foot-contact">
+          Heuveloord 25 J · 3523 CK Utrecht<br />
+          <a href="mailto:cees@ceesdecontroller.nl">cees@ceesdecontroller.nl</a> · <a href="tel:+31640582472">06 40 58 24 72</a>
+        </div>
       </div>
       <div class="foot-links">
-        <a href="https://linkedin.com/in/cees-van-de-vendel-1344b727" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/company/cees-de-controller-b-v" target="_blank" rel="noopener">LinkedIn</a>
         <a href="contact.html">Contact</a>
-        <span>© 2026</span>
+        <a href="privacy-statement.html">Privacy</a>
+        <a href="algemene-voorwaarden.html">Voorwaarden</a>
       </div>
+    </div>
+    <div class="container foot-legal">
+      <span>KvK 95299238 · BTW NL867078261B01</span>
+      <span>© 2026 Cees de Controller B.V.</span>
     </div>
   </footer>
   <script>
