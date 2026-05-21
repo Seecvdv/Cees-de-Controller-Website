@@ -18,6 +18,60 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "OfferCatalog",
+    "name": "Diensten van Cees de Controller",
+    "url": "https://www.ceesdecontroller.nl/diensten.html",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Financial control — Basis op orde",
+        "description": "Maandafsluiting, btw-controle, cashflow-overzicht en één vast aanspreekpunt.",
+        "priceCurrency": "EUR",
+        "price": "250",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "250",
+          "priceCurrency": "EUR",
+          "unitCode": "MON"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Business control — Sturing en inzicht",
+        "description": "Managementrapportage, budget vs realisatie, KPI-dashboard en margeanalyse.",
+        "priceCurrency": "EUR",
+        "price": "750",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "750",
+          "priceCurrency": "EUR",
+          "unitCode": "MON"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Sparring & CFO-rol — Richting en rust",
+        "description": "Financieel sparren op MT-niveau, scenario-analyses, investeringsbegeleiding.",
+        "priceCurrency": "EUR",
+        "price": "1500",
+        "priceSpecification": {
+          "@type": "UnitPriceSpecification",
+          "price": "1500",
+          "priceCurrency": "EUR",
+          "unitCode": "MON"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Projecten — Tijdelijk en gericht",
+        "description": "Achterstanden bijwerken, finance-systemen inrichten, interim-ondersteuning."
+      }
+    ]
+  }
+  </script>
   <style>
 :root {
   --bg: #0c0d0c;
@@ -112,6 +166,13 @@ p { margin: 0; }
 .nav-links a { font-size: 0.92rem; color: var(--muted); transition: color 160ms ease; }
 .nav-links a:hover, .nav-links a.current { color: var(--text); }
 .nav-cta { display: flex; align-items: center; gap: 0.75rem; }
+.nav-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--muted); width: 36px; height: 36px;
+  border-radius: var(--radius);
+  transition: color 160ms ease, background 160ms ease;
+}
+.nav-icon:hover { color: var(--text); background: var(--surface); }
 .hamburger {
   display: none; background: transparent; border: 1px solid var(--border);
   border-radius: var(--radius); width: 40px; height: 40px; padding: 0;
@@ -509,6 +570,9 @@ form { display: flex; flex-direction: column; gap: 1rem; }
         <li><a href="contact.html">Contact</a></li>
       </ul>
       <div class="nav-cta">
+        <a class="nav-icon" href="https://www.linkedin.com/in/cees-van-de-vendel-1344b727/" target="_blank" rel="noopener" aria-label="Cees op LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.339 18.337V9.722H5.667v8.615h2.672zM7.003 8.546a1.548 1.548 0 1 0 0-3.096 1.548 1.548 0 0 0 0 3.096zm11.336 9.791v-4.72c0-2.557-1.366-3.747-3.187-3.747-1.468 0-2.124.807-2.49 1.374V9.722h-2.671c.035.754 0 8.615 0 8.615h2.671v-4.811c0-.24.018-.48.088-.652.193-.48.633-.978 1.371-.978.967 0 1.354.737 1.354 1.818v4.623h2.864z"/></svg>
+        </a>
         <a class="btn btn-primary btn-sm" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een intake</a>
         <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-menu">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
@@ -630,6 +694,10 @@ form { display: flex; flex-direction: column; gap: 1rem; }
             <summary>Werk je ook op uurbasis?</summary>
             <div class="faq-body">Voor structurele samenwerking werk ik liever op maandbasis. Voor projecten hanteren we een projectprijs of uurtarief. We bespreken dat tijdens de intake.</div>
           </details>
+          <details>
+            <summary>Hoe gaat het met mijn financiële data?</summary>
+            <div class="faq-body">Ik werk met de tools die jij al gebruikt — Exact Online, Moneybird, Yuki. Toegang krijg ik via jouw eigen omgeving, niet via gedeelde inboxen. Geheimhouding is contractueel vastgelegd en ik gebruik je data niet voor andere doeleinden. Geen AI-trainingsdata, geen doorverkoop.</div>
+          </details>
         </div>
       </div>
     </section>
@@ -647,14 +715,15 @@ form { display: flex; flex-direction: column; gap: 1rem; }
     <div class="container foot-inner">
       <div class="foot-brand">
         <div class="name">Cees de Controller</div>
-        <div class="tag">Fractioneel controller en CFO voor freelancers en MKB.</div>
+        <div class="tag">Fractioneel controller en CFO voor MKB-ondernemers.</div>
         <div class="foot-contact">
           Heuveloord 25 J · 3523 CK Utrecht<br />
           <a href="mailto:cees@ceesdecontroller.nl">cees@ceesdecontroller.nl</a> · <a href="tel:+31640582472">06 40 58 24 72</a>
         </div>
       </div>
       <div class="foot-links">
-        <a href="https://www.linkedin.com/company/cees-de-controller-b-v" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/company/cees-de-controller-b-v" target="_blank" rel="noopener">LinkedIn (bedrijf)</a>
+        <a href="https://www.linkedin.com/in/cees-van-de-vendel-1344b727/" target="_blank" rel="noopener">LinkedIn (Cees)</a>
         <a href="contact.html">Contact</a>
         <a href="privacy-statement.html">Privacy</a>
         <a href="algemene-voorwaarden.html">Voorwaarden</a>
