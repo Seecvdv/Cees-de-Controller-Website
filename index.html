@@ -10,6 +10,11 @@
   <meta property="og:description" content="Fractioneel controller en CFO voor freelancers en MKB. Grip op je cijfers, structuur en financiële rust." />
   <meta property="og:url" content="https://www.ceesdecontroller.nl/" />
   <meta property="og:type" content="website" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0c0d0c" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
@@ -258,7 +263,7 @@ img.photo {
   border: 1px solid var(--border); border-radius: var(--radius);
   transition: background 200ms ease, border-color 200ms ease, box-shadow 200ms ease;
 }
-.blog-card:hover { background: var(--surface-2); }
+.blog-card:hover { background: var(--surface-2); box-shadow: inset 0 -2px 0 0 #4a7c59; }
 
 .blog-meta { display: flex; align-items: center; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; }
 .blog-meta .dot { width: 3px; height: 3px; background: var(--faint); border-radius: 50%; }
@@ -271,9 +276,9 @@ img.photo {
   display: grid; gap: 1rem;
   grid-template-columns: 1fr;
   padding: 1.75rem 0.5rem; border-bottom: 1px solid var(--border);
-  transition: background 200ms ease;
+  transition: background 200ms ease, box-shadow 200ms ease;
 }
-.blog-row:hover { background: var(--surface); }
+.blog-row:hover { background: var(--surface); box-shadow: inset 2px 0 0 0 #4a7c59; }
 @media (min-width: 720px) {
   .blog-row { grid-template-columns: 220px 1fr 80px; align-items: start; padding: 1.75rem; }
 }
