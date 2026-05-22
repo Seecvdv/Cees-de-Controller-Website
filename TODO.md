@@ -11,7 +11,8 @@ Open items uit de strategische verbeterronde van 2026-05-21.
 
 ## Latere kandidaten
 
-- Webhook van Web3Forms naar Notion of Odoo CRM zodat lead-magnet aanvragen en contactformulier automatisch in één lijst landen.
+- **Autoresponse per e-mail naar aanvragers** (zinvol zodra je structureel meer dan 1-2 PDF-aanvragen per week ziet). Web3Forms-autoresponder is een Pro-feature (~$8/mnd) — werkt point-and-click via hun dashboard, geen code-changes nodig. Goedkoper alternatief: webhook van Web3Forms naar een serverless function (Vercel/Netlify) die via Resend/Postmark/MailerSend een welkomstmail met PDF-link stuurt. In beide gevallen: success-bericht op homepage moet dan weer aangevuld worden met *"Je ontvangt 'm ook in je inbox"*.
+- Webhook van Web3Forms naar Notion of Odoo CRM zodat lead-magnet aanvragen en contactformulier automatisch in één lijst landen — kan gecombineerd met bovenstaande autoresponder-flow in dezelfde serverless function.
 - Daadwerkelijke testimonials/case-content verzamelen via klantvraag (e.g. Jeugdeducatiefonds, Humble Recruitment, Infinitas Learning).
 - **Blogpost over Odoo + finance.** Onderwerp: *"Wat een Odoo-implementatiepartner finance-technisch vaak overslaat"*. Doel: longtail SEO-verkeer naar `/odoo.html`. Plek: `blog/odoo-implementatie-finance.html` (of vergelijkbare slug); ook toevoegen aan `blog/index.html` en `sitemap.xml`.
 - **Tweede visual op odoo.html** (optioneel). Eerste foto staat ingebouwd. Een Odoo-screenshot of diagram implementatiepartner ↔ Cees ↔ klant zou het verhaal verder completeren — maar de pagina werkt nu al met één menselijke visual.
