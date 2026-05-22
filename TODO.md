@@ -13,3 +13,5 @@ Open items uit de strategische verbeterronde van 2026-05-21.
 
 - Webhook van Web3Forms naar Notion of Odoo CRM zodat lead-magnet aanvragen en contactformulier automatisch in één lijst landen.
 - Daadwerkelijke testimonials/case-content verzamelen via klantvraag (e.g. Jeugdeducatiefonds, Humble Recruitment, Infinitas Learning).
+- **Blogpost over Odoo + finance.** Onderwerp: *"Wat een Odoo-implementatiepartner finance-technisch vaak overslaat"*. Doel: longtail SEO-verkeer naar `/odoo.html`. Plek: `blog/odoo-implementatie-finance.html` (of vergelijkbare slug); ook toevoegen aan `blog/index.html` en `sitemap.xml`.
+- **Visual op odoo.html.** De pagina is nu tekst-zwaar. Eén goede visual helpt: bijv. een screenshot van een ingerichte rapportage of dashboard in Odoo, of een diagram van het samenspel implementatiepartner ↔ Cees ↔ klant. Plek: tussen de "Wat ik anders maak" sectie en "Wanneer ik instap".
