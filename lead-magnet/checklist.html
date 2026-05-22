@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>7 signalen dat je financiële functie je bedrijf remt</title>
+<style>
+  :root {
+    --accent: #4a7c59;
+    --ink: #1c1c1c;
+    --muted: #555;
+    --line: #d8d8d8;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ececec;
+  }
+
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 11pt;
+  }
+
+  /* A4 paginavlak voor schermweergave */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 16px auto;
+    padding: 20mm;
+    background: #fff;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.15);
+  }
+
+  h1, h2, h3, .label, .kicker, .footer-url {
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  a { color: var(--accent); text-decoration: underline; }
+  a:hover { text-decoration: none; }
+
+  /* ---------- Cover ---------- */
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 257mm;
+  }
+  .cover .kicker {
+    font-size: 10pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 14mm;
+  }
+  .cover h1 {
+    font-size: 30pt;
+    line-height: 1.18;
+    font-weight: 700;
+    margin: 0 0 8mm 0;
+    max-width: 150mm;
+  }
+  .cover .accent-bar {
+    width: 60mm;
+    height: 4px;
+    background: var(--accent);
+    margin: 0 0 8mm 0;
+  }
+  .cover .subtitle {
+    font-size: 13pt;
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 auto 0;
+  }
+  .cover .meta {
+    margin-top: 14mm;
+    padding-top: 6mm;
+    border-top: 1px solid var(--line);
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.6;
+  }
+  .cover .meta strong { font-weight: 600; }
+  .cover .meta .url { color: var(--accent); }
+  .cover .meta .legal { color: var(--muted); }
+
+  /* ---------- Inhoud ---------- */
+  h2 {
+    font-size: 13pt;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 4mm 0;
+  }
+
+  .intro {
+    border-left: 3px solid var(--accent);
+    padding-left: 6mm;
+    margin-bottom: 10mm;
+  }
+  .intro p { margin: 0 0 3.5mm 0; }
+  .intro .closing {
+    font-weight: 700;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.5pt;
+    color: var(--ink);
+  }
+
+  /* Signaal */
+  .signal {
+    margin-bottom: 9mm;
+  }
+  .signal-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 4mm;
+    margin-bottom: 3mm;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .checkbox {
+    flex: 0 0 auto;
+    width: 6mm;
+    height: 6mm;
+    border: 2px solid var(--accent);
+    border-radius: 2px;
+    margin-top: 1mm;
+  }
+  .signal-num {
+    flex: 0 0 auto;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13pt;
+    color: var(--accent);
+    line-height: 1.3;
+  }
+  .signal-head h3 {
+    font-size: 12.5pt;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .signal-body {
+    padding-left: 10mm;
+  }
+  .block { margin-bottom: 3mm; }
+  .block:last-child { margin-bottom: 0; }
+  .label {
+    font-size: 8.5pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.5mm;
+  }
+  .block p { margin: 0; }
+
+  hr.divider {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 9mm 0;
+  }
+
+  /* Wat nu? */
+  .scenario {
+    margin-bottom: 4mm;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .scenario .tag {
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* Over Cees */
+  .about {
+    margin-top: 8mm;
+    background: #f3f6f3;
+    border-top: 3px solid var(--accent);
+    padding: 7mm;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .about p { margin: 0 0 3mm 0; }
+  .about p:last-child { margin-bottom: 0; }
+  .about .cta { font-weight: 700; }
+  .about a { color: var(--accent); }
+
+  /* ---------- Print ---------- */
+  @page {
+    size: A4;
+    margin: 20mm;
+  }
+
+  @media print {
+    html, body { background: #fff; }
+    .page {
+      width: auto;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    .cover {
+      min-height: 0;
+      height: 247mm;
+      page-break-after: always;
+    }
+    .signal { page-break-inside: auto; }
+    .signal-head { page-break-after: avoid; }
+    h2 { page-break-after: avoid; }
+    a { color: var(--accent); text-decoration: underline; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <div class="kicker">Zelfcheck voor MKB-ondernemers</div>
+  <h1>7 signalen dat je financiële functie je bedrijf remt</h1>
+  <div class="accent-bar"></div>
+  <p class="subtitle">Een korte zelfcheck van Cees van de Vendel</p>
+  <div class="meta">
+    <strong>Cees de Controller B.V.</strong><br>
+    <a class="url" href="https://www.ceesdecontroller.nl/">ceesdecontroller.nl</a><br>
+    <span class="legal">KvK 95299238 · Utrecht</span>
+  </div>
+</section>
+
+<!-- ============ INHOUD ============ -->
+<section class="page">
+
+  <h2>Waarom deze checklist</h2>
+  <div class="intro">
+    <p>Je weet wat je weet over je cijfers. Toch knaagt er iets: het kan scherper. Maar waar zit het probleem precies — bij jezelf, bij je boekhouder, of mist er gewoon een controller?</p>
+    <p>Deze checklist helpt je dat scherp te krijgen. Zeven signalen, allemaal uit de praktijk bij MKB-ondernemers. Geen theorie, geen jargon.</p>
+    <p>Pak er tien minuten voor. Lees elk signaal rustig door en wees eerlijk tegen jezelf — niet tegen de versie die het op een verjaardag mooier maakt. Twijfel je? Dan telt het waarschijnlijk mee.</p>
+    <p>Aan het eind staat wat je met je uitkomst kunt doen.</p>
+    <p class="closing">Vink mee. Als je drie of meer signalen herkent, is er waarschijnlijk werk aan de winkel.</p>
+  </div>
+
+  <!-- Signaal 1 -->
+  <div class="signal">
+    <div class="signal-head">
+      <div class="checkbox"></div>
+      <div class="signal-num">1</div>
+      <h3>De maandafsluiting komt niet op tijd rond</h3>
+    </div>
+    <div class="signal-body">
+      <div class="block">
+        <div class="label">Herken je dit?</div>
+        <p>Je bent alweer halverwege de maand en de cijfers van vorige maand zijn nog niet af. Of de afsluiting komt wel, maar zo laat dat je er niets meer mee stuurt. Soms is een maand nooit echt klaar — er blijft altijd een correctie of een openstaande post hangen.</p>
+      </div>
+      <div class="block">
+        <div class="label">Wat het je kost</div>
+        <p>Je stuurt met de blik in de achteruitkijkspiegel. Tegen de tijd dat je weet hoe een maand liep, is de volgende al half voorbij. Bijsturen kan dan niet meer — je kunt alleen nog vaststellen wat er gebeurd is.</p>
+      </div>
+      <div class="block">
+        <div class="label">Eerste stap die je vandaag kunt zetten</div>
+        <p>Spreek met je boekhouder een vaste datum af: de cijfers van de maand staan uiterlijk de 10e. Schrijf daarna op wat een tijdige afsluiting nu blokkeert — wachten op bonnetjes, op een bankkoppeling, op informatie van jou. Dat lijstje is je startpunt.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signaal 2 -->
+  <div class="signal">
+    <div class="signal-head">
+      <div class="checkbox"></div>
+      <div class="signal-num">2</div>
+      <h3>Cashflow blijft een verrassing</h3>
+    </div>
+    <div class="signal-body">
+      <div class="block">
+        <div class="label">Herken je dit?</div>
+        <p>"Staat er over twee maanden genoeg op de rekening?" Je weet het niet zeker. Je winst-en-verliesrekening ziet er prima uit, maar dat zegt weinig over wat er echt binnenkomt en uitgaat. Grote betalingen — btw, vakantiegeld, een investering — overvallen je net iets te vaak.</p>
+      </div>
+      <div class="block">
+        <div class="label">Wat het je kost</div>
+        <p>Je houdt onbewust een buffer aan die groter is dan nodig, puur uit onzekerheid. Of je schrikt op het verkeerde moment. Beslissingen over investeren of aannemen schuif je voor je uit — niet omdat het slim is, maar omdat je het overzicht mist.</p>
+      </div>
+      <div class="block">
+        <div class="label">Eerste stap die je vandaag kunt zetten</div>
+        <p>Maak een simpele cashflowprognose voor de komende dertien weken. Begin met je huidige banksaldo. Zet daaronder per week de verwachte inkomsten en uitgaven, en reken het saldo per week uit. Eén tabblad, geen ingewikkeld model. Werk hem één keer per week bij. Na een maand zie je patronen die je eerder ontgingen.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signaal 3 -->
+  <div class="signal">
+    <div class="signal-head">
+      <div class="checkbox"></div>
+      <div class="signal-num">3</div>
+      <h3>Hoge omzet, smalle marge — en je weet niet waar het lekt</h3>
+    </div>
+    <div class="signal-body">
+      <div class="block">
+        <div class="label">Herken je dit?</div>
+        <p>De omzet groeit, de orders komen binnen, maar onderaan de streep blijft minder over dan je zou verwachten. "We draaien hard, dus waar blijft het geld?" Je hebt een vermoeden — een project, een klant, een kostenpost — maar zeker weten doe je het niet.</p>
+      </div>
+      <div class="block">
+        <div class="label">Wat het je kost</div>
+        <p>Je blijft sturen op omzet, terwijl de marge het echte verhaal vertelt. Misschien werk je hard aan klanten of producten die je per saldo geld kosten. Zonder zicht daarop herhaal je die keuze gewoon volgend jaar.</p>
+      </div>
+      <div class="block">
+        <div class="label">Eerste stap die je vandaag kunt zetten</div>
+        <p>Pak je drie grootste klanten of projecten van vorig jaar. Reken per stuk uit wat er onder de streep overbleef — niet alleen na de directe kosten, maar ook na een eerlijk deel van je overhead: personeel, kantoor, en posten als retouren. Niet tot achter de komma; een schatting is genoeg. De verschillen zijn vaak groter dan je denkt.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signaal 4 -->
+  <div class="signal">
+    <div class="signal-head">
+      <div class="checkbox"></div>
+      <div class="signal-num">4</div>
+      <h3>Beslissingen gaan op gevoel, niet op cijfers</h3>
+    </div>
+    <div class="signal-body">
+      <div class="block">
+        <div class="label">Herken je dit?</div>
+        <p>Een nieuwe medewerker aannemen, een machine kopen, je prijzen verhogen — je weegt het af in je hoofd, tijdens het rijden of onder de douche. Het gevoel klopt vaak. Maar je kunt het niet hardmaken met een berekening, en bij twijfel valt de knoop daarom soms verkeerd.</p>
+      </div>
+      <div class="block">
+        <div class="label">Wat het je kost</div>
+        <p>Gevoel werkt prima zolang je bedrijf klein en overzichtelijk is. Word je groter, dan worden de bedragen ook groter — en een misser kost dan echt geld. Je mist ook het rustige gevoel dat een onderbouwd besluit geeft.</p>
+      </div>
+      <div class="block">
+        <div class="label">Eerste stap die je vandaag kunt zetten</div>
+        <p>Neem de eerstvolgende beslissing van enige omvang en zet hem op papier. Wat kost het, wat levert het op, wanneer verdien je het terug? Eén A4 is genoeg. Je merkt meteen welke aannames wankel zijn.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signaal 5 -->
+  <div class="signal">
+    <div class="signal-head">
+      <div class="checkbox"></div>
+      <div class="signal-num">5</div>
+      <h3>Btw, jaarrekening en VPB zijn telkens weer stress</h3>
+    </div>
+    <div class="signal-body">
+      <div class="block">
+        <div class="label">Herken je dit?</div>
+        <p>Elke maand of elk kwartaal weer de btw-aangifte, en aan het eind van het jaar de jaarrekening en de VPB. Telkens hetzelfde patroon: de accountant vraagt om stukken, er moeten correcties achteraf, en jij levert later aan dan de bedoeling was. "Volgend jaar doen we het anders" — en toch gebeurt het weer.</p>
+      </div>
+      <div class="block">
+        <div class="label">Wat het je kost</div>
+        <p>Werk achteraf herstellen kost meer tijd dan het in één keer goed doen. De accountant rekent uren voor uitzoekwerk dat niet nodig was. En de stress zit niet alleen in de deadline, maar in het onderbuikgevoel dat de cijfers misschien niet kloppen.</p>
+      </div>
+      <div class="block">
+        <div class="label">Eerste stap die je vandaag kunt zetten</div>
+        <p>Loop terug naar de laatste aangifte en noteer waar het stokte. Ontbrekende stukken? Onduidelijke posten? Te laat begonnen? Maak één lijstje met die knelpunten. Dat lijstje is meteen een goed gesprek met je boekhouder of accountant.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signaal 6 -->
+  <div class="signal">
+    <div class="signal-head">
+      <div class="checkbox"></div>
+      <div class="signal-num">6</div>
+      <h3>Je hebt rapportages, maar je stuurt er niet op</h3>
+    </div>
+    <div class="signal-body">
+      <div class="block">
+        <div class="label">Herken je dit?</div>
+        <p>Er zijn dashboards of Excel-overzichten. Ooit met zorg gemaakt. Maar je opent ze niet meer elke maand. Of je opent ze wel en denkt: "klopt dit eigenlijk nog wel?" — waarna je toch op je gevoel verdergaat.</p>
+      </div>
+      <div class="block">
+        <div class="label">Wat het je kost</div>
+        <p>Een rapportage die je niet gebruikt, kost alleen maar: tijd om hem te maken, en een vals gevoel dat je grip hebt. Erger nog: als je je eigen cijfers niet vertrouwt, neem je beslissingen liever zonder. Dan kun je de rapportage net zo goed niet hebben.</p>
+      </div>
+      <div class="block">
+        <div class="label">Eerste stap die je vandaag kunt zetten</div>
+        <p>Pak je belangrijkste rapportage en stel jezelf één vraag: welke drie tot vijf getallen wil ik elke maand echt weten? Schrap de rest. Een kort overzicht dat je wél leest, is meer waard dan een uitgebreid overzicht dat blijft liggen.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Signaal 7 -->
+  <div class="signal">
+    <div class="signal-head">
+      <div class="checkbox"></div>
+      <div class="signal-num">7</div>
+      <h3>Je groeit, maar de financiële functie groeit niet mee</h3>
+    </div>
+    <div class="signal-body">
+      <div class="block">
+        <div class="label">Herken je dit?</div>
+        <p>Je boekhouder doet z'n werk netjes, net als toen je nog €500k omzet draaide. Maar je bent gegroeid. De vragen zijn complexer, het tempo hoger, en je merkt dat de boekhouding bijhoudt wat er was — en niet meedenkt over wat komt.</p>
+      </div>
+      <div class="block">
+        <div class="label">Wat het je kost</div>
+        <p>Een boekhouder houdt de administratie bij. Sturen op cijfers, vooruitkijken, scenario's doorrekenen — dat is ander werk. Mis je dat, dan groeit je bedrijf harder dan je grip erop. Dat voelt onrustig, en het is ook echt een risico.</p>
+      </div>
+      <div class="block">
+        <div class="label">Eerste stap die je vandaag kunt zetten</div>
+        <p>Schrijf op welke financiële vragen je de afgelopen maanden had en niet beantwoord kreeg. "Kan ik deze investering aan?" "Welke klant levert echt op?" Dat lijstje laat zien wat er mist tussen je boekhouder en jou — en of dat een controllerrol is.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>Wat nu?</h2>
+  <p style="margin-top:0;">Tel je vinkjes.</p>
+
+  <div class="scenario">
+    <p><span class="tag">0–2 signalen herkend.</span> Waarschijnlijk ben je goed bezig. Je financiële functie past bij je bedrijf. Houd het zo, en pak deze checklist er over een half jaar nog eens bij — bedrijven groeien, en wat nu past, past straks misschien niet meer.</p>
+  </div>
+  <div class="scenario">
+    <p><span class="tag">3–4 signalen.</span> Er is werk aan de winkel, maar niets onoverkomelijks. Meestal zit het in ritme en organisatie: vaste afsluitdata, een simpele prognose, scherpere afspraken met je boekhouder. Begin met het signaal dat je het meeste dwarszit. Eén knelpunt tegelijk oplossen werkt beter dan alles in één keer willen.</p>
+  </div>
+  <div class="scenario">
+    <p><span class="tag">5 of meer signalen.</span> Dan is je financiële functie waarschijnlijk een rem op je groei geworden. Dat is geen verwijt — het hoort vaak gewoon bij een bedrijf dat sneller groeide dan z'n administratie. Maar het is wel het moment om er serieus naar te kijken. De vraag is niet óf het beter kan, maar wie het oppakt en wanneer.</p>
+  </div>
+  <p>Wat je uitkomst ook is: je weet nu concreter waar het schuurt. Dat is de helft van de oplossing.</p>
+
+  <div class="about">
+    <h2 style="margin-bottom:3mm;">Over Cees</h2>
+    <p>Cees van de Vendel is fractioneel controller en CFO voor MKB-ondernemers. Bijzonder aan zijn aanpak: hij is óók accountant, met een achtergrond bij PwC en KPMG. Daardoor pakt hij niet alleen sturing en rapportage op, maar ook de jaarrekening en belastingaangiften — werk dat een gewone controller laat liggen.</p>
+    <p>Hij werkt voor ondernemers met €0,5 tot €10 miljoen omzet, een paar dagen per maand. Geen vast dienstverband, wel een vast aanspreekpunt.</p>
+    <p class="cta">Herken je een paar signalen uit deze checklist en wil je sparren over wat het voor jou betekent? Plan een gratis kennismaking van 30 minuten: <a href="https://calendly.com/cees-ceesdecontroller/30min">calendly.com/cees-ceesdecontroller/30min</a>.</p>
+  </div>
+
+</section>
+
+</body>
+</html>
