@@ -173,6 +173,18 @@ section { padding: 5rem 0; }
 .check-list li:first-child { border-top: 1px solid var(--border); }
 .check-list li::before { content: '—'; color: #5b9069; font-weight: 600; }
 
+/* Photo */
+.photo {
+  aspect-ratio: 3 / 4; background: #141513;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  position: relative; overflow: hidden;
+}
+img.photo {
+  width: 100%; height: auto;
+  object-fit: cover; object-position: center 30%;
+  background: var(--surface);
+}
+
 /* Features (vinkjes) */
 .feature-list { list-style: none; margin: 0 0 1.75rem; padding: 0; display: flex; flex-direction: column; gap: 0.65rem; }
 .feature-list li {
@@ -343,17 +355,18 @@ footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
 
     <section style="padding-top: 2rem;">
       <div class="container two-col">
+        <img class="photo" src="assets/cees-odoo.jpg" alt="Cees van de Vendel in gesprek met een ondernemer over diens Odoo-omgeving" loading="lazy" width="1200" height="1600" />
         <div>
           <span class="eyebrow">Situatie</span>
-          <h2 style="margin-top: 0.75rem;">Herken je dit?</h2>
+          <h2 style="margin: 0.75rem 0 1.5rem;">Herken je dit?</h2>
+          <ul class="check-list">
+            <li><span>Odoo staat live, maar de cijfers kloppen nog niet — of de maandafsluiting komt niet rond.</span></li>
+            <li><span>Het rekeningschema is overgenomen, niet bewust ontworpen voor jouw rapportage.</span></li>
+            <li><span>De implementatiepartner is technisch sterk, maar pakt finance-vragen niet op.</span></li>
+            <li><span>Je hebt rapportages, maar je weet niet of je erop kunt sturen.</span></li>
+            <li><span>Je staat voor een Odoo-keuze en mist iemand die de finance-kant bewaakt.</span></li>
+          </ul>
         </div>
-        <ul class="check-list">
-          <li><span>Odoo staat live, maar de cijfers kloppen nog niet — of de maandafsluiting komt niet rond.</span></li>
-          <li><span>Het rekeningschema is overgenomen, niet bewust ontworpen voor jouw rapportage.</span></li>
-          <li><span>De implementatiepartner is technisch sterk, maar pakt finance-vragen niet op.</span></li>
-          <li><span>Je hebt rapportages, maar je weet niet of je erop kunt sturen.</span></li>
-          <li><span>Je staat voor een Odoo-keuze en mist iemand die de finance-kant bewaakt.</span></li>
-        </ul>
       </div>
     </section>
 
