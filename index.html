@@ -787,7 +787,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
         <div class="contact-block">
           <span class="eyebrow">Gratis checklist</span>
           <h2>Niet klaar voor een intake? Check eerst deze gratis checklist.</h2>
-          <p>7 signalen dat je financiële functie je bedrijf remt — direct in je inbox.</p>
+          <p>7 signalen dat je financiële functie je bedrijf remt — direct te downloaden na het invullen van je e-mail.</p>
           <form id="checklist-form" method="POST" novalidate>
             <input type="hidden" name="access_key" value="89f23d9c-5876-42b4-8733-d118645155c8" />
             <input type="hidden" name="subject" value="Lead-magnet aanvraag — Checklist" />
@@ -796,7 +796,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
             <label for="checklist-email" style="position:absolute;left:-9999px;">E-mailadres</label>
             <div class="inline-form">
               <input id="checklist-email" type="email" name="email" required placeholder="je@bedrijf.nl" autocomplete="email" />
-              <button type="submit" class="btn btn-primary">Stuur me de checklist</button>
+              <button type="submit" class="btn btn-primary">Download de checklist</button>
             </div>
             <p class="form-note">Door te versturen ga je akkoord met onze <a href="privacy-statement.html">privacyverklaring</a>.</p>
             <div class="form-success" id="checklist-success">Bedankt! <a href="assets/checklist-7-signalen.pdf" download style="color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 1px;">Download de checklist hier direct (PDF) →</a></div>
@@ -879,7 +879,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
             succ.classList.add('show');
           }).catch(function () {
             err.classList.add('show');
-            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel || 'Stuur me de checklist'; }
+            if (submitBtn) { submitBtn.disabled = false; submitBtn.textContent = originalLabel || 'Download de checklist'; }
           });
         });
       }
