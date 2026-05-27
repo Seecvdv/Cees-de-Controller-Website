@@ -72,16 +72,16 @@ Neem de eerstvolgende beslissing van enige omvang en zet hem op papier. Wat kost
 
 ---
 
-## 5. Btw, jaarrekening en VPB zijn telkens weer stress
+## 5. Je werkt om je systemen heen, niet ermee
 
 **Herken je dit?**
-Elke maand of elk kwartaal weer de btw-aangifte, en aan het eind van het jaar de jaarrekening en de VPB. Telkens hetzelfde patroon: de accountant vraagt om stukken, er moeten correcties achteraf, en jij levert later aan dan de bedoeling was. "Volgend jaar doen we het anders" — en toch gebeurt het weer.
+Je boekhoudpakket of ERP begon prima, maar er ligt nu een laag Excel-lijstjes overheen. Facturen wachten op akkoord in een mailbox, declaraties komen via Whatsapp, voorraad of urenregistratie klopt nooit helemaal. Iedereen heeft z'n eigen workaround — en niemand weet meer waar de waarheid zit.
 
 **Wat het je kost**
-Werk achteraf herstellen kost meer tijd dan het in één keer goed doen. De accountant rekent uren voor uitzoekwerk dat niet nodig was. En de stress zit niet alleen in de deadline, maar in het onderbuikgevoel dat de cijfers misschien niet kloppen.
+Tijd, fouten en — het ergste — geen betrouwbaar zicht op marge per klant, project of dienst. Hoe groter je wordt, hoe duurder dit wordt. En het verdwijnt niet uit zichzelf; het versterkt meerdere andere signalen op deze lijst.
 
 **Eerste stap die je vandaag kunt zetten**
-Loop terug naar de laatste aangifte en noteer waar het stokte. Ontbrekende stukken? Onduidelijke posten? Te laat begonnen? Maak één lijstje met die knelpunten. Dat lijstje is meteen een goed gesprek met je boekhouder of accountant.
+Schrijf vijf dingen op die jij of je team buiten het systeem om doen. Een Excel naast de boekhouding, een mailmap "facturen akkoord", een lijstje "nog inboeken". Dat overzicht is je startpunt voor een ERP-stap of een procesverbetering — en vaak hoeft er minder vervangen te worden dan je denkt.
 
 ---
 
@@ -127,7 +127,9 @@ Wat je uitkomst ook is: je weet nu concreter waar het schuurt. Dat is de helft v
 
 ## Over Cees
 
-Cees van de Vendel is fractioneel controller en CFO voor MKB-ondernemers. Bijzonder aan zijn aanpak: hij is óók accountant, met een achtergrond bij PwC en KPMG. Daardoor pakt hij niet alleen sturing en rapportage op, maar ook de jaarrekening en belastingaangiften — werk dat een gewone controller laat liggen.
+Cees van de Vendel is fractioneel controller en CFO voor MKB-ondernemers. Hij stuurt op cijfers waar veel boekhouders alleen bijhouden: cashflow, marge, scenario's en richting. Daarnaast pakt hij ERP-implementaties en systeemverbeteringen op (bv. Odoo, Salesforce, factuurautorisatie of kostendeclaratie) — omdat goede sturing en goede systemen niet los van elkaar staan.
+
+Door zijn accountantsachtergrond bij PwC en KPMG kan hij optioneel ook de jaarrekening en aangiften verzorgen — of die taken laten waar ze nu liggen. Wat past, bespreken jullie.
 
 Hij werkt voor ondernemers met €0,5 tot €10 miljoen omzet, een paar dagen per maand. Geen vast dienstverband, wel een vast aanspreekpunt.
 
