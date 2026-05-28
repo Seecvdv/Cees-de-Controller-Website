@@ -32,7 +32,7 @@
   </url>
   <url>
     <loc>https://ceesdecontroller.nl/blog/</loc>
-    <lastmod>2026-05-21</lastmod>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -57,6 +57,12 @@
   <url>
     <loc>https://ceesdecontroller.nl/blog/wanneer-fractioneel-controller-zonde-van-het-geld.html</loc>
     <lastmod>2026-05-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://ceesdecontroller.nl/blog/controller-aangenomen-data-chaos.html</loc>
+    <lastmod>2026-05-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
