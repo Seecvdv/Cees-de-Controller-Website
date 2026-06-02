@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la /tmp/design/cees-de-controller-website/project/blog)",
+      "Read(//tmp/design/cees-de-controller-website/project/**)",
+      "Read(//tmp/**)",
+      "Bash(curl -sL https://www.ceesdecontroller.nl/diensten -o /tmp/live_diensten.html)",
+      "Bash(python -c ' *)",
+      "Bash(kill 1697)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}

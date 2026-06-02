@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5 data-checks vóór je AI op je cijfers loslaat</title>
+<style>
+  :root {
+    --accent: #4a7c59;
+    --ink: #1c1c1c;
+    --muted: #555;
+    --line: #d8d8d8;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #ececec;
+  }
+
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 11pt;
+  }
+
+  /* A4 paginavlak voor schermweergave */
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 16px auto;
+    padding: 20mm;
+    background: #fff;
+    box-shadow: 0 2px 14px rgba(0,0,0,0.15);
+  }
+
+  h1, h2, h3, .label, .kicker, .footer-url {
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  }
+
+  a { color: var(--accent); text-decoration: underline; }
+  a:hover { text-decoration: none; }
+
+  /* ---------- Cover ---------- */
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 257mm;
+  }
+  .cover .kicker {
+    font-size: 10pt;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
+    margin-bottom: 14mm;
+  }
+  .cover h1 {
+    font-size: 30pt;
+    line-height: 1.18;
+    font-weight: 700;
+    margin: 0 0 8mm 0;
+    max-width: 150mm;
+  }
+  .cover .accent-bar {
+    width: 60mm;
+    height: 4px;
+    background: var(--accent);
+    margin: 0 0 8mm 0;
+  }
+  .cover .subtitle {
+    font-size: 13pt;
+    color: var(--muted);
+    font-style: italic;
+    margin: 0 0 auto 0;
+  }
+  .cover .meta {
+    margin-top: 14mm;
+    padding-top: 6mm;
+    border-top: 1px solid var(--line);
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10pt;
+    line-height: 1.6;
+  }
+  .cover .meta strong { font-weight: 600; }
+  .cover .meta .url { color: var(--accent); }
+  .cover .meta .legal { color: var(--muted); }
+
+  /* ---------- Inhoud ---------- */
+  h2 {
+    font-size: 13pt;
+    font-weight: 700;
+    color: var(--ink);
+    margin: 0 0 4mm 0;
+  }
+
+  .intro {
+    border-left: 3px solid var(--accent);
+    padding-left: 6mm;
+    margin-bottom: 10mm;
+  }
+  .intro p { margin: 0 0 3.5mm 0; }
+  .intro .closing {
+    font-weight: 700;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-size: 10.5pt;
+    color: var(--ink);
+  }
+
+  /* Check */
+  .signal {
+    margin-bottom: 9mm;
+  }
+  .signal-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 4mm;
+    margin-bottom: 3mm;
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  .checkbox {
+    flex: 0 0 auto;
+    width: 6mm;
+    height: 6mm;
+    border: 2px solid var(--accent);
+    border-radius: 2px;
+    margin-top: 1mm;
+  }
+  .signal-num {
+    flex: 0 0 auto;
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13pt;
+    color: var(--accent);
+    line-height: 1.3;
+  }
+  .signal-head h3 {
+    font-size: 12.5pt;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+  }
+  .signal-body {
+    padding-left: 10mm;
+  }
+  .block { margin-bottom: 3mm; }
+  .block:last-child { margin-bottom: 0; }
+  .label {
+    font-size: 8.5pt;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0.5mm;
+  }
+  .block p { margin: 0; }
+
+  hr.divider {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 9mm 0;
+  }
+
+  /* Wat nu? */
+  .scenario {
+    margin-bottom: 4mm;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .scenario .tag {
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+  }
+
+  /* Over Cees */
+  .about {
+    margin-top: 8mm;
+    background: #f3f6f3;
+    border-top: 3px solid var(--accent);
+    padding: 7mm;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  .about p { margin: 0 0 3mm 0; }
+  .about p:last-child { margin-bottom: 0; }
+  .about .cta { font-weight: 700; }
+  .about a { color: var(--accent); }
+
+  /* ---------- Print ---------- */
+  @page {
+    size: A4;
+    margin: 20mm;
+  }
+
+  @media print {
+    html, body { background: #fff; }
+    .page {
+      width: auto;
+      min-height: 0;
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+    }
+    .cover {
+      min-height: 0;
+      height: 247mm;
+      page-break-after: always;
+    }
+    .signal { page-break-inside: auto; }
+    .signal-head { page-break-after: avoid; }
+    h2 { page-break-after: avoid; }
+    a { color: var(--accent); text-decoration: underline; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="page cover">
+  <div class="kicker">Zelfcheck voor MKB-ondernemers</div>
+  <h1>5 data-checks vóór je AI op je cijfers loslaat</h1>
+  <div class="accent-bar"></div>
+  <p class="subtitle">Een korte zelfcheck van Cees van de Vendel</p>
+  <div class="meta">
+    <strong>Cees de Controller B.V.</strong><br>
+    <a class="url" href="https://ceesdecontroller.nl/">ceesdecontroller.nl</a><br>
+    <span class="legal">KvK 95299238 · Utrecht</span>
+  </div>
+</section>
+
+<!-- ============ INHOUD ============ -->
+<section class="page">
+
+  <h2>Waarom deze zelfcheck</h2>
+  <div class="intro">
+    <p>AI is een uitstekende analist-assistent voor je financiële cijfers — maar alleen als de cijfers die je erin stopt klaar zijn voor analyse. Slechte input blijft slechte input; AI maakt hem alleen sneller en overtuigender verkeerd.</p>
+    <p>Deze zelfcheck loopt vijf dingen langs die je controleert vóór je Claude of een ander model op je administratie loslaat. Geen techniek, geen jargon — gewoon de basis die het verschil maakt tussen een leuke demo en bruikbaar inzicht.</p>
+    <p>Pak er tien minuten voor. Loop elke check langs en wees eerlijk: zit dit bij jou goed, of werk je eromheen?</p>
+    <p class="closing">Vink mee. Herken je twee of meer knelpunten? Dan is je datalaag — niet de AI — je eerste werk.</p>
+  </div>
+
+  <!-- Check 1 -->
+  <div class="signal">
+    <div class="signal-head">
+      <div class="checkbox"></div>
+      <div class="signal-num">1</div>
+      <h3>Eén bron per soort gegeven</h3>
+    </div>
+    <div class="signal-body">
+      <div class="block">
+        <div class="label">Wat je controleert</div>
+        <p>Staan je klanten, je uren en je facturen elk in één leidend systeem? Of leeft dezelfde informatie op meerdere plekken — in het CRM, in de boekhouding én in een paar Excels die niemand officieel beheert?</p>
+      </div>
+      <div class="block">
+        <div class="label">Waarom AI hierop struikelt</div>
+        <p>Als er meerdere "waarheden" zijn, weet het model niet welke klopt. Het kiest er een, klinkt overtuigd, en je analyse rust op het verkeerde getal. Dubbele bronnen leveren dubbele conclusies.</p>
+      </div>
+      <div class="block">
+        <div class="label">Snelle check</div>
+        <p>Noem voor klanten, omzet en uren de éne plek waar de waarheid staat. Lukt dat niet in één adem, dan heb je geen bron maar een verzameling versies.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Check 2 -->
+  <div class="signal">
+    <div class="signal-head">
+      <div class="checkbox"></div>
+      <div class="signal-num">2</div>
+      <h3>Consistente sleutels tussen je systemen</h3>
+    </div>
+    <div class="signal-body">
+      <div class="block">
+        <div class="label">Wat je controleert</div>
+        <p>Gebruikt elk systeem hetzelfde klant- of projectnummer? Of heet "Jansen B.V." in je CRM anders dan in je boekhouding, en kent operations projectcodes die finance niet herkent?</p>
+      </div>
+      <div class="block">
+        <div class="label">Waarom AI hierop struikelt</div>
+        <p>Zonder gedeelde sleutels kan een model gegevens uit verschillende systemen niet betrouwbaar aan elkaar koppelen. Het matcht op naam, maakt fouten bij elke spelvariant, en telt dezelfde klant zomaar dubbel.</p>
+      </div>
+      <div class="block">
+        <div class="label">Snelle check</div>
+        <p>Pak één klant en zoek hem op in twee systemen. Staat hij er onder hetzelfde nummer? Zo niet, dan is elke koppeling handwerk — voor jou én voor de AI.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Check 3 -->
+  <div class="signal">
+    <div class="signal-head">
+      <div class="checkbox"></div>
+      <div class="signal-num">3</div>
+      <h3>Gedeelde definities</h3>
+    </div>
+    <div class="signal-body">
+      <div class="block">
+        <div class="label">Wat je controleert</div>
+        <p>Is binnen je bedrijf afgesproken wat "omzet", "openstaand" en "actieve klant" precies betekenen? Wanneer wordt een offerte een opdracht, wanneer een factuur ingeboekt?</p>
+      </div>
+      <div class="block">
+        <div class="label">Waarom AI hierop struikelt</div>
+        <p>Een model neemt jouw woorden letterlijk. Vraag je naar "de omzet" terwijl drie afdelingen daar iets anders onder verstaan, dan krijg je een antwoord dat klopt volgens één definitie en misleidt volgens de rest.</p>
+      </div>
+      <div class="block">
+        <div class="label">Snelle check</div>
+        <p>Vraag twee collega's los van elkaar wat een "actieve klant" is. Verschillende antwoorden? Dan moet je de definitie eerst vastleggen, niet de AI vragen.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Check 4 -->
+  <div class="signal">
+    <div class="signal-head">
+      <div class="checkbox"></div>
+      <div class="signal-num">4</div>
+      <h3>Een schone, complete export</h3>
+    </div>
+    <div class="signal-body">
+      <div class="block">
+        <div class="label">Wat je controleert</div>
+        <p>Klopt de data die je het model voert: de juiste periode, geen lege velden waar bedragen horen, geen dubbeltellingen, geen testklanten of afgeboekte posten die er niet in thuishoren?</p>
+      </div>
+      <div class="block">
+        <div class="label">Waarom AI hierop struikelt</div>
+        <p>Het model ziet niet dat een rij ontbreekt of dat een bedrag twee keer staat. Het rekent gewoon door met wat het krijgt. Een rommelige export levert een vloeiend geformuleerde, foute analyse op.</p>
+      </div>
+      <div class="block">
+        <div class="label">Snelle check</div>
+        <p>Tel vóór het uploaden zelf het totaal en het aantal regels. Komt dat niet overeen met wat je verwacht? Dan eerst de export opschonen, niet de AI vragen het "even glad te strijken".</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Check 5 -->
+  <div class="signal">
+    <div class="signal-head">
+      <div class="checkbox"></div>
+      <div class="signal-num">5</div>
+      <h3>Vertrouwelijkheid geregeld</h3>
+    </div>
+    <div class="signal-body">
+      <div class="block">
+        <div class="label">Wat je controleert</div>
+        <p>Weet je waar je data terechtkomt? Wordt de tool getraind op wat je invoert? En zijn de cijfers herleidbaar naar klanten of medewerkers, of heb je ze geanonimiseerd?</p>
+      </div>
+      <div class="block">
+        <div class="label">Waarom dit ertoe doet</div>
+        <p>Finance-data is gevoelig. Je debiteurenlijst of loongegevens in de eerste de beste gratis chatbot plakken is een privacyrisico — en mogelijk een AVG-probleem. Een onbekende derde partij tussen jou en je administratie is geen detail.</p>
+      </div>
+      <div class="block">
+        <div class="label">Snelle check</div>
+        <p>Kun je in één zin uitleggen via welke route je cijfers lopen en wie er onderweg bij kan? Zo niet, werk dan eerst met geanonimiseerde of niet-herleidbare data.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <h2>Wat nu?</h2>
+  <p style="margin-top:0;">Tel je vinkjes.</p>
+
+  <div class="scenario">
+    <p><span class="tag">4–5 checks op orde.</span> Je datalaag is klaar voor AI. Begin klein: één concrete vraag op één schone export, en controleer altijd of het model laat zien hoe het aan zijn antwoord komt.</p>
+  </div>
+  <div class="scenario">
+    <p><span class="tag">2–3 checks.</span> Er is een basis, maar er zitten gaten in. Los eerst het knelpunt op dat je het vaakst raakt — meestal zijn dat consistente sleutels of gedeelde definities. Daarna levert AI pas betrouwbaar inzicht.</p>
+  </div>
+  <div class="scenario">
+    <p><span class="tag">0–1 check.</span> Begin niet bij de AI, begin bij de structuur. Eén bron per gegeven, gedeelde definities, consistente sleutels. Zonder dat fundament reproduceert elk model alleen de chaos — sneller en met meer zelfvertrouwen verkeerd.</p>
+  </div>
+  <p>Wat je uitkomst ook is: je weet nu waar het schuurt vóór je AI inzet. Dat scheelt je een hoop misleidende antwoorden.</p>
+
+  <div class="about">
+    <h2 style="margin-bottom:3mm;">Over Cees</h2>
+    <p>Cees van de Vendel is fractioneel controller en CFO voor MKB-ondernemers. Hij werkt dagelijks met AI náást boekhoud- en ERP-systemen, en stuurt op cijfers waar veel boekhouders alleen bijhouden: cashflow, marge, scenario's en richting. Daarnaast pakt hij de datastructuur en ERP-implementaties op (bv. Odoo) — omdat goede sturing, goede systemen en bruikbare AI niet los van elkaar staan.</p>
+    <p>Door zijn accountantsachtergrond bij PwC en KPMG kan hij optioneel ook de jaarrekening en aangiften verzorgen — of die taken laten waar ze nu liggen. Wat past, bespreken jullie.</p>
+    <p>Hij werkt voor ondernemers met €0,5 tot €10 miljoen omzet, een paar dagen per maand. Geen vast dienstverband, wel een vast aanspreekpunt.</p>
+    <p class="cta">Wil je AI serieus inzetten op je cijfers en sparren over wat je datalaag daarvoor nodig heeft? Plan een gratis kennismaking van 30 minuten: <a href="https://calendly.com/cees-ceesdecontroller/30min">calendly.com/cees-ceesdecontroller/30min</a>.</p>
+  </div>
+
+</section>
+
+</body>
+</html>
