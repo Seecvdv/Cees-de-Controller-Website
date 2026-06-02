@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>5 data-checks vóór je AI op je cijfers loslaat</title>
+<title>Is je boekhouding klaar voor AI? 3 checks</title>
 <style>
   :root {
     --accent: #4a7c59;
@@ -160,6 +160,28 @@
   }
   .block p { margin: 0; }
 
+  /* Sub-checklist binnen een laag */
+  ul.subchecks {
+    list-style: none;
+    margin: 1mm 0 0 0;
+    padding: 0;
+  }
+  ul.subchecks li {
+    position: relative;
+    padding-left: 7mm;
+    margin-bottom: 1.5mm;
+  }
+  ul.subchecks li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1mm;
+    width: 3.5mm;
+    height: 3.5mm;
+    border: 1.5px solid var(--accent);
+    border-radius: 1.5px;
+  }
+
   hr.divider {
     border: 0;
     border-top: 1px solid var(--line);
@@ -224,9 +246,9 @@
 <!-- ============ COVER ============ -->
 <section class="page cover">
   <div class="kicker">Zelfcheck voor MKB-ondernemers</div>
-  <h1>5 data-checks vóór je AI op je cijfers loslaat</h1>
+  <h1>Is je boekhouding klaar voor AI?</h1>
   <div class="accent-bar"></div>
-  <p class="subtitle">Een korte zelfcheck van Cees van de Vendel</p>
+  <p class="subtitle">3 checks vóór je je cijfers aan een model geeft — door Cees van de Vendel</p>
   <div class="meta">
     <strong>Cees de Controller B.V.</strong><br>
     <a class="url" href="https://ceesdecontroller.nl/">ceesdecontroller.nl</a><br>
@@ -239,123 +261,83 @@
 
   <h2>Waarom deze zelfcheck</h2>
   <div class="intro">
-    <p>AI is een uitstekende analist-assistent voor je financiële cijfers — maar alleen als de cijfers die je erin stopt klaar zijn voor analyse. Slechte input blijft slechte input; AI maakt hem alleen sneller en overtuigender verkeerd.</p>
-    <p>Deze zelfcheck loopt vijf dingen langs die je controleert vóór je Claude of een ander model op je administratie loslaat. Geen techniek, geen jargon — gewoon de basis die het verschil maakt tussen een leuke demo en bruikbaar inzicht.</p>
-    <p>Pak er tien minuten voor. Loop elke check langs en wees eerlijk: zit dit bij jou goed, of werk je eromheen?</p>
-    <p class="closing">Vink mee. Herken je twee of meer knelpunten? Dan is je datalaag — niet de AI — je eerste werk.</p>
+    <p>AI is een uitstekende analist-assistent voor je financiële cijfers — maar een taalmodel rekent gewoon door met wat het krijgt. Het merkt niet dat je banken nog niet verwerkt zijn, dat er oude ruis op je debiteuren staat, of dat een retour nooit goed geboekt is. Je krijgt dan een vlot, overtuigend antwoord op cijfers die niet kloppen.</p>
+    <p>Deze zelfcheck loopt drie lagen langs. Niet abstract "datastructuur", maar gewoon: is je boekhouding bij en schoon, klopt het proces eronder, en sluiten je subadministraties op elkaar aan? Pas dan is "vraag het maar aan AI" een goed idee.</p>
+    <p>Pak er tien minuten voor. Loop elke laag langs en wees eerlijk: zit dit structureel goed, of is het altijd net even bijwerken?</p>
+    <p class="closing">De tool is nooit betrouwbaarder dan de boekhouding eronder.</p>
   </div>
 
-  <!-- Check 1 -->
+  <!-- Laag 1 -->
   <div class="signal">
     <div class="signal-head">
       <div class="checkbox"></div>
       <div class="signal-num">1</div>
-      <h3>Eén bron per soort gegeven</h3>
+      <h3>Je boekhouding is bij en schoon</h3>
     </div>
     <div class="signal-body">
       <div class="block">
         <div class="label">Wat je controleert</div>
-        <p>Staan je klanten, je uren en je facturen elk in één leidend systeem? Of leeft dezelfde informatie op meerdere plekken — in het CRM, in de boekhouding én in een paar Excels die niemand officieel beheert?</p>
+        <p>De basis: een afgesloten, actuele stand waar je op kunt vertrouwen. Concreet wil je dat dit klopt:</p>
+        <ul class="subchecks">
+          <li><strong>Banken volledig verwerkt</strong> — alle bankmutaties geboekt, niets blijft op een wachtrij hangen.</li>
+          <li><strong>Debiteuren schoon</strong> — de openstaande postenlijst klopt met de werkelijkheid: geen al betaalde posten, geen oude ruis.</li>
+          <li><strong>Crediteuren schoon</strong> — inkoopfacturen verwerkt, geen vergeten of dubbele posten.</li>
+          <li><strong>Tussenrekeningen leeg of verklaard</strong> — geen onverwerkte posten die nergens thuishoren.</li>
+        </ul>
       </div>
       <div class="block">
         <div class="label">Waarom AI hierop struikelt</div>
-        <p>Als er meerdere "waarheden" zijn, weet het model niet welke klopt. Het kiest er een, klinkt overtuigd, en je analyse rust op het verkeerde getal. Dubbele bronnen leveren dubbele conclusies.</p>
+        <p>Een model ziet niet dat een stand nog niet af is. Het rekent door op een onvolledige of vervuilde administratie en presenteert het resultaat met volle overtuiging. Onaffe input, overtuigend fout antwoord.</p>
       </div>
       <div class="block">
         <div class="label">Snelle check</div>
-        <p>Noem voor klanten, omzet en uren de éne plek waar de waarheid staat. Lukt dat niet in één adem, dan heb je geen bron maar een verzameling versies.</p>
+        <p>Kun je vandaag een actuele, afgesloten stand laten zien? Of klinkt het antwoord als "ja, maar er moet nog even wat bijgewerkt worden"? In dat laatste geval is je boekhouding nog niet klaar voor analyse — door wie of wat dan ook.</p>
       </div>
     </div>
   </div>
 
-  <!-- Check 2 -->
+  <!-- Laag 2 -->
   <div class="signal">
     <div class="signal-head">
       <div class="checkbox"></div>
       <div class="signal-num">2</div>
-      <h3>Consistente sleutels tussen je systemen</h3>
+      <h3>Het proces eronder klopt — ook bij verstoringen</h3>
     </div>
     <div class="signal-body">
       <div class="block">
         <div class="label">Wat je controleert</div>
-        <p>Gebruikt elk systeem hetzelfde klant- of projectnummer? Of heet "Jansen B.V." in je CRM anders dan in je boekhouding, en kent operations projectcodes die finance niet herkent?</p>
+        <p>Een schone stand op één moment is niet genoeg; het proces dat 'm voedt moet kloppen. Vooral bij de posten die je cijfers makkelijk vertekenen: <strong>retouren, kortingen en creditnota's</strong>. Worden die consequent en op de juiste manier verwerkt?</p>
       </div>
       <div class="block">
         <div class="label">Waarom AI hierop struikelt</div>
-        <p>Zonder gedeelde sleutels kan een model gegevens uit verschillende systemen niet betrouwbaar aan elkaar koppelen. Het matcht op naam, maakt fouten bij elke spelvariant, en telt dezelfde klant zomaar dubbel.</p>
+        <p>Blijft een retour als gewone verkoop staan, of landt een korting nergens, dan ziet je omzet er beter uit dan hij is. AI neemt dat over en versterkt het: je stuurt op een te rooskleurig beeld zonder dat je het merkt.</p>
       </div>
       <div class="block">
         <div class="label">Snelle check</div>
-        <p>Pak één klant en zoek hem op in twee systemen. Staat hij er onder hetzelfde nummer? Zo niet, dan is elke koppeling handwerk — voor jou én voor de AI.</p>
+        <p>Pak een recente retour of een verleende korting. Kun je terugvinden hoe en waar die is verwerkt — en gebeurt dat elke keer op dezelfde manier? Zo niet, dan zit de fout in het proces, niet in de tool.</p>
       </div>
     </div>
   </div>
 
-  <!-- Check 3 -->
+  <!-- Laag 3 -->
   <div class="signal">
     <div class="signal-head">
       <div class="checkbox"></div>
       <div class="signal-num">3</div>
-      <h3>Gedeelde definities</h3>
+      <h3>Je subadministraties sluiten op elkaar aan</h3>
     </div>
     <div class="signal-body">
       <div class="block">
         <div class="label">Wat je controleert</div>
-        <p>Is binnen je bedrijf afgesproken wat "omzet", "openstaand" en "actieve klant" precies betekenen? Wanneer wordt een offerte een opdracht, wanneer een factuur ingeboekt?</p>
+        <p>Laat je sales- of CRM-systeem dezelfde cijfers zien als je boekhouding? Dezelfde omzet, dezelfde klanten? Of vertelt verkoop een ander verhaal dan finance?</p>
       </div>
       <div class="block">
         <div class="label">Waarom AI hierop struikelt</div>
-        <p>Een model neemt jouw woorden letterlijk. Vraag je naar "de omzet" terwijl drie afdelingen daar iets anders onder verstaan, dan krijg je een antwoord dat klopt volgens één definitie en misleidt volgens de rest.</p>
+        <p>Als twee systemen een ander omzetcijfer geven, weet een model niet welke waar is — het kiest er een. Jouw analyse hangt dan af van welke bron je toevallig hebt geëxporteerd. Verschillende bronnen, verschillende conclusies.</p>
       </div>
       <div class="block">
         <div class="label">Snelle check</div>
-        <p>Vraag twee collega's los van elkaar wat een "actieve klant" is. Verschillende antwoorden? Dan moet je de definitie eerst vastleggen, niet de AI vragen.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Check 4 -->
-  <div class="signal">
-    <div class="signal-head">
-      <div class="checkbox"></div>
-      <div class="signal-num">4</div>
-      <h3>Een schone, complete export</h3>
-    </div>
-    <div class="signal-body">
-      <div class="block">
-        <div class="label">Wat je controleert</div>
-        <p>Klopt de data die je het model voert: de juiste periode, geen lege velden waar bedragen horen, geen dubbeltellingen, geen testklanten of afgeboekte posten die er niet in thuishoren?</p>
-      </div>
-      <div class="block">
-        <div class="label">Waarom AI hierop struikelt</div>
-        <p>Het model ziet niet dat een rij ontbreekt of dat een bedrag twee keer staat. Het rekent gewoon door met wat het krijgt. Een rommelige export levert een vloeiend geformuleerde, foute analyse op.</p>
-      </div>
-      <div class="block">
-        <div class="label">Snelle check</div>
-        <p>Tel vóór het uploaden zelf het totaal en het aantal regels. Komt dat niet overeen met wat je verwacht? Dan eerst de export opschonen, niet de AI vragen het "even glad te strijken".</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Check 5 -->
-  <div class="signal">
-    <div class="signal-head">
-      <div class="checkbox"></div>
-      <div class="signal-num">5</div>
-      <h3>Vertrouwelijkheid geregeld</h3>
-    </div>
-    <div class="signal-body">
-      <div class="block">
-        <div class="label">Wat je controleert</div>
-        <p>Weet je waar je data terechtkomt? Wordt de tool getraind op wat je invoert? En zijn de cijfers herleidbaar naar klanten of medewerkers, of heb je ze geanonimiseerd?</p>
-      </div>
-      <div class="block">
-        <div class="label">Waarom dit ertoe doet</div>
-        <p>Finance-data is gevoelig. Je debiteurenlijst of loongegevens in de eerste de beste gratis chatbot plakken is een privacyrisico — en mogelijk een AVG-probleem. Een onbekende derde partij tussen jou en je administratie is geen detail.</p>
-      </div>
-      <div class="block">
-        <div class="label">Snelle check</div>
-        <p>Kun je in één zin uitleggen via welke route je cijfers lopen en wie er onderweg bij kan? Zo niet, werk dan eerst met geanonimiseerde of niet-herleidbare data.</p>
+        <p>Pak de omzet van vorige maand uit je CRM én uit je boekhouding. Eén getal, of twee? Wijken ze af, dan moet je eerst weten waaróm voordat je er een AI-analyse op baseert.</p>
       </div>
     </div>
   </div>
@@ -363,25 +345,25 @@
   <hr class="divider">
 
   <h2>Wat nu?</h2>
-  <p style="margin-top:0;">Tel je vinkjes.</p>
+  <p style="margin-top:0;">Loop de drie lagen na.</p>
 
   <div class="scenario">
-    <p><span class="tag">4–5 checks op orde.</span> Je datalaag is klaar voor AI. Begin klein: één concrete vraag op één schone export, en controleer altijd of het model laat zien hoe het aan zijn antwoord komt.</p>
+    <p><span class="tag">Alle drie op orde.</span> Je administratie is klaar voor AI. Begin klein: één concrete vraag op een afgesloten, gecontroleerde stand, en vraag het model altijd om te laten zien hoe het aan zijn antwoord komt.</p>
   </div>
   <div class="scenario">
-    <p><span class="tag">2–3 checks.</span> Er is een basis, maar er zitten gaten in. Los eerst het knelpunt op dat je het vaakst raakt — meestal zijn dat consistente sleutels of gedeelde definities. Daarna levert AI pas betrouwbaar inzicht.</p>
+    <p><span class="tag">Eén of twee lagen wankel.</span> Begin daar, niet bij de AI. Meestal zit het in laag 1 (de boekhouding is net niet bij) of laag 3 (sales en finance lopen uiteen). Los dat eerst op; daarna levert elke analyse — met of zonder AI — pas betrouwbaar inzicht.</p>
   </div>
   <div class="scenario">
-    <p><span class="tag">0–1 check.</span> Begin niet bij de AI, begin bij de structuur. Eén bron per gegeven, gedeelde definities, consistente sleutels. Zonder dat fundament reproduceert elk model alleen de chaos — sneller en met meer zelfvertrouwen verkeerd.</p>
+    <p><span class="tag">Geen enkele laag echt op orde.</span> Dan is AI niet je eerste prioriteit, je financiële basis is dat. Dat is geen schande — het hoort vaak bij een bedrijf dat sneller groeide dan z'n administratie. Maar een model loslaten op cijfers die niet kloppen, geeft je alleen sneller en overtuigender de verkeerde antwoorden.</p>
   </div>
-  <p>Wat je uitkomst ook is: je weet nu waar het schuurt vóór je AI inzet. Dat scheelt je een hoop misleidende antwoorden.</p>
+  <p>Wat je uitkomst ook is: je weet nu of je boekhouding klaar is vóór je AI inzet. Dat scheelt je een hoop misleidende analyses.</p>
 
   <div class="about">
     <h2 style="margin-bottom:3mm;">Over Cees</h2>
-    <p>Cees van de Vendel is fractioneel controller en CFO voor MKB-ondernemers. Hij werkt dagelijks met AI náást boekhoud- en ERP-systemen, en stuurt op cijfers waar veel boekhouders alleen bijhouden: cashflow, marge, scenario's en richting. Daarnaast pakt hij de datastructuur en ERP-implementaties op (bv. Odoo) — omdat goede sturing, goede systemen en bruikbare AI niet los van elkaar staan.</p>
+    <p>Cees van de Vendel is fractioneel controller en CFO voor MKB-ondernemers. Hij stuurt op cijfers waar veel boekhouders alleen bijhouden: cashflow, marge, scenario's en richting. Daarnaast pakt hij de datastructuur en ERP-implementaties op (bv. Odoo) — omdat goede sturing, goede systemen en bruikbare AI niet los van elkaar staan.</p>
     <p>Door zijn accountantsachtergrond bij PwC en KPMG kan hij optioneel ook de jaarrekening en aangiften verzorgen — of die taken laten waar ze nu liggen. Wat past, bespreken jullie.</p>
     <p>Hij werkt voor ondernemers met €0,5 tot €10 miljoen omzet, een paar dagen per maand. Geen vast dienstverband, wel een vast aanspreekpunt.</p>
-    <p class="cta">Wil je AI serieus inzetten op je cijfers en sparren over wat je datalaag daarvoor nodig heeft? Plan een gratis kennismaking van 30 minuten: <a href="https://calendly.com/cees-ceesdecontroller/30min">calendly.com/cees-ceesdecontroller/30min</a>.</p>
+    <p class="cta">Twijfel je of je boekhouding klaar is voor serieuze sturing — met of zonder AI? Plan een gratis kennismaking van 30 minuten: <a href="https://calendly.com/cees-ceesdecontroller/30min">calendly.com/cees-ceesdecontroller/30min</a>.</p>
   </div>
 
 </section>

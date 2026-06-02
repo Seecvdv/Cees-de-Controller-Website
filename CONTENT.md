@@ -5,7 +5,7 @@ Intern werkdocument. Geen webpagina. Bijgewerkt 2026-05-28.
 ## Publicatiestatus
 
 - **2026-05-28 (do):** ✅ Gepubliceerd — *"Je hebt een controller aangenomen. Je data is nog steeds een chaos."* — [blog/controller-aangenomen-data-chaos.html](blog/controller-aangenomen-data-chaos.html). Kick-off; verschuift de donderdag-rij van week 1 naar voren.
-- **2026-06-02 (di):** ✅ Gepubliceerd — *"Claude als je financieel analist — wat werkt en wat niet"* — [blog/claude-als-financieel-analist.html](blog/claude-als-financieel-analist.html). Eerste post in nieuwe categorie *AI in finance*. Eigen lead magnet meegeleverd: *5 data-checks vóór je AI op je cijfers loslaat* (zie hieronder). **Actie Cees vóór live:** magnet [lead-magnet/ai-datachecks.html](lead-magnet/ai-datachecks.html) afdrukken naar PDF en opslaan als `assets/5-data-checks-ai-finance.pdf` (anders werkt de downloadlink in het artikel nog niet).
+- **2026-06-02 (di):** ✅ Gepubliceerd — *"Claude als je financieel analist — wat werkt en wat niet"* — [blog/claude-als-financieel-analist.html](blog/claude-als-financieel-analist.html). Eerste post in nieuwe categorie *AI in finance*. Eigen lead magnet meegeleverd: *Is je boekhouding klaar voor AI? (3 checks)* — Cees' eigen controller-checks i.p.v. abstracte datagovernance (zie hieronder). **Actie Cees vóór live:** magnet [lead-magnet/boekhouding-klaar-voor-ai.html](lead-magnet/boekhouding-klaar-voor-ai.html) afdrukken naar PDF en opslaan als `assets/boekhouding-klaar-voor-ai.pdf` (anders werkt de downloadlink in het artikel nog niet). Oude `assets/5-data-checks-ai-finance.pdf` kan weg.
 
 ## Uitgangspunten
 
@@ -49,7 +49,7 @@ De site gebruikt nu drie categorieën: *Controle & Grip*, *Reporting & Inzicht*,
 
 - **"Power BI + AI" en "Excel zonder VBA":** passen die nog bij de huidige positionering (fractioneel / Odoo / cashflow)? Of zijn dat resten van een bredere strategie? Beslissen vóór week 2.
 - **"AI neemt mijn werk over" (persoonlijk):** toon afstemmen — zelfspot werkt alleen als de rest van de site al een serieuze toon heeft. Vóór week 4 een ruwe versie schrijven en toetsen.
-- ~~**Lead magnet onder AI-artikel (week 1):**~~ ✅ Beslist (2026-06-02): optie (a) gekozen — tweede magnet *"5 data-checks vóór je AI op je cijfers loslaat"* gemaakt ([lead-magnet/ai-datachecks.html](lead-magnet/ai-datachecks.html) + `.md`). Ingebouwd als Web3Forms-formulier in het artikel. Restactie: HTML afdrukken naar `assets/5-data-checks-ai-finance.pdf`.
+- ~~**Lead magnet onder AI-artikel (week 1):**~~ ✅ Beslist (2026-06-02): optie (a) gekozen — tweede magnet *"Is je boekhouding klaar voor AI? (3 checks)"* gemaakt ([lead-magnet/boekhouding-klaar-voor-ai.html](lead-magnet/boekhouding-klaar-voor-ai.html) + `.md`). Variant B (3 lagen): boekhouding bij & schoon · proces klopt incl. verstoringen · subadministraties sluiten aan. Ingebouwd als Web3Forms-formulier in het artikel. Restactie: HTML afdrukken naar `assets/boekhouding-klaar-voor-ai.pdf`.
 - ~~**Nieuwe categorie *AI in finance*:**~~ ✅ Toegevoegd als `meta-cat`-label op [blog/index.html](blog/index.html) (de blogindex heeft geen aparte categoriefilter; categorie = label per rij).
 
 ## Inhoudelijke notitie bij de MCP-post (week 4 do)

@@ -373,13 +373,19 @@ footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
             <li><strong>Een rommelige administratie laten "oplossen" door AI.</strong> Drie systemen met verschillende klantnummers en vijf Excels worden niet magisch consistent omdat je er een model op loslaat. Slechte input blijft slechte input — alleen sneller en met meer zelfvertrouwen verkeerd.</li>
           </ul>
 
-          <h2 id="datalaag">De voorwaarde: eerst je datalaag, dan pas AI</h2>
+          <h2 id="datalaag">De voorwaarde: eerst je boekhouding op orde, dan pas AI</h2>
 
-          <p>Hier komt het punt dat de meeste AI-verhalen overslaan. AI als financieel analist werkt pas als er een betrouwbare laag onder ligt: één bron per soort gegeven, gedeelde definities, consistente sleutels tussen je systemen. Datastructuur — niet "een schone export per keer met de hand maken".</p>
+          <p>Hier komt het punt dat de meeste AI-verhalen overslaan. En het begint dichterbij dan "datastructuur" of "een datawarehouse": het begint bij een boekhouding die bij en schoon is. Concreet zijn er drie lagen die op orde moeten zijn voordat een model iets betrouwbaars te analyseren heeft:</p>
 
-          <div class="callout">Het verschil tussen een leuke demo en blijvende waarde zit hem niet in de prompt. Het zit in de vraag of de cijfers die je het model voert elke maand op dezelfde manier kloppen. Anders bouw je elke keer opnieuw je analyse op drijfzand.</div>
+          <ul>
+            <li><strong>Je boekhouding is bij en schoon.</strong> Banken volledig verwerkt, debiteuren en crediteuren schoon, tussenrekeningen leeg of verklaard. Geen "er moet nog even wat bijgewerkt worden".</li>
+            <li><strong>Het proces eronder klopt — ook bij verstoringen.</strong> Worden retouren, kortingen en creditnota's consequent goed verwerkt? Dat zijn de posten die je omzet- en margebeeld het snelst vertekenen.</li>
+            <li><strong>Je subadministraties sluiten aan.</strong> Laat je sales- of CRM-systeem dezelfde omzet en dezelfde klanten zien als je boekhouding? Of vertelt verkoop een ander verhaal dan finance?</li>
+          </ul>
 
-          <p>Dat is dezelfde volgorde als bij een nieuwe controller: <a href="controller-aangenomen-data-chaos.html">eerst je data op orde, dan pas sturen</a>. AI verandert daar niets aan — het maakt het alleen urgenter, omdat de tool de chaos sneller en overtuigender reproduceert.</p>
+          <div class="callout">Een model rekent gewoon door met wat het krijgt. Het ziet niet dat je banken nog niet bij zijn of dat een retour als gewone verkoop blijft staan. Het verschil tussen een leuke demo en bruikbaar inzicht zit niet in de prompt — het zit in de vraag of de cijfers eronder kloppen.</div>
+
+          <p>Dat is dezelfde volgorde als bij een nieuwe controller: <a href="controller-aangenomen-data-chaos.html">eerst je data op orde, dan pas sturen</a>. AI verandert daar niets aan — het maakt het alleen urgenter, omdat de tool een onaffe administratie sneller en overtuigender reproduceert. Daarboven komt later de structuur die het herhaalbaar maakt; de basis is gewoon een administratie die klopt.</p>
 
           <h2 id="privacy">En de vertrouwelijkheid?</h2>
 
@@ -387,14 +393,14 @@ footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
 
           <h2 id="checklist">Begin klein, maar begin goed</h2>
 
-          <p>Je hoeft niet je hele administratie te verbouwen om met AI te beginnen. Maar je wilt wel weten of de cijfers die je erin stopt klaar zijn voor analyse. Daarvoor maakte ik een korte zelfcheck: vijf data-checks die je doet vóór je AI op je financiële cijfers loslaat.</p>
+          <p>Je hoeft niet je hele administratie te verbouwen om met AI te beginnen. Maar je wilt wel weten of de cijfers die je erin stopt klaar zijn voor analyse. Daarvoor maakte ik een korte zelfcheck: drie lagen om langs te lopen vóór je AI op je financiële cijfers loslaat.</p>
 
           <div class="article-cta">
-            <h3>Gratis: 5 data-checks vóór je AI op je cijfers loslaat</h3>
+            <h3>Gratis: is je boekhouding klaar voor AI? (3 checks)</h3>
             <p>Een korte zelfcheck (PDF) — direct te downloaden na het invullen van je e-mail. Geen verkooppraat, wel concreet toe te passen.</p>
             <form id="magnet-form" method="POST" novalidate>
               <input type="hidden" name="access_key" value="89f23d9c-5876-42b4-8733-d118645155c8" />
-              <input type="hidden" name="subject" value="Lead-magnet aanvraag — 5 data-checks AI in finance" />
+              <input type="hidden" name="subject" value="Lead-magnet aanvraag — Is je boekhouding klaar voor AI" />
               <input type="hidden" name="from_name" value="Cees de Controller website" />
               <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0;" />
               <label for="magnet-email" style="position:absolute;left:-9999px;">E-mailadres</label>
@@ -403,7 +409,7 @@ footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
                 <button type="submit" class="btn btn-primary">Download de zelfcheck</button>
               </div>
               <p class="form-note">Door te versturen ga je akkoord met onze <a href="../privacy-statement.html">privacyverklaring</a>.</p>
-              <div class="form-success" id="magnet-success">Bedankt! <a href="../assets/5-data-checks-ai-finance.pdf" download style="color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 1px;">Download de zelfcheck hier direct (PDF) →</a></div>
+              <div class="form-success" id="magnet-success">Bedankt! <a href="../assets/boekhouding-klaar-voor-ai.pdf" download style="color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 1px;">Download de zelfcheck hier direct (PDF) →</a></div>
               <div class="form-error" id="magnet-error">Versturen lukte niet. Probeer het opnieuw of mail direct naar <a href="mailto:cees@ceesdecontroller.nl">cees@ceesdecontroller.nl</a>.</div>
             </form>
           </div>
@@ -425,7 +431,7 @@ footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
             <ul class="toc">
               <li><a href="#werkt">Wat werkt</a></li>
               <li><a href="#niet">Wat niet werkt</a></li>
-              <li><a href="#datalaag">Eerst je datalaag</a></li>
+              <li><a href="#datalaag">Eerst je boekhouding op orde</a></li>
               <li><a href="#privacy">Vertrouwelijkheid</a></li>
               <li><a href="#checklist">Begin klein, begin goed</a></li>
               <li><a href="#conclusie">Conclusie</a></li>
