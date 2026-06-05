@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Controle op je boekhouding: kloppen de cijfers — en wat zeggen ze? — Cees de Controller</title>
-  <meta name="description" content="Controle op je boekhouding is twee dingen: kloppen de cijfers, en kun je ermee sturen? Praktische check met symptomen, zelf-controle en een checklist." />
-  <link rel="canonical" href="https://ceesdecontroller.nl/blog/controle-op-je-boekhouding.html" />
-  <meta property="og:title" content="Controle op je boekhouding: kloppen de cijfers — en wat zeggen ze? — Cees de Controller" />
-  <meta property="og:description" content="Controle op je boekhouding is twee dingen: kloppen de cijfers, en kun je ermee sturen? Praktische check met symptomen, zelf-controle en een checklist." />
-  <meta property="og:url" content="https://ceesdecontroller.nl/blog/controle-op-je-boekhouding.html" />
+  <title>Cashflow runway: wat het is en hoe je het zelf berekent — Cees de Controller</title>
+  <meta name="description" content="Hoeveel maanden kun je nog door als er niets verandert? Dat is je runway. Wat het is, waarom je W&V het niet vertelt, en hoe je het in drie stappen zelf berekent." />
+  <link rel="canonical" href="https://ceesdecontroller.nl/blog/cashflow-runway-zelf-berekenen.html" />
+  <meta property="og:title" content="Cashflow runway: wat het is en hoe je het zelf berekent — Cees de Controller" />
+  <meta property="og:description" content="Hoeveel maanden kun je nog door als er niets verandert? Dat is je runway. Wat het is, waarom je W&V het niet vertelt, en hoe je het in drie stappen zelf berekent." />
+  <meta property="og:url" content="https://ceesdecontroller.nl/blog/cashflow-runway-zelf-berekenen.html" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://ceesdecontroller.nl/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
@@ -147,6 +147,15 @@ p { margin: 0; }
 section { padding: 5rem 0; }
 .section-head { margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
 
+/* CTA bar */
+.cta-bar { padding: 5rem 0; border-top: 1px solid var(--border);  }
+.cta-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+  border-left: 2px solid #4a7c59; padding-left: 1.5rem;
+}
+.cta-inner h2 { max-width: 18ch; }
+
 .text-link {
   display: inline-flex; align-items: center; gap: 0.4rem;
   color: var(--text); font-weight: 500;
@@ -160,15 +169,6 @@ section { padding: 5rem 0; }
   margin-bottom: 1.5rem;
 }
 .back-link:hover { color: var(--text); }
-
-/* CTA bar */
-.cta-bar { padding: 5rem 0; border-top: 1px solid var(--border);  }
-.cta-inner {
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 2rem; flex-wrap: wrap;
-  border-left: 2px solid #4a7c59; padding-left: 1.5rem;
-}
-.cta-inner h2 { max-width: 18ch; }
 
 /* Footer */
 footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
@@ -315,132 +315,84 @@ footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
       <div class="article-layout">
         <article class="article-content">
           <a class="back-link" href="/blog/">← Terug naar blog</a>
-          <span class="meta-cat">Controle &amp; Grip · 7 min lezen</span>
-          <h1>Controle op je boekhouding: kloppen de cijfers — en wat zeggen ze?</h1>
+          <span class="meta-cat">Controle &amp; Grip · 6 min lezen</span>
+          <h1>Cashflow runway: wat het is en hoe je het zelf berekent</h1>
 
-          <p class="intro">"Controle op je boekhouding" betekent in de praktijk twee verschillende dingen. En ondernemers die het ene regelen, vergeten meestal het andere.</p>
+          <p class="intro">Stel: er verandert vanaf vandaag niets meer aan je inkomsten en uitgaven. Hoeveel maanden kun je dan nog door op het geld dat er staat? Veel ondernemers weten dat getal niet uit hun hoofd. En juist dat getal — je runway — vertelt je meer over je risico dan je winst-en-verliesrekening.</p>
 
-          <p>De eerste betekenis is technisch: <em>klopt</em> wat er geboekt staat? Zijn de cijfers in je boekhoudpakket een eerlijke weergave van wat er in je bedrijf gebeurt? De tweede is breder: heb je grip op je boekhouding? Vertellen die cijfers je iets waarmee je kunt sturen, of zijn ze vooral input voor de aangifte?</p>
+          <p>Runway is een term uit de startup-wereld, maar het is voor elk MKB-bedrijf bruikbaar. Je hoeft er geen investeerder of ingewikkeld model voor te hebben. In dit artikel: wat runway is, waarom je W&amp;V het niet vertelt, en hoe je het in drie stappen zelf uitrekent.</p>
 
-          <p>Allebei zijn nodig. Een boekhouding kan technisch perfect zijn en je toch geen enkel houvast geven. En een boekhouding waar je gevoelsmatig op vaart kan er vanonder rommelig uitzien. Hieronder beide kanten, met concrete dingen die je zelf kunt nalopen.</p>
+          <h2 id="wat">Wat runway is</h2>
 
-          <h2 id="twee-soorten">Twee soorten controle, allebei nodig</h2>
+          <p>Je <strong>runway</strong> is het aantal maanden dat je het volhoudt op je huidige kaspositie, als je netto elke maand geld verbruikt. Het antwoord op: "Hoelang tot het op is, als alles bij het oude blijft?"</p>
 
-          <p>Even afbakenen, want de termen lopen door elkaar:</p>
+          <p>Twee begrippen horen erbij:</p>
 
           <ul>
-            <li><strong>Controle of de boekhouding klopt</strong> — een kwaliteitscheck op de inhoud. Sluiten de saldi aan? Worden dingen op de juiste rekening geboekt? Komen er geen rare correcties terug?</li>
-            <li><strong>Controle over je boekhouding</strong> — grip krijgen op wat de cijfers je vertellen. Heb je maandcijfers op tijd, ken je je marge per klant, weet je waar je cash naartoe gaat?</li>
+            <li><strong>Kaspositie</strong> — het geld dat je nú vrij beschikbaar hebt.</li>
+            <li><strong>Burn rate</strong> — hoeveel cash er netto per maand uit gaat (uitgaven min inkomsten).</li>
           </ul>
 
-          <p>Je boekhouder is verantwoordelijk voor het eerste, binnen de opdracht die hij of zij heeft gekregen. Maar het tweede ligt vrijwel nooit bij de boekhouder — en ook niet bij de accountant. Dat is precies de plek waar de meeste MKB-bedrijven structureel iets missen.</p>
+          <p>Runway = kaspositie gedeeld door je netto burn rate. Meer niet.</p>
 
-          <h2 id="kloppen-de-cijfers">Deel 1: kloppen de cijfers eigenlijk wel?</h2>
+          <h2 id="waarom">Waarom je winst-en-verliesrekening dit niet vertelt</h2>
 
-          <p>De meeste boekhouders werken zorgvuldig. Maar boekhoudwerk is repetitief, en wat één keer scheef in het systeem zit, blijft vaak jarenlang scheef. Niet uit slordigheid, maar omdat niemand stelt dat de structuur eronder geen sluitend verhaal vertelt.</p>
+          <p>Je kunt op papier winst maken en tóch in de problemen komen met cash. Winst en cash zijn niet hetzelfde. Een paar voorbeelden die je W&amp;V netjes verbergt:</p>
 
-          <p>Dit zijn de symptomen die ik in de praktijk het vaakst tegenkom — en die je zelf kunt herkennen zonder accountant te zijn.</p>
+          <ul>
+            <li>Een grote factuur die je hebt verstuurd telt als omzet, maar staat nog 45 dagen open op de bank.</li>
+            <li>Btw en vakantiegeld zijn geen "kosten" in de maand dat je ze betaalt, maar ze gaan wél van je rekening.</li>
+            <li>Een investering of aflossing raakt je cash hard, terwijl het je winst nauwelijks beweegt.</li>
+          </ul>
 
-          <h3>Tussenrekeningen die alleen maar groeien</h3>
+          <p>Daarom is winst een mooi verhaal en runway een hard getal. Cash is wat er echt op de bank staat — en dat is wat je bedrijf draaiende houdt.</p>
 
-          <p>Tussenrekeningen (kruisposten, "vraagposten", "nog te verdelen") zijn bedoeld om transacties tijdelijk te parkeren. Tijdelijk. Als de saldi maand na maand oplopen of er stuiterende oude bedragen blijven staan, dan zit er ergens een proces vast. In de tussentijd staan die bedragen niet op de juiste plek in je resultaat of balans.</p>
-
-          <h3>Btw-correcties bij elke aangifte</h3>
-
-          <p>Een suppletie aan het eind van het jaar kan gebeuren. Maar als je boekhouder per kwartaal correcties moet boeken om het sluitend te krijgen, dan klopt er iets niet in de manier waarop facturen of bonnetjes worden ingeboekt. De aangifte komt uiteindelijk goed, maar je tussentijdse cijfers laten een vertekend btw-resultaat zien.</p>
-
-          <h3>Debiteurensaldo dat niet aansluit op je facturen</h3>
-
-          <p>Open een lijst van openstaande facturen in je systeem. Tel die op. Vergelijk met het saldo op je grootboekrekening Debiteuren. Klopt dat niet, dan zijn er ergens betalingen niet correct gekoppeld, dubbel geboekt of facturen handmatig weggeboekt. Hetzelfde geldt voor crediteuren.</p>
-
-          <h3>Kosten op een vergaarbak-rekening</h3>
-
-          <p>"Algemene kosten", "Overige bedrijfskosten" of "Diverse" — een rekening waar van alles op verdwijnt. Soms onvermijdelijk, maar als 15% van je kosten daar landt, is je P&amp;L niet meer leesbaar. Je kunt dan niet zien waar je geld naartoe gaat zonder elke transactie open te klikken.</p>
-
-          <h3>Voorraad of OHW die niet matcht met de werkelijkheid</h3>
-
-          <p>Voor bedrijven met fysieke voorraad of onderhanden werk: het saldo op de balans moet aansluiten op een telling of een projectstatus. Doe je dat nooit, dan staat er een willekeurig getal en kun je je brutomarge niet vertrouwen.</p>
-
-          <h3>Jaarrekening die structureel "nog wat correcties" nodig heeft</h3>
-
-          <p>Als je accountant elk jaar fikse correctieboekingen doet om de jaarrekening sluitend te krijgen — afschrijvingen, voorzieningen, vrijval — dan waren je tussentijdse cijfers een ruwe schatting. Dat is geen ramp voor de aangifte, maar wel als je in juli al wilt weten hoe je staat.</p>
-
-          <div class="callout">Bij een dienstverlener van €2,5 miljoen omzet vond ik in een half uur drie oude kruisposten van samen €78.000 die al twee jaar meeliepen. De boekhouder boekte correct binnen z'n opdracht, maar niemand was eindverantwoordelijk voor de structuur. Pas toen we de balans regel voor regel doorliepen, kwam dat boven water.</div>
-
-          <h2 id="zelf-controleren">Snel zelf controleren</h2>
+          <h2 id="berekenen">In drie stappen zelf berekenen</h2>
 
           <div class="checklist-block">
-            <h4>Acht checks die je zelf kunt doen (of je boekhouder kunt vragen)</h4>
+            <h4>De berekening</h4>
             <ul>
-              <li>Lopen er tussenrekeningen met saldi ouder dan drie maanden?</li>
-              <li>Hoeveel correctieboekingen staan er per kwartaal in het grootboek?</li>
-              <li>Sluit het saldo Debiteuren aan op de openstaande-facturenlijst?</li>
-              <li>Idem voor Crediteuren en Banksaldi (bank moet één-op-één aansluiten op het bankafschrift)?</li>
-              <li>Welk percentage van je kosten landt op "diverse" of "algemene kosten"?</li>
-              <li>Is je voorraad of OHW recent geteld of bevestigd?</li>
-              <li>Krijg je maandcijfers binnen tien werkdagen na maandafsluiting?</li>
-              <li>Komen er bij de jaarafsluiting nog grote correcties die je niet had verwacht?</li>
+              <li><strong>Stap 1 — bepaal je vrije kaspositie.</strong> Tel je banksaldo en direct opvraagbare middelen op. Trek eraf wat al vastligt: nog te betalen btw, loonheffing, een bekende grote rekening. Wat overblijft is je échte buffer.</li>
+              <li><strong>Stap 2 — bereken je netto burn per maand.</strong> Pak de laatste drie maanden. Tel per maand alles wat er uitging en alles wat er binnenkwam. Het gemiddelde verschil (uit min in) is je netto burn rate.</li>
+              <li><strong>Stap 3 — deel het op elkaar.</strong> Runway = vrije kaspositie ÷ netto burn rate. De uitkomst is je aantal maanden.</li>
             </ul>
           </div>
 
-          <p>Geen van deze checks vraagt boekhoudkundige kennis. Je hoeft alleen te weten welke vragen te stellen.</p>
+          <div class="callout">Rekenvoorbeeld. Je hebt €120.000 vrij beschikbaar. De afgelopen drie maanden ging er gemiddeld €20.000 meer uit dan er binnenkwam. Je runway is €120.000 ÷ €20.000 = <strong>6 maanden</strong>. Verandert er niets, dan staat de rekening over een half jaar op nul.</div>
 
-          <h2 id="vertellen-de-cijfers">Deel 2: vertellen de cijfers je ook iets?</h2>
+          <p>Draai je netto geld toe in plaats van eraf? Dan is je burn rate negatief en heb je geen "runway"-probleem — maar de berekening is nog steeds nuttig: hij laat zien hoe snel je buffer groeit en hoeveel ruimte je hebt om te investeren of aan te nemen.</p>
 
-          <p>Stel: de cijfers kloppen. Tussenrekeningen leeg, debiteuren sluiten aan, jaarafsluiting gaat zonder gedoe. Dan ben je halverwege.</p>
+          <h2 id="nuance">Eén getal is niet genoeg</h2>
 
-          <p>De andere helft van controle op je boekhouding gaat over wat je ermee doet. Een correct geboekte winst-en-verliesrekening die je twee maanden te laat krijgt en die je niet snapt, helpt je niet sturen. Concrete symptomen dat het hier mis gaat:</p>
-
-          <ul>
-            <li>Je weet niet welke klanten of diensten het meeste opleveren.</li>
-            <li>Je beslist over investeringen, prijzen of personeel op gevoel.</li>
-            <li>Je maandcijfers komen ergens halverwege de volgende maand — of nog later.</li>
-            <li>Je kunt geen cashflow van drie maanden vooruit produceren.</li>
-            <li>Je begrijpt zelf niet wat er in je rapportage staat.</li>
-          </ul>
-
-          <p>Hier ligt het werk niet bij de boekhouder. Die heeft een correct verleden vastgelegd. Wat ontbreekt is iemand die maandelijks de cijfers ophaalt, controleert, vertaalt naar marge per klant of dienst, een cashflowprognose neerzet en de afwijkingen benoemt. Dat is wat een controller doet — en wat de meeste MKB-bedrijven onderschatten tot het misgaat.</p>
-
-          <p>Ik schreef eerder over de symptomen waar dat gat zich het scherpst voordoet in <a href="drie-signalen.html">drie signalen dat je cijfers je bedrijf remmen</a>. Het verschil tussen boekhouder, accountant, controller en CFO werk ik uit in <a href="controller-vs-boekhouder.html">dit artikel</a>.</p>
-
-          <h2 id="boekhouder-en-controller">Waar boekhouder en controller elkaar raken</h2>
-
-          <p>Een veelgemaakte aanname: als je een goede boekhouder hebt, dan heb je grip op je boekhouding. Helaas niet. Boekhouder en controller zijn twee verschillende rollen, met andere uitkomsten:</p>
+          <p>Runway geeft je een snelle thermometer, geen volledig beeld. Cash beweegt namelijk niet gelijkmatig over het jaar. Let op:</p>
 
           <ul>
-            <li>Een boekhouder verwerkt en categoriseert wat er gebeurd is.</li>
-            <li>Een controller controleert of de structuur eronder klopt, en vertaalt het naar sturing.</li>
+            <li><strong>Seizoen.</strong> Een webshop met een piek in december heeft een heel andere maand dan in februari. Een gemiddelde over drie zomermaanden kan misleiden.</li>
+            <li><strong>Klontposten.</strong> Btw per kwartaal, vakantiegeld in mei, een jaarlijkse verzekering — die vallen niet elke maand en vertekenen je burn rate.</li>
+            <li><strong>Betaaltermijnen.</strong> Als je grootste klant 60 dagen betaalt, is je cash van vandaag niet de cash van volgende maand.</li>
           </ul>
 
-          <p>Bij kleinere bedrijven is dat overkill — daar volstaat een goede boekhouder met een accountant voor de jaarafsluiting. Vanaf grofweg €500.000 omzet, of zodra je personeel, voorraad of meerdere klantsegmenten hebt, wordt het verschil groter. Vanaf een paar miljoen omzet is een fractioneel controller standaard, of zou het moeten zijn.</p>
+          <p>Daarom hoort naast je runway een korte <strong>cashflowprognose voor de komende dertien weken</strong>: per week verwachte inkomsten en uitgaven, zodat je de pieken en dalen ziet aankomen in plaats van ze als gemiddelde weg te poetsen. Runway zegt "hoelang"; de 13-wekenprognose zegt "wanneer het krap wordt".</p>
 
-          <h3>Als finance en systemen samenvallen</h3>
+          <h2 id="kort">Wat te doen bij een korte runway</h2>
 
-          <p>In bedrijven met een ERP (Odoo, Exact, Microsoft Business Central) of een CRM dat doorloopt naar facturatie (Salesforce, HubSpot), wordt de boekhouding deels gevuld door wat er in die systemen gebeurt. Een verkooporder die niet goed wordt afgesloten, een autorisatiestap die wordt overgeslagen, een koppeling die soms wel en soms niet doorloopt — al die dingen landen uiteindelijk in je grootboek.</p>
-
-          <p>Controle op je boekhouding gaat dan niet meer alleen over journaalposten. Het gaat over de flow ervoor: wie keurt een inkoopfactuur goed, wanneer wordt een verkoop omgezet in een factuur, hoe gaat voorraad eraf, klopt de mapping tussen producten en grootboekrekeningen. Daar zit vaak de echte oorzaak van rommelige cijfers — niet bij de boekhouder zelf.</p>
-
-          <h2 id="praktisch">Hoe pak je het aan</h2>
-
-          <p>Een paar concrete stappen, in volgorde:</p>
+          <p>Schrik je van het getal? Een korte runway is geen ramp, maar wel een signaal om aan een paar knoppen te draaien:</p>
 
           <ul>
-            <li><strong>Loop de acht checks hierboven door.</strong> Of vraag je boekhouder ze met je door te lopen. Een goede boekhouder vindt dat niet vervelend.</li>
-            <li><strong>Spreek af waar de verantwoordelijkheid voor de structuur ligt.</strong> Boekhouder, accountant of een controller — maar maak het expliciet. Anders ligt het nergens.</li>
-            <li><strong>Bepaal welke vier of vijf cijfers je elke maand moet zien</strong> om te sturen. Omzet, brutomarge, kosten per categorie, cash, evt. marge per klantsegment. Niet meer.</li>
-            <li><strong>Spreek een vaste leverdatum af</strong> voor die maandcijfers, bijvoorbeeld de 10e van de volgende maand.</li>
-            <li><strong>Als je systemen en finance gekoppeld zijn:</strong> laat één keer de hele keten van order tot grootboek doorlopen. Bijna altijd vind je daar minstens één lek.</li>
+            <li><strong>Verkort de debiteurentermijn.</strong> Sneller factureren, duidelijke betaaltermijnen, op tijd herinneren. Geld dat openstaat is geen runway.</li>
+            <li><strong>Faseer grote uitgaven.</strong> Spreid of stel uit wat niet acuut is, zodat een investering niet je hele buffer in één maand opeet.</li>
+            <li><strong>Maak de pieken zichtbaar.</strong> Reserveer btw en vakantiegeld apart, dan verrast geen enkele klontpost je nog.</li>
           </ul>
+
+          <p>En de belangrijkste: weet überhaupt wat je runway ís. Je kunt pas bijsturen wat je meet.</p>
 
           <h2 id="conclusie">Conclusie</h2>
 
-          <p>Controle op je boekhouding heeft twee lagen. De technische laag — kloppen de cijfers, zit de structuur goed — is iets wat je periodiek moet laten checken, niet alleen aan het eind van het jaar. De sturingslaag — vertellen de cijfers je iets — is wat de meeste ondernemers missen en wat ook met een goede boekhouder niet vanzelf goedkomt.</p>
-
-          <p>Het goede nieuws: allebei zijn op te lossen zonder dat je een fulltime financieel team hoeft op te tuigen. Maar het begint met de eerlijke vraag welke van de twee je nu eigenlijk hebt — en welke niet.</p>
+          <p>Runway is het meest eerlijke getal in je bedrijf: hoeveel maanden hou je het vol als alles bij het oude blijft. Het kost je tien minuten om het uit te rekenen, en het geeft je rust én beslisruimte. Reken het deze week één keer uit — en zet er een 13-wekenprognose naast, dan stuur je niet meer achteraf maar vooruit.</p>
 
           <div class="article-cta">
-            <h3>Wil je weten waar jouw boekhouding staat?</h3>
-            <p>In een gratis intake van 30 minuten lopen we samen kort door waar je nu staat op beide lagen — en wat er als eerste opgepakt zou moeten worden.</p>
+            <h3>Geen grip op je cashflow?</h3>
+            <p>Plan een gratis intake. Dan zetten we samen je runway én een eenvoudige prognose op, toegesneden op jouw bedrijf.</p>
             <a class="btn btn-primary" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een gratis intake</a>
           </div>
         </article>
@@ -449,19 +401,18 @@ footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
           <div class="side-card">
             <h4>In dit artikel</h4>
             <ul class="toc">
-              <li><a href="#twee-soorten">Twee soorten controle</a></li>
-              <li><a href="#kloppen-de-cijfers">Kloppen de cijfers?</a></li>
-              <li><a href="#zelf-controleren">Snel zelf controleren</a></li>
-              <li><a href="#vertellen-de-cijfers">Vertellen ze je iets?</a></li>
-              <li><a href="#boekhouder-en-controller">Boekhouder en controller</a></li>
-              <li><a href="#praktisch">Hoe pak je het aan</a></li>
+              <li><a href="#wat">Wat runway is</a></li>
+              <li><a href="#waarom">Waarom W&amp;V dit niet vertelt</a></li>
+              <li><a href="#berekenen">In drie stappen berekenen</a></li>
+              <li><a href="#nuance">Eén getal is niet genoeg</a></li>
+              <li><a href="#kort">Bij een korte runway</a></li>
               <li><a href="#conclusie">Conclusie</a></li>
             </ul>
           </div>
           <div class="side-card">
             <h4>Meer lezen</h4>
-            <p>Wanneer is een fractioneel controller zonde van het geld?</p>
-            <a class="text-link" href="wanneer-fractioneel-controller-zonde-van-het-geld.html">Lees verder →</a>
+            <p>Controle op je boekhouding: kloppen de cijfers — en wat zeggen ze?</p>
+            <a class="text-link" href="controle-op-je-boekhouding.html">Lees verder →</a>
           </div>
           <div class="side-card">
             <h4>Meer lezen</h4>

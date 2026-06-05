@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Controller, boekhouder of accountant: wie heb jij nodig? — Cees de Controller</title>
-  <meta name="description" content="Boekhouder, accountant, controller, CFO. Ze doen alle vier iets met cijfers — maar elk iets anders. Praktische uitleg met checklist." />
+  <title>Verschil accountant, controller en boekhouder — Cees</title>
+  <meta name="description" content="Wat is het verschil tussen een accountant, controller en boekhouder? Heldere uitleg met vergelijkingstabel, kosten en checklist: wie heb jij echt nodig?" />
   <link rel="canonical" href="https://ceesdecontroller.nl/blog/controller-vs-boekhouder.html" />
-  <meta property="og:title" content="Controller, boekhouder of accountant: wie heb jij nodig? — Cees de Controller" />
-  <meta property="og:description" content="Boekhouder, accountant, controller, CFO. Ze doen alle vier iets met cijfers — maar elk iets anders. Praktische uitleg met checklist." />
+  <meta property="og:title" content="Verschil accountant, controller en boekhouder — Cees de Controller" />
+  <meta property="og:description" content="Wat is het verschil tussen een accountant, controller en boekhouder? Heldere uitleg met vergelijkingstabel, kosten en checklist: wie heb jij echt nodig?" />
   <meta property="og:url" content="https://ceesdecontroller.nl/blog/controller-vs-boekhouder.html" />
   <meta property="og:type" content="article" />
   <meta property="og:image" content="https://ceesdecontroller.nl/assets/og-image.png" />
@@ -20,6 +20,46 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   <meta name="theme-color" content="#0c0d0c" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Wat is het verschil tussen een accountant en een controller?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Een accountant kijkt vooral achteruit: jaarrekening, belastingaangifte en naleving van wet- en regelgeving. Een controller kijkt vooruit en helpt je sturen met maandrapportages, dashboards, budgetten en cashflowplanning. De accountant bewaakt de regels, de controller helpt je beslissen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat is het verschil tussen een controller en een boekhouder?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Een boekhouder houdt je administratie kloppend: facturen, bank, btw en het maandelijks afsluiten van de boeken. Een controller gebruikt die cijfers om te analyseren en te adviseren. De boekhouder registreert, de controller interpreteert."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Heb ik een controller of een accountant nodig?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Heb je vooral je jaarrekening en belastingaangifte te regelen, dan volstaat een accountant naast je boekhouder. Mis je sturing op cijfers, dan heb je een controller nodig. Veel MKB-bedrijven hebben beide, plus een boekhouder."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat kost een controller vergeleken met een accountant?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Een accountant kost een klein bedrijf grofweg 1.500 tot 5.000 euro per jaar. Een controller werkt continu mee: fulltime 80.000 tot 100.000 euro per jaar, of fractioneel vanaf 1.500 tot 2.000 euro per maand."
+        }
+      }
+    ]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
@@ -426,6 +466,28 @@ footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
 }
 .checklist-block ul li::before { content: '—'; color: #5b9069; font-weight: 600; }
 
+/* Vergelijkingstabel */
+.table-wrap { overflow-x: auto; margin: 1.5rem 0; -webkit-overflow-scrolling: touch; }
+.compare {
+  width: 100%; border-collapse: collapse;
+  font-size: 0.92rem; min-width: 560px;
+}
+.compare caption { text-align: left; color: var(--muted); font-size: 0.85rem; margin-bottom: 0.75rem; }
+.compare th, .compare td {
+  text-align: left; vertical-align: top;
+  padding: 0.8rem 0.9rem; border-bottom: 1px solid var(--border);
+}
+.compare thead th {
+  color: var(--text); font-weight: 600; font-size: 0.9rem;
+  border-bottom: 1px solid var(--text);
+}
+.compare tbody th {
+  color: var(--muted); font-weight: 500; white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+.compare tbody td { color: var(--text); }
+.compare tbody tr:hover td, .compare tbody tr:hover th { background: var(--surface); }
+
 .article-cta {
   margin-top: 3rem; padding: 2rem;
   background: var(--surface); border: 1px solid var(--border);
@@ -514,12 +576,12 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 <body>
   <nav class="nav" aria-label="Hoofdnavigatie">
     <div class="container nav-inner">
-      <a href="../index.html" class="logo"><span class="logo-dot"></span>Cees de Controller</a>
+      <a href="/" class="logo"><span class="logo-dot"></span>Cees de Controller</a>
       <ul class="nav-links">
         <li><a href="../diensten.html">Diensten</a></li>
         <li><a href="../odoo.html">Odoo</a></li>
         <li><a href="../over-cees.html">Over</a></li>
-        <li><a href="../blog/index.html" class="current">Blog</a></li>
+        <li><a href="/blog/" class="current">Blog</a></li>
         <li><a href="../contact.html">Contact</a></li>
       </ul>
       <div class="nav-cta">
@@ -538,7 +600,7 @@ form { display: flex; flex-direction: column; gap: 1rem; }
       <li><a href="../diensten.html">Diensten</a></li>
         <li><a href="../odoo.html">Odoo</a></li>
       <li><a href="../over-cees.html">Over</a></li>
-      <li><a href="../blog/index.html" class="current">Blog</a></li>
+      <li><a href="/blog/" class="current">Blog</a></li>
       <li><a href="../contact.html">Contact</a></li>
     </ul>
     <a class="btn btn-primary" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een intake</a>
@@ -548,13 +610,73 @@ form { display: flex; flex-direction: column; gap: 1rem; }
     <div class="container">
       <div class="article-layout">
         <article class="article-content">
-          <a class="back-link" href="index.html">← Terug naar blog</a>
-          <span class="meta-cat">Fractioneel controller · 7 min lezen</span>
-          <h1>Controller, boekhouder of accountant: wie heb jij nodig?</h1>
+          <a class="back-link" href="/blog/">← Terug naar blog</a>
+          <span class="meta-cat">Fractioneel controller · 8 min lezen</span>
+          <h1>Het verschil tussen accountant, controller en boekhouder</h1>
 
-          <p class="intro">“Ik heb een boekhouder, dus ik heb toch geen controller nodig?” Deze vraag krijg ik regelmatig. Het antwoord: dat hangt ervan af wat je nodig hebt.</p>
+          <p class="intro">“Ik heb een boekhouder, dus ik heb toch geen controller nodig?” Deze vraag krijg ik regelmatig. Het antwoord: dat hangt af van wélk verschil je voelt in je cijfers.</p>
 
-          <p>Een boekhouder, accountant, controller en CFO doen allemaal iets met cijfers. Maar ze doen elk iets anders. En voor verschillende fases van je bedrijf heb je verschillende functies nodig.</p>
+          <p>Boekhouder, accountant, controller en CFO doen allemaal iets met cijfers — maar elk iets anders. Het verschil zit in waar ze naar kijken: het verleden, de regels, of de sturing naar de toekomst. Hieronder leg ik het verschil per rol uit, met een vergelijkingstabel en een FAQ, zodat je weet wie jouw bedrijf nu nodig heeft.</p>
+
+          <p>Snel het verschil zien? Spring naar de <a href="#vergelijking">vergelijkingstabel</a> of de <a href="#faq">veelgestelde vragen</a>.</p>
+
+          <h2 id="vergelijking">Het verschil in één oogopslag</h2>
+
+          <p>De tabel hieronder zet boekhouder, accountant en controller (en de CFO) naast elkaar: wat de rol inhoudt, de belangrijkste taken en wanneer je die persoon inhuurt.</p>
+
+          <div class="table-wrap">
+            <table class="compare">
+              <caption>Verschil tussen boekhouder, accountant, controller en CFO</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Aspect</th>
+                  <th scope="col">Boekhouder</th>
+                  <th scope="col">Accountant</th>
+                  <th scope="col">Controller</th>
+                  <th scope="col">CFO</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Rol</th>
+                  <td>Administratie kloppend houden</td>
+                  <td>Controle en compliance</td>
+                  <td>Sturing en inzicht</td>
+                  <td>Strategie en financiering</td>
+                </tr>
+                <tr>
+                  <th scope="row">Belangrijkste taken</th>
+                  <td>Facturen verwerken, bank koppelen, btw-aangifte, debiteuren/crediteuren, boeken afsluiten</td>
+                  <td>Jaarrekening, belastingaangifte (IB/VPB), fiscaal advies, controle</td>
+                  <td>Maandrapportages, dashboards, budgetten, marges, cashflowplanning</td>
+                  <td>Scenario’s, financiering, risicobeheer, overnames</td>
+                </tr>
+                <tr>
+                  <th scope="row">Blik</th>
+                  <td>Verleden</td>
+                  <td>Verleden + naleving</td>
+                  <td>Nu + nabije toekomst</td>
+                  <td>Toekomst + strategie</td>
+                </tr>
+                <tr>
+                  <th scope="row">Wanneer inhuren</th>
+                  <td>Zodra je transacties doet en factureert</td>
+                  <td>Bij jaarrekening- en aangifteplicht</td>
+                  <td>Vanaf ± €500k omzet of bij personeel</td>
+                  <td>Vanaf ± €5–10M omzet of bij complexe vraagstukken</td>
+                </tr>
+                <tr>
+                  <th scope="row">Indicatie kosten</th>
+                  <td>€100–300 per maand</td>
+                  <td>€1.500–5.000 per jaar</td>
+                  <td>Fractioneel vanaf €1.500–2.000/maand</td>
+                  <td>Fractioneel vanaf €2.000–5.000/maand</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>Kort samengevat: het grootste verschil tussen een accountant en een controller is de blikrichting. Een accountant kijkt achteruit en bewaakt de regels; een controller kijkt vooruit en helpt je sturen. De boekhouder legt de basis waarop beiden bouwen. Hieronder per rol de details.</p>
 
           <h2 id="boekhouder">De boekhouder: de basis op orde</h2>
 
@@ -638,6 +760,31 @@ form { display: flex; flex-direction: column; gap: 1rem; }
 
           <p>De meeste fractionele controllers doen analyses en rapportages. Dat doe ik ook — maar ik ga verder. Omdat ik een achtergrond heb als accountant, kan ik ook de jaarrekening opstellen, belastingadvies geven en je administratie automatiseren. Je hoeft niet vier partijen aan te sturen voor boekhouding, controle, rapportage en advies.</p>
 
+          <h2 id="faq">Veelgestelde vragen over het verschil</h2>
+
+          <div class="faq">
+            <details>
+              <summary>Wat is het verschil tussen een accountant en een controller?</summary>
+              <div class="faq-body">Een accountant kijkt vooral achteruit: jaarrekening, belastingaangifte en naleving van wet- en regelgeving. Een controller kijkt vooruit en helpt je sturen met maandrapportages, dashboards, budgetten en cashflowplanning. Kort gezegd: de accountant bewaakt de regels, de controller helpt je beslissen.</div>
+            </details>
+            <details>
+              <summary>Wat is het verschil tussen een controller en een boekhouder?</summary>
+              <div class="faq-body">Een boekhouder houdt je administratie kloppend — facturen, bank, btw en het maandelijks afsluiten van de boeken. Een controller gebruikt die cijfers om te analyseren en te adviseren: welke klanten leveren het meest op, waar lekt marge weg, hoe staat je cashflow ervoor. De boekhouder registreert, de controller interpreteert.</div>
+            </details>
+            <details>
+              <summary>Heb ik een controller of een accountant nodig?</summary>
+              <div class="faq-body">Heb je vooral je jaarrekening en belastingaangifte te regelen, dan volstaat een accountant (naast je boekhouder). Mis je sturing — cijfers komen te laat, je beslist op gevoel, je weet niet welke klanten renderen — dan heb je een controller nodig. Veel MKB-bedrijven hebben beide, plus een boekhouder.</div>
+            </details>
+            <details>
+              <summary>Kan één persoon boekhouder, accountant én controller zijn?</summary>
+              <div class="faq-body">De rollen overlappen niet vanzelf, maar één persoon kan ze wél combineren als de achtergrond er is. Met mijn accountantsachtergrond doe ik naast control ook de jaarrekening en belastingadvies, zodat je niet meerdere partijen hoeft aan te sturen. De dagelijkse boekhouding blijft meestal bij een vaste boekhouder of wordt geautomatiseerd.</div>
+            </details>
+            <details>
+              <summary>Wat kost een controller vergeleken met een accountant?</summary>
+              <div class="faq-body">Een accountant kost een klein bedrijf grofweg €1.500–5.000 per jaar voor jaarrekening en aangifte. Een controller werkt continu mee: fulltime €80.000–100.000 per jaar, of fractioneel vanaf €1.500–2.000 per maand. Je betaalt een controller dus voor doorlopende sturing, niet voor een jaarlijkse controle.</div>
+            </details>
+          </div>
+
           <h2 id="conclusie">Conclusie</h2>
 
           <p>Boekhouder, accountant, controller en CFO zijn geen concurrenten maar aanvullingen. Begin met een goede boekhouder. Voeg een accountant toe voor compliance. Zodra je groeit, haal je een controller erbij. De meeste MKB-bedrijven hebben boekhouder, accountant en fractioneel controller nodig — dat dekt 90% van de financiële functie zonder fulltime personeel.</p>
@@ -653,11 +800,13 @@ form { display: flex; flex-direction: column; gap: 1rem; }
           <div class="side-card">
             <h4>In dit artikel</h4>
             <ul class="toc">
+              <li><a href="#vergelijking">Verschil in één oogopslag</a></li>
               <li><a href="#boekhouder">De boekhouder</a></li>
               <li><a href="#accountant">De accountant</a></li>
               <li><a href="#controller">De controller</a></li>
               <li><a href="#cfo">De CFO</a></li>
               <li><a href="#checklist">Checklist</a></li>
+              <li><a href="#faq">Veelgestelde vragen</a></li>
               <li><a href="#conclusie">Conclusie</a></li>
             </ul>
           </div>

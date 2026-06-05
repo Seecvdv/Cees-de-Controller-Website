@@ -6,6 +6,7 @@ Intern werkdocument. Geen webpagina. Bijgewerkt 2026-05-28.
 
 - **2026-05-28 (do):** ✅ Gepubliceerd — *"Je hebt een controller aangenomen. Je data is nog steeds een chaos."* — [blog/controller-aangenomen-data-chaos.html](blog/controller-aangenomen-data-chaos.html). Kick-off; verschuift de donderdag-rij van week 1 naar voren.
 - **2026-06-02 (di):** ✅ Gepubliceerd — *"Claude als je financieel analist — wat werkt en wat niet"* — [blog/claude-als-financieel-analist.html](blog/claude-als-financieel-analist.html). Eerste post in nieuwe categorie *AI in finance*. Eigen lead magnet meegeleverd: *Is je boekhouding klaar voor AI? (3 checks)* — Cees' eigen controller-checks i.p.v. abstracte datagovernance (zie hieronder). PDF staat klaar in `assets/boekhouding-klaar-voor-ai.pdf` (bron: [lead-magnet/boekhouding-klaar-voor-ai.html](lead-magnet/boekhouding-klaar-voor-ai.html)). **Levering is handmatig:** het formulier toont geen directe download meer; na aanvraag krijgt Cees de e-mail via Web3Forms en stuurt de PDF persoonlijk toe. Geldt ook voor de homepage-checklist (idem aangepast).
+- **2026-06-04 (do):** 📝 Uitgewerkt, klaar om te plannen — *"Cashflow runway: wat het is en hoe je het zelf berekent"* — [blog/cashflow-runway-zelf-berekenen.html](blog/cashflow-runway-zelf-berekenen.html). Categorie *Controle & Grip*. Naar voren gehaald uit week 3 (do 18 juni) om de donderdag van week 1 te vullen en de AI-tip van dinsdag te balanceren met een concrete finance-tip. LinkedIn-versie staat in [content-input/cashflow-runway-zelf-berekenen.md](content-input/cashflow-runway-zelf-berekenen.md).
 
 ## Uitgangspunten
 
@@ -23,9 +24,10 @@ Startdatum week 1: dinsdag 2 juni 2026.
 |----|----------|----------|-------|------|-----------|
 | 1 | — | 2026-05-28 | Controle & Grip | MKB | Je hebt een controller aangenomen. Je data is nog steeds een chaos. *(gepubliceerd)* |
 | 1 | 2026-06-02 | — | AI in finance | AI-tip | Claude als je financieel analist — wat werkt en wat niet *(gepubliceerd)* |
-| 2 | 2026-06-09 | — | AI in finance | Tip | 3 dingen die je vandaag in Excel kunt automatiseren (zonder VBA) |
-| 3 | 2026-06-16 | — | Cashflow & sturen | MKB | Wanneer is een controller eigenlijk geldverspilling? |
-| 3 | — | 2026-06-18 | Cashflow & sturen | Tip | Cashflow runway: wat het is en hoe je het zelf berekent |
+| 1 | — | 2026-06-04 | Controle & Grip | Tip | Cashflow runway: wat het is en hoe je het zelf berekent *(uitgewerkt — naar voren gehaald uit wk 3)* |
+| 2 | 2026-06-09 | — | AI in finance | Tip | 3 dingen die je vandaag in Excel kunt automatiseren (zonder VBA) — *⚠️ positionering nog te beslissen* |
+| 3 | 2026-06-16 | — | Cashflow & sturen | MKB | Wanneer is een controller eigenlijk geldverspilling? — *⚠️ overlapt met reeds live [wanneer-fractioneel-controller-zonde-van-het-geld](blog/wanneer-fractioneel-controller-zonde-van-het-geld.html)* |
+| 3 | — | 2026-06-18 | Cashflow & sturen | Tip | ~~Cashflow runway~~ → verplaatst naar 2026-06-04; do-slot vrij voor nieuw onderwerp |
 | 4 | 2026-06-23 | — | Cashflow & sturen | Persoonlijk | "AI neemt mijn werk over" — met de nodige zelfspot |
 | 4 | — | 2026-06-25 | AI in finance | Opinie | Waarom Claude wél met je agenda kan praten, maar niet met Exact — pleidooi voor MCP-koppelingen in NL-software |
 | 5 | 2026-06-30 | — | Fractioneel & DBA | MKB | Waarom je misschien geen fulltime controller nodig hebt |
