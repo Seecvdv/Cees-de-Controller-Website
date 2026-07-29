@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Betrouwbare AI-rapportages beginnen bij een datawarehouse — Cees de Controller</title>
+  <meta name="description" content="AI geeft vlot antwoord, ook als je cijfers niet kloppen. Wat een datawarehouse in gewoon Nederlands is, wanneer je het nodig hebt en wanneer niet." />
+  <link rel="canonical" href="https://ceesdecontroller.nl/blog/ai-rapportages-datawarehouse.html" />
+  <meta property="og:title" content="Betrouwbare AI-rapportages beginnen bij een datawarehouse — Cees de Controller" />
+  <meta property="og:description" content="AI geeft vlot antwoord, ook als je cijfers niet kloppen. Wat een datawarehouse in gewoon Nederlands is, wanneer je het nodig hebt en wanneer niet." />
+  <meta property="og:url" content="https://ceesdecontroller.nl/blog/ai-rapportages-datawarehouse.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:image" content="https://ceesdecontroller.nl/assets/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Cees de Controller — Fractioneel Controller &amp; CFO" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+  <meta name="theme-color" content="#0c0d0c" />
+  <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/assets/fonts.css" />
+  <style>
+:root {
+  --bg: #0c0d0c;
+  --surface: #141513;
+  --surface-2: #1c1d1b;
+  --border: #25272a;
+  --text: #f1f2ef;
+  --muted: #8a8c88;
+  --faint: #2f3230;
+  --radius: 6px;
+  --max: 1080px;
+  --nav-h: 72px;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+img, svg { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; cursor: pointer; }
+.container { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 1.5rem; }
+.container-narrow { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
+
+h1, h2, h3, h4 { margin: 0; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
+h1 { font-size: clamp(2.25rem, 5vw, 3.5rem); font-weight: 800; }
+h2 { font-size: clamp(1.6rem, 3vw, 2.25rem); }
+h3 { font-size: 1.15rem; font-weight: 600; letter-spacing: -0.01em; }
+h4 { font-size: 1rem; font-weight: 600; letter-spacing: -0.01em; }
+p { margin: 0; }
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a8c88;
+}
+.eyebrow::before {
+        content: '';
+        display: inline-block;
+        width: 18px; height: 1px;
+        background: #5b9069;
+        margin-right: 0.6rem;
+        vertical-align: middle;
+      }
+.muted { color: var(--muted); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: var(--radius);
+  font-weight: 500; font-size: 0.95rem; line-height: 1;
+  border: 1px solid transparent;
+  transition: opacity 160ms ease, background 160ms ease, border-color 160ms ease, color 160ms ease;
+  white-space: nowrap;
+}
+.btn-primary { background: #4a7c59; color: #ffffff; }
+.btn-primary:hover { background: #5b9069; }
+.btn-secondary { background: transparent; color: var(--text); border-color: var(--border); }
+.btn-secondary:hover { border-color: var(--text); }
+.btn-sm { padding: 0.65rem 1.05rem; font-size: 0.88rem; }
+.btn-block { width: 100%; }
+
+/* Nav */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  height: var(--nav-h);
+  background: rgba(12, 13, 12, 0.7);
+  backdrop-filter: saturate(140%) blur(14px);
+  -webkit-backdrop-filter: saturate(140%) blur(14px);
+  border-bottom: 1px solid var(--border);
+
+}
+.nav-inner {
+  height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem;
+}
+.logo { font-weight: 700; letter-spacing: -0.01em; font-size: 1rem; display: flex; align-items: center; gap: 0.55rem; }
+.logo-dot { width: 6px; height: 6px; background: #4a7c59; border-radius: 50%; display: inline-block; }
+.nav-links { display: flex; align-items: center; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+.nav-links a { font-size: 0.92rem; color: var(--muted); transition: color 160ms ease; }
+.nav-links a:hover, .nav-links a.current { color: var(--text); }
+.nav-cta { display: flex; align-items: center; gap: 0.75rem; }
+.nav-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--muted); width: 36px; height: 36px;
+  border-radius: var(--radius);
+  transition: color 160ms ease, background 160ms ease;
+}
+.nav-icon:hover { color: var(--text); background: var(--surface); }
+.hamburger {
+  display: none; background: transparent; border: 1px solid var(--border);
+  border-radius: var(--radius); width: 40px; height: 40px; padding: 0;
+  align-items: center; justify-content: center; color: var(--text);
+}
+.hamburger:hover { border-color: var(--text); }
+.hamburger svg { width: 18px; height: 18px; }
+.mobile-menu {
+  display: none; position: fixed; top: var(--nav-h); left: 0; right: 0;
+  background: var(--bg); border-bottom: 1px solid var(--border);
+  padding: 1rem 1.5rem 1.5rem; z-index: 49;
+}
+.mobile-menu.open { display: block; }
+.mobile-menu ul { list-style: none; margin: 0 0 1rem; padding: 0; display: flex; flex-direction: column; gap: 0.25rem; }
+.mobile-menu a { display: block; padding: 0.85rem 0; font-size: 1rem; border-bottom: 1px solid var(--border); color: var(--muted); }
+.mobile-menu a.current { color: var(--text); }
+.mobile-menu .btn { width: 100%; margin-top: 0.5rem; }
+
+/* Section spacing */
+section { padding: 5rem 0; }
+.section-head { margin-bottom: 2.5rem; display: flex; flex-direction: column; gap: 0.75rem; }
+
+/* CTA bar */
+.cta-bar { padding: 5rem 0; border-top: 1px solid var(--border);  }
+.cta-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 2rem; flex-wrap: wrap;
+  border-left: 2px solid #4a7c59; padding-left: 1.5rem;
+}
+.cta-inner h2 { max-width: 18ch; }
+
+.text-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  color: var(--text); font-weight: 500;
+  border-bottom: 1px solid var(--border); padding-bottom: 2px;
+  transition: border-color 160ms ease;
+}
+.text-link:hover { border-color: var(--text); }
+.back-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  color: var(--muted); font-size: 0.92rem; transition: color 160ms ease;
+  margin-bottom: 1.5rem;
+}
+.back-link:hover { color: var(--text); }
+
+/* Footer */
+footer { padding: 3rem 0 2.5rem; border-top: 1px solid var(--border); }
+.foot-inner { display: flex; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.foot-brand .name { font-weight: 700; }
+.foot-brand .tag { color: var(--muted); font-size: 0.9rem; margin-top: 0.25rem; max-width: 38ch; }
+.foot-links { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; font-size: 0.9rem; color: var(--muted); }
+.foot-links a { color: var(--muted); transition: color 160ms ease; }
+.foot-links a:hover { color: var(--text); }
+.foot-brand .foot-contact { color: var(--muted); font-size: 0.85rem; margin-top: 0.85rem; line-height: 1.7; max-width: 38ch; }
+.foot-brand .foot-contact a { color: var(--muted); transition: color 160ms ease; }
+.foot-brand .foot-contact a:hover { color: var(--text); }
+.foot-legal {
+  display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
+  margin-top: 2rem; padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--muted); font-size: 0.82rem; letter-spacing: 0.02em;
+}
+
+/* Article layout */
+.article-layout {
+  display: grid; gap: 3rem; grid-template-columns: 1fr;
+  padding: 3rem 0 5rem;
+}
+@media (min-width: 960px) {
+  .article-layout { grid-template-columns: minmax(0, 1fr) 260px; gap: 4rem; }
+}
+.article-content { max-width: 680px; }
+.article-content .meta-cat { font-size: 0.78rem; color: var(--muted); letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; margin-bottom: 1rem; display: inline-block; }
+.article-content h1 { font-size: clamp(2rem, 4vw, 2.75rem); margin-bottom: 1.5rem; max-width: 22ch; }
+.article-content h2 {
+  font-size: 1.5rem; margin: 2.5rem 0 1rem;
+  letter-spacing: -0.015em;
+}
+.article-content h3 { font-size: 1.15rem; margin: 1.5rem 0 0.75rem; }
+.article-content p { margin-bottom: 1.25rem; color: var(--text); }
+.article-content p.intro { font-size: 1.1rem; color: var(--text); }
+.article-content ul { padding-left: 1.4rem; margin: 0 0 1.25rem; }
+.article-content ul li { color: var(--text); margin-bottom: 0.35rem; }
+.article-content a { color: var(--text); border-bottom: 1px solid var(--border); padding-bottom: 1px; }
+
+.callout {
+  background: transparent;
+  border-left: 2px solid #4a7c59;
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  color: var(--text);
+  font-size: 0.98rem;
+
+}
+
+.kosten-tag {
+  display: inline-block; font-size: 0.8rem;
+  padding: 0.6rem 0.9rem; border: 1px solid var(--border);
+  border-radius: var(--radius); margin: 0.5rem 0 1.25rem;
+  color: #5b9069;
+}
+.kosten-tag strong { font-weight: 600; }
+
+.checklist-block {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.35rem 1.5rem;
+  margin: 1rem 0 1.5rem;
+}
+.checklist-block h4 { margin-bottom: 0.75rem; font-size: 1rem; color: var(--text); }
+.checklist-block ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.5rem; }
+.checklist-block ul li {
+  display: grid; grid-template-columns: 1.25rem 1fr; gap: 0.6rem;
+  font-size: 0.95rem; color: var(--text);
+}
+.checklist-block ul li::before { content: '—'; color: #5b9069; font-weight: 600; }
+
+.article-cta {
+  margin-top: 3rem; padding: 2rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius);
+  border-left: 2px solid #4a7c59;
+  display: flex; flex-direction: column; gap: 1rem;
+}
+.article-cta h3 { font-size: 1.25rem; }
+.article-cta p { color: var(--muted); margin: 0; }
+.article-cta .btn { width: max-content; }
+
+/* Sidebar */
+.sidebar { display: flex; flex-direction: column; gap: 1rem; }
+@media (min-width: 960px) {
+  .sidebar { position: sticky; top: calc(var(--nav-h) + 1.5rem); align-self: start; max-height: calc(100vh - var(--nav-h) - 3rem); overflow-y: auto; }
+}
+.side-card {
+  padding: 1.25rem 1.35rem;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.side-card .eyebrow { margin-bottom: 0.85rem; }
+.side-card h4 { font-size: 0.92rem; margin-bottom: 0.75rem; font-weight: 600; }
+.toc { display: flex; flex-direction: column; gap: 0.5rem; list-style: none; margin: 0; padding: 0; }
+.toc li a { color: var(--muted); font-size: 0.88rem; line-height: 1.4; display: block; transition: color 160ms ease; }
+.toc li a:hover { color: var(--text); }
+.side-card p { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+.side-card .btn { width: 100%; }
+
+/* Responsive */
+@media (max-width: 760px) { .nav-links, .nav-cta .btn { display: none; } .hamburger { display: inline-flex; } }
+@media (max-width: 720px) { section { padding: 3rem 0; } .cta-bar { padding: 3rem 0; } .article-layout { padding: 2rem 0 3rem; } }
+</style>
+</head>
+<body>
+  <nav class="nav" aria-label="Hoofdnavigatie">
+    <div class="container nav-inner">
+      <a href="/" class="logo"><span class="logo-dot"></span>Cees de Controller</a>
+      <ul class="nav-links">
+        <li><a href="../diensten.html">Diensten</a></li>
+        <li><a href="../odoo.html">Odoo</a></li>
+        <li><a href="../over-cees.html">Over</a></li>
+        <li><a href="/blog/" class="current">Blog</a></li>
+        <li><a href="../contact.html">Contact</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="nav-icon" href="https://www.linkedin.com/in/cees-van-de-vendel-1344b727/" target="_blank" rel="noopener" aria-label="Cees op LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" aria-hidden="true"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14zM8.339 18.337V9.722H5.667v8.615h2.672zM7.003 8.546a1.548 1.548 0 1 0 0-3.096 1.548 1.548 0 0 0 0 3.096zm11.336 9.791v-4.72c0-2.557-1.366-3.747-3.187-3.747-1.468 0-2.124.807-2.49 1.374V9.722h-2.671c.035.754 0 8.615 0 8.615h2.671v-4.811c0-.24.018-.48.088-.652.193-.48.633-.978 1.371-.978.967 0 1.354.737 1.354 1.818v4.623h2.864z"/></svg>
+        </a>
+        <a class="btn btn-primary btn-sm" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een intake</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu openen" aria-expanded="false" aria-controls="mobile-menu">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="7" x2="21" y2="7"/><line x1="3" y1="17" x2="21" y2="17"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu">
+    <ul>
+      <li><a href="../diensten.html">Diensten</a></li>
+        <li><a href="../odoo.html">Odoo</a></li>
+      <li><a href="../over-cees.html">Over</a></li>
+      <li><a href="/blog/" class="current">Blog</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+    </ul>
+    <a class="btn btn-primary" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een intake</a>
+  </div>
+  <main>
+
+    <div class="container">
+      <div class="article-layout">
+        <article class="article-content">
+          <a class="back-link" href="/blog/">← Terug naar blog</a>
+          <span class="meta-cat">AI in finance · 6 min lezen</span>
+          <h1>Wil je betrouwbare rapportages met AI? Begin bij je data</h1>
+
+          <p class="intro">Steeds meer ondernemers willen hetzelfde. Een vraag stellen over je eigen bedrijf, in gewone taal, en meteen antwoord krijgen. "Hoeveel marge maakten we vorige maand op nieuwe klanten?"</p>
+
+          <p>Dat kan tegenwoordig echt. De techniek is er, en hij is goed.</p>
+
+          <p>Maar er zit een addertje onder het gras. AI beantwoordt je vraag met de cijfers die hij krijgt. Kloppen die cijfers niet, dan klopt het antwoord ook niet. En dat zie je er niet aan af.</p>
+
+          <h2 id="ai">Waar AI goed in is, en waar niet</h2>
+
+          <p>AI is sterk in samenvatten, uitleggen en rekenen. Dat gaat sneller dan welke analist ook.</p>
+
+          <p>Waar AI <strong>níet</strong> goed in is: bepalen welk getal het juiste is.</p>
+
+          <div class="callout">Een voorbeeld. Je webshop zegt dat je vorige maand 412 klanten had. Je boekhouding zegt 380. Je marketingtool zegt 455. Wie heeft gelijk?</div>
+
+          <p>Een mens gaat twijfelen. Die belt iemand. AI doet dat niet. Die pakt een getal en geeft er een vlot, overtuigend antwoord bij.</p>
+
+          <p>Daarmee zijn rommelige cijfers in AI gevaarlijker dan rommelige cijfers in Excel. Bij een Excel weet iedereen dat je even moet controleren. Bij een keurig geformuleerd AI-antwoord voelt niemand die behoefte.</p>
+
+          <h2 id="wat">Een datawarehouse, in gewoon Nederlands</h2>
+
+          <p>Het woord klinkt als iets voor de IT-afdeling. Maar de vertaling is letterlijk "magazijn voor data". En dat is precies wat het is.</p>
+
+          <p>Denk aan een echt magazijn. Er komen leveringen binnen van allerlei leveranciers. Iedereen pakt anders in. Eigen dozen, eigen codes, eigen etiketten. In je magazijn pak je alles uit, je sorteert het, en je zet het op een vaste plek met één soort etiket. Daarna kan iedereen vinden wat hij zoekt.</p>
+
+          <p>Een datawarehouse doet dat met je cijfers. Je webshop levert aan, je boekhouding levert aan, je urenregistratie levert aan. In het magazijn wordt alles uitgepakt en op dezelfde manier gelabeld.</p>
+
+          <p>Eén ding is belangrijk: <strong>je vervangt er niets mee</strong>. Je boekhouding blijft je boekhouding. Je webshop blijft je webshop. Er komt alleen een centrale plek bij waar de cijfers samenkomen.</p>
+
+          <h2 id="magazijn">Wat er in dat magazijn gebeurt</h2>
+
+          <p>Drie dingen, en ze zijn alle drie saai. Precies daarom worden ze meestal overgeslagen.</p>
+
+          <div class="checklist-block">
+            <h4>De drie stappen die het werk doen</h4>
+            <ul>
+              <li><strong>Alles komt op één plek.</strong> Niet in vijf systemen en een handvol Excels, maar op één centrale plek.</li>
+              <li><strong>Alles krijgt dezelfde naam.</strong> Wat is een klant? Wanneer is een order omzet? Bij het versturen van de factuur, of bij betaling? Zolang je systemen daar verschillend over denken, tellen ze verschillend.</li>
+              <li><strong>Alles krijgt hetzelfde nummer.</strong> Klant 1042 in je webshop moet dezelfde klant zijn als 1042 in je boekhouding. Anders kun je niets aan elkaar knopen.</li>
+            </ul>
+          </div>
+
+          <p>Dat tweede punt is waar het meestal misgaat. Niet door techniek, maar door afspraken die nooit zijn gemaakt. Dat is hetzelfde patroon dat ik beschrijf in <a href="controller-aangenomen-data-chaos.html">je hebt een controller aangenomen, je data is nog steeds een chaos</a>.</p>
+
+          <h2 id="volgorde">De volgorde die werkt</h2>
+
+          <ul>
+            <li><strong>1. Je systemen blijven gewoon draaien.</strong> Er verandert niets aan hoe je team werkt.</li>
+            <li><strong>2. De cijfers worden automatisch opgehaald.</strong> Elke nacht, zonder dat iemand iets exporteert.</li>
+            <li><strong>3. In het magazijn wordt alles gelijkgetrokken.</strong> Opschonen, dezelfde namen, dezelfde nummers.</li>
+            <li><strong>4. Pas dán zet je AI of een dashboard erop.</strong></li>
+          </ul>
+
+          <p>De AI is in beide gevallen precies even slim. Het enige verschil is wat er in het magazijn ligt.</p>
+
+          <h2 id="nodig">Heb ik dit eigenlijk wel nodig?</h2>
+
+          <p>Eerlijk antwoord: lang niet iedereen.</p>
+
+          <p>Waarschijnlijk <strong>wél</strong>, als je dit herkent:</p>
+
+          <ul>
+            <li>Je verkoopt via meer dan één kanaal.</li>
+            <li>Je hebt meerdere systemen die niet met elkaar praten.</li>
+            <li>Je maandcijfers zijn pas halverwege de volgende maand rond.</li>
+            <li>In je MT wordt gediscussieerd over wiens getal klopt.</li>
+          </ul>
+
+          <p>Waarschijnlijk <strong>niet</strong>, als dit op jou slaat:</p>
+
+          <ul>
+            <li>Je werkt met één systeem en één verkoopkanaal.</li>
+            <li>Je boekhouding is bij en je vertrouwt hem.</li>
+            <li>Je hebt genoeg aan een dashboard op je boekhoudpakket.</li>
+          </ul>
+
+          <p>In dat laatste geval bouw je een magazijn voor drie dozen. Dat is zonde van je geld. Dan is een goed ingericht boekhoudpakket met een paar vaste rapportages een beter antwoord.</p>
+
+          <h2 id="kosten">Wat het kost en hoe lang het duurt</h2>
+
+          <p>Dit is de vraag die ondernemers als eerste stellen, en die in de meeste stukken hierover ontbreekt.</p>
+
+          <p><strong>Doorlooptijd.</strong> Denk in weken, niet in jaren. Bij een bedrijf met twee of drie bronsystemen zijn de eerste bruikbare rapportages er meestal binnen 4 tot 8 weken.</p>
+
+          <p><strong>Kosten.</strong> Die zitten in drie dingen:</p>
+
+          <ul>
+            <li>De techniek zelf. Voor een MKB-bedrijf valt dit tegenwoordig mee: 100 à 150 euro per maand.</li>
+            <li>Het eenmalig inrichten. 6.000 tot 15.000 euro.</li>
+            <li>Onderhoud. Er komen systemen bij en definities veranderen. Reken op 1.500 tot 3.000 euro per jaar, of een paar dagen van je eigen tijd als je het zelf beheert.</li>
+          </ul>
+
+          <p>De grootste kostenpost is meestal niet de techniek. Het is de tijd die het kost om afspraken te maken over wat de cijfers betekenen. Dat is denkwerk, geen bouwwerk.</p>
+
+          <h2 id="hulp">Waar ik in beeld kom</h2>
+
+          <p>Ik bouw geen software. Ik ben controller.</p>
+
+          <p>Wat ik doe, is de vertaalslag maken tussen jouw bedrijf en je cijfers. Welke definitie van "klant" en "omzet" past bij hoe jij stuurt. Welke bron leidend is als twee systemen elkaar tegenspreken. Welke vragen je elke maand beantwoord wilt zien, en welke cijfers daarvoor nodig zijn.</p>
+
+          <p>Dat doe ik vaak samen met een technische partner die de koppelingen bouwt. Die kan prima een magazijn neerzetten. Maar of het juiste erin ligt, en of je er daarna op kunt sturen: dat is finance-werk.</p>
+
+          <p>Precies dat is ook de reden dat dit zo vaak misgaat. De techniek staat, de cijfers komen binnen, en niemand heeft ooit vastgelegd wat ze betekenen.</p>
+
+          <h2 id="kortom">Kortom</h2>
+
+          <p>AI maakt het stellen van vragen makkelijk. Het maakt je antwoorden niet betrouwbaar. Dat moet ergens anders vandaan komen.</p>
+
+          <p>Een datawarehouse is geen technisch speeltje. Het is de plek waar je afspreekt wat je cijfers betekenen, zodat je erop kunt vertrouwen. Wie die stap overslaat, krijgt sneller antwoord op dezelfde onduidelijke cijfers.</p>
+
+          <div class="article-cta">
+            <h3>Wil je weten of dit voor jouw bedrijf zin heeft?</h3>
+            <p>In een gratis intake van 30 minuten kijken we naar je systemen en je huidige rapportages. Soms is het antwoord: dit heb je niet nodig. Dat hoor je dan ook.</p>
+            <a class="btn btn-primary" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een gratis intake</a>
+          </div>
+        </article>
+
+        <aside class="sidebar">
+          <div class="side-card">
+            <h4>In dit artikel</h4>
+            <ul class="toc">
+              <li><a href="#ai">Waar AI goed in is, en waar niet</a></li>
+              <li><a href="#wat">Een datawarehouse, in gewoon Nederlands</a></li>
+              <li><a href="#magazijn">Wat er in dat magazijn gebeurt</a></li>
+              <li><a href="#volgorde">De volgorde die werkt</a></li>
+              <li><a href="#nodig">Heb ik dit wel nodig?</a></li>
+              <li><a href="#kosten">Kosten en doorlooptijd</a></li>
+              <li><a href="#hulp">Waar ik in beeld kom</a></li>
+              <li><a href="#kortom">Kortom</a></li>
+            </ul>
+          </div>
+          <div class="side-card">
+            <h4>Meer lezen</h4>
+            <p>Claude als je financieel analist — wat werkt en wat niet.</p>
+            <a class="text-link" href="claude-als-financieel-analist.html">Lees verder →</a>
+          </div>
+          <div class="side-card">
+            <h4>Meer lezen</h4>
+            <p>Je hebt een controller aangenomen. Je data is nog steeds een chaos.</p>
+            <a class="text-link" href="controller-aangenomen-data-chaos.html">Lees verder →</a>
+          </div>
+          <div class="side-card">
+            <h4>Gratis intake</h4>
+            <p>30 minuten, vrijblijvend. Video of telefoon.</p>
+            <a class="btn btn-primary" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan via Calendly</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="container foot-inner">
+      <div class="foot-brand">
+        <div class="name">Cees de Controller</div>
+        <div class="tag">Fractioneel controller en CFO voor MKB-ondernemers.</div>
+        <div class="foot-contact">
+          Heuveloord 25 J · 3523 CK Utrecht<br />
+          <a href="mailto:cees@ceesdecontroller.nl">cees@ceesdecontroller.nl</a> · <a href="tel:+31640582472">06 40 58 24 72</a>
+        </div>
+      </div>
+      <div class="foot-links">
+        <a href="https://www.linkedin.com/company/cees-de-controller-b-v" target="_blank" rel="noopener">LinkedIn (bedrijf)</a>
+        <a href="https://www.linkedin.com/in/cees-van-de-vendel-1344b727/" target="_blank" rel="noopener">LinkedIn (Cees)</a>
+        <a href="../contact.html">Contact</a>
+        <a href="../privacy-statement.html">Privacy</a>
+        <a href="../algemene-voorwaarden.html">Voorwaarden</a>
+      </div>
+    </div>
+    <div class="container foot-legal">
+      <span>KvK 95299238 · BTW NL867078261B01</span>
+      <span>© 2026 Cees de Controller B.V.</span>
+    </div>
+  </footer>
+  <script>
+    (function () {
+      var btn = document.getElementById('hamburger');
+      var menu = document.getElementById('mobile-menu');
+      if (!btn || !menu) return;
+      btn.addEventListener('click', function () {
+        var open = menu.classList.toggle('open');
+        btn.setAttribute('aria-expanded', String(open));
+      });
+      menu.querySelectorAll('a').forEach(function (a) {
+        a.addEventListener('click', function () {
+          menu.classList.remove('open');
+          btn.setAttribute('aria-expanded', 'false');
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
