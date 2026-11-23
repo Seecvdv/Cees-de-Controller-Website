@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- v2 staat nog niet live: noindex weghalen bij livegang (zie v2/README.md) -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Odoo of Exact Online? Een controller vergelijkt</title>
+  <meta content="Odoo of Exact Online? Vergelijking door een controller die met beide werkt. Rekeningschema, btw, rapportage en migratie, inclusief wanneer Exact wint." name="description"/>
+  <link href="https://ceesdecontroller.nl/odoo-vs-exact-online.html" rel="canonical"/>
+  <meta content="Odoo of Exact Online? Een controller vergelijkt" property="og:title"/>
+  <meta content="Odoo of Exact Online? Vergelijking door een controller die met beide werkt. Rekeningschema, btw, rapportage en migratie, inclusief wanneer Exact wint." property="og:description"/>
+  <meta content="https://ceesdecontroller.nl/odoo-vs-exact-online.html" property="og:url"/>
+  <meta content="article" property="og:type"/>
+  <meta content="https://ceesdecontroller.nl/assets/og-image.png" property="og:image"/>
+  <meta content="1200" property="og:image:width"/>
+  <meta content="630" property="og:image:height"/>
+  <meta content="Cees de Controller, Fractioneel Controller &amp; CFO" property="og:image:alt"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Odoo of Exact Online: wat je als controller echt merkt",
+    "description": "Vergelijking van Odoo en Exact Online voor het Nederlandse MKB, vanuit het perspectief van een controller: rekeningschema en RGS, btw-aangifte, kostenplaatsen, rapportage, accountant, bankkoppelingen, kosten en migratie.",
+    "url": "https://ceesdecontroller.nl/odoo-vs-exact-online.html",
+    "author": { "@type": "Person", "name": "Cees van de Vendel" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Cees de Controller B.V.",
+      "logo": { "@type": "ImageObject", "url": "https://ceesdecontroller.nl/assets/icon-512.png" }
+    },
+    "datePublished": "2026-08-26",
+    "dateModified": "2026-08-26"
+  }
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#f3efe6" />
+  <link rel="preload" href="assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="assets/site.css" />
+</head>
+<body>
+  <a class="sr" href="#inhoud">Naar de inhoud</a>
+  <nav class="nav" aria-label="Hoofdnavigatie">
+    <div class="wrap">
+      <a href="index.html" class="logo">Cees <i>de</i> Controller</a>
+      <ul><li><a href="diensten.html">Diensten</a></li><li><a href="odoo.html" aria-current="page">Odoo</a></li><li><a href="over-cees.html">Over</a></li><li><a href="blog/index.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul>
+      <a class="btn" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een intake</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu"><a href="diensten.html">Diensten</a><a href="odoo.html">Odoo</a><a href="over-cees.html">Over</a><a href="blog/index.html">Blog</a><a href="contact.html">Contact</a><a class="btn" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een intake</a></div>
+  <main id="inhoud">
+
+    <div class="wrap">
+      <div class="article-layout">
+<article class="article-content">
+<span class="meta-cat">Vergelijking · Odoo &amp; ERP</span>
+<h1>Odoo of Exact Online: wat je als controller echt merkt</h1>
+<p class="intro">Exact Online is de standaard in het Nederlandse MKB. Wie Odoo overweegt, vergelijkt dus bijna altijd met Exact. Het probleem met die vergelijking: hij wordt meestal geschreven door een Odoo-partner of door Exact zelf, en gaat over featurelijstjes.</p>
+<p>Dit stuk gaat over iets anders. Niet welk pakket meer vinkjes heeft, maar wat het verschil betekent voor je administratie, je maandafsluiting en je rapportage, de dingen waar je pas tegenaan loopt als het draait.</p>
+<div class="callout">
+<strong>Wat je van mij moet weten voordat je verder leest.</strong> Ik ben Odoo Accounting Partner. Dat betekent dat ik een commercieel belang heb bij Odoo, en dat je dit stuk met die wetenschap moet lezen. Twee dingen daarover. Ten eerste ben ik geen Odoo-implementatiepartner: ik bouw de software niet, ik bewaak de financiële kant ervan. Ten tweede werk ik in de praktijk met beide pakketten, en er zijn situaties waarin ik klanten van Odoo afraad. Die staan verderop in dit stuk, in een eigen hoofdstuk. Als je dat hoofdstuk overslaat, mis je de helft van het antwoord.
+          </div>
+<h2 id="kort-antwoord">Het korte antwoord</h2>
+<p>Voor wie niet het hele stuk wil lezen:</p>
+<div class="checklist-block">
+<h4>In één alinea</h4>
+<ul>
+<li><span><strong>Wil je alleen boekhouden</strong>, en werkt je accountant al in Exact? Blijf bij Exact Online. De rest van dit stuk gaat je niet overtuigen.</span></li>
+<li><span><strong>Draait je bedrijf op vier losse systemen</strong> die je met de hand aan elkaar knoopt? Dan is de vraag niet welk boekhoudpakket beter is, maar of je toe bent aan een ERP. Dat is het gesprek waar Odoo over gaat.</span></li>
+<li><span><strong>Zit je ertussenin?</strong> Reken dan niet op licentiekosten, maar op inrichtingskosten. Daar zit het echte verschil, en dat is precies wat de meeste vergelijkingen weglaten.</span></li>
+</ul>
+</div>
+<h2 id="scheidslijn">De echte scheidslijn: alles-in-één of boekhouden plus koppelingen</h2>
+<p>Odoo en Exact Online worden naast elkaar gelegd alsof het twee boekhoudpakketten zijn. Dat is de eerste denkfout. Exact Online is een boekhoudpakket met modules eromheen. Odoo is een ERP-systeem waar boekhouding één van de apps in is.</p>
+<p>Dat klinkt als een detail, maar het bepaalt alles wat daarna komt. In Exact koop je een administratie die werkt zodra je hem aanzet. Het rekeningschema is Nederlands, de btw-aangifte zit erin, je accountant kent het scherm. In Odoo koop je bouwmateriaal. Wat je ermee bouwt, hangt af van wie het inricht.</p>
+<p>Voor een bedrijf waar de administratie het probleem is, is dat bouwmateriaal een nadeel. Voor een bedrijf waar de administratie het probleem <em>niet</em> is, waar de pijn zit in voorraad die niet aansluit op de boekhouding, in projecten waarvan je de marge niet kent, in orders die drie keer worden overgetypt, is het precies wat je nodig hebt.</p>
+<p>Stel jezelf dus eerst deze vraag: is mijn probleem de boekhouding, of is mijn probleem dat mijn bedrijf uit losse systemen bestaat? Het antwoord daarop kiest je pakket, niet een featurelijst.</p>
+<h2 id="rgs">Rekeningschema en RGS</h2>
+<p>Beide pakketten leveren een Nederlands rekeningschema. Het verschil zit in RGS, het Referentie Grootboekschema.</p>
+<p>Exact Online ondersteunt RGS actief. In de accountancy-versie kun je kiezen tussen meerdere RGS-versies, en de RGS-referentiecode staat als apart veld bij de grootboekrekening. Die code gaat mee in de auditfile, wat betekent dat rapportagesoftware van je accountant je cijfers zonder handwerk kan inlezen.</p>
+<p>In Odoo is RGS geen standaardonderdeel. Het kan worden ingericht, maar dan via een aparte module of via eigen configuratie, en dat moet iemand doen die weet wat RGS is. Standaard krijg je een Nederlands rekeningschema zonder RGS-codering.</p>
+<p>Of dat erg is, hangt van je situatie af. Werkt je accountant met RGS-gebaseerde rapportagesoftware, of heb je een financier die daarop uitvraagt, dan is dit een reëel punt dat je vóór de keuze moet uitzoeken. Doe je dat niet, dan ontdek je het bij de eerste jaarafsluiting.</p>
+<p>Belangrijker dan RGS is trouwens iets anders: in Exact krijg je een schema dat af is, in Odoo krijg je een schema dat je zelf ontwerpt. Dat laatste is een kans en een risico tegelijk. Een goed ontworpen schema geeft je rapportages die precies aansluiten op hoe je stuurt. Een schema dat is overgenomen zonder nadenken, geeft je jarenlang rapportages waar je niets aan hebt.</p>
+<h2 id="btw">Btw-aangifte: het verschil dat je elk kwartaal voelt</h2>
+<p>Hier zit het duidelijkste praktische verschil, en het is een verschil dat vaak verkeerd wordt weergegeven, ook door mij, tot ik het naging.</p>
+<p><strong>Exact Online</strong> dient je btw-aangifte en je ICP-opgaaf digitaal in via Digipoort. Voor het versturen is een certificaat nodig, en Exact biedt daarbij de mogelijkheid om het certificaat van Exact zelf te gebruiken. Je hoeft dus niet zelf een certificaat aan te schaffen.</p>
+<p><strong>Moneybird</strong>, om een tweede Nederlands pakket te noemen, werkt vergelijkbaar: de aangifte gaat met één handeling naar de Belastingdienst. Je hebt er een betaald pakket voor nodig en je bedrijf moet eenmalig geverifieerd worden, via identificatie in de app, of via een brief naar je KVK-adres.</p>
+<p><strong>Odoo</strong> ligt genuanceerder. Elektronisch aangifte doen via SBR staat sinds versie 18 in de officiële Odoo-documentatie: je kunt het belastingrapport als XBRL-bestand downloaden, of het rechtstreeks naar de Belastingdienst versturen. In de documentatie van versie 17 komt die functionaliteit nog niet voor.</p>
+<p>Maar er zit een voorwaarde aan die het praktische verschil maakt. Odoo vraagt om je eigen Digipoort-certificaat: een geldig PKIoverheid-servicescertificaat, dat je zelf aanvraagt bij een certificaatleverancier en vervolgens met wachtwoord in Odoo uploadt. Zo'n certificaat kost geld en tijd, bij één aanbieder beginnen de tarieven rond €449 voor twee jaar exclusief btw, en er hoort een identificatieprocedure bij. Tarieven verschillen per leverancier en per certificaattype.</p>
+<div class="callout">
+            Samengevat: technisch kan Odoo de aangifte versturen, vanaf versie 18. Praktisch is het geen knop die aan staat. Je moet een certificaat kopen, aanvragen en installeren, waar Exact en Moneybird dat voor je regelen. Draai je op een oudere Odoo-versie, of wil je die stap niet zetten, dan neem je de bedragen uit het belastingrapport over in Mijn Belastingdienst Zakelijk. Dat werkt prima, maar het is handwerk, en handwerk is een foutbron.
+          </div>
+<p>Voor een bedrijf met één btw-nummer en een kwartaalaangifte is dat een kleine ergernis. Voor een bedrijf met meerdere entiteiten en maandaangiftes telt het op.</p>
+
+<h2 id="kostenplaatsen">Kostenplaatsen en analytische boekhouding</h2>
+<p>Dit is het punt waarop Odoo het duidelijkst wint, en het wordt in vergelijkingen zelden goed uitgelegd.</p>
+<p>Exact Online werkt met kostenplaats en kostendrager: twee vaste dimensies naast je grootboek. Voor de meeste MKB-bedrijven is dat genoeg. Je verdeelt kosten over afdelingen, of over projecten, en je kunt erop rapporteren.</p>
+<p>Odoo werkt met analytische rekeningen en analytische verdelingen. Je kunt meerdere dimensies naast elkaar gebruiken en één boeking over meerdere dimensies verdelen. Denk aan een kostenpost die je tegelijk wilt toerekenen aan een project, een afdeling en een productlijn, zonder die boeking drie keer te maken.</p>
+<p>Wat dat oplevert: marge per project, per klant en per productgroep uit dezelfde administratie, zonder Excel ertussen. Wat het kost: iemand moet die dimensiestructuur ontwerpen voordat je begint. Doe je dat achteraf, dan moet je historie herrubriceren, en dat is precies het werk waar niemand tijd voor heeft.</p>
+<h2 id="rapportage">Managementrapportage: wat komt er standaard uit</h2>
+<p>Allebei leveren ze balans, winst-en-verliesrekening en de gebruikelijke financiële overzichten. De vraag is wat je daarnaast kunt.</p>
+<p>Exact Online heeft standaardrapportages die het doen zodra je begint, en in het duurste pakket zit rapportage via Power BI. Voor bedrijven die vooral hun cijfers netjes willen zien, is dat afdoende.</p>
+<p>In Odoo bouw je je rapportage zelf op, met de analytische structuur als basis. Dat geeft meer bewegingsruimte, en meer manieren om het verkeerd te doen. Een Odoo-omgeving waarin niemand de rapportagestructuur heeft ontworpen, levert cijfers op die kloppen maar waar je niet op kunt sturen.</p>
+<p>Mijn eerlijke observatie na een aantal trajecten: het verschil in rapportagekwaliteit tussen twee bedrijven met hetzelfde pakket is groter dan het verschil tussen de pakketten. De inrichting bepaalt de uitkomst, niet de software.</p>
+<h2 id="accountant">Je accountant: auditfile en samenwerking</h2>
+<p>Beide pakketten exporteren een auditfile in XAF-formaat, het bestand dat je accountant of de Belastingdienst kan inlezen. In Odoo gaat dat via het grootboekrapport, in Exact via de export-functie.</p>
+<p>Het verschil zit in wat eromheen zit. Exact Online wordt door een groot deel van de Nederlandse accountantskantoren dagelijks gebruikt: je accountant kan meekijken in dezelfde omgeving, kent de schermen en heeft er werkprogramma's op gebouwd. Bij Odoo is de kans groot dat je accountant het pakket niet kent. Dan verloopt de samenwerking via exports in plaats van via meekijken, en dat kost aan beide kanten meer tijd.</p>
+<p>Dit is een van de meest onderschatte kosten van een overstap naar Odoo, en het is een kostenpost die niet in de licentieprijs zit. Vraag je accountant vóór de keuze wat hij ervan vindt. Als het antwoord is dat hij er niet mee werkt, weet je dat je een extra schakel nodig hebt.</p>
+<h2 id="bank">Bankkoppelingen in Nederland</h2>
+<p>Exact Online koppelt met de Nederlandse banken en biedt het aantal koppelingen per abonnement: één bij het instappakket, vijf in het middelste pakket, onbeperkt vanaf het pakket daarboven.</p>
+<p>Odoo koppelt via externe dienstverleners, waaronder Ponto en Basiq. De documentatie is duidelijk over de voorwaarde: bankkoppeling vereist een geldig Odoo Enterprise-abonnement. De gratis variant van Odoo valt daarmee af voor wie automatisch bankafschriften wil inlezen.</p>
+<p>In de praktijk werkt het bij beide, maar de Nederlandse bankkoppelingen van Exact zijn het meest ingesleten. Bij Odoo is dit een van de onderdelen die je tijdens de implementatie expliciet moet testen in plaats van aannemen.</p>
+<h2 id="kosten">Wat het kost: licentie én implementatie</h2>
+<p>Eerst de gepubliceerde licentieprijzen, gecontroleerd op 26 augustus 2026 bij de leveranciers zelf.</p>
+<p><strong>Odoo</strong> rekent per gebruiker en levert alle apps: Standard €19,90 per gebruiker per maand bij jaarlijkse betaling, of €24,90 bij maandelijkse betaling. Custom kost €29,90 respectievelijk €37,40 en voegt onder meer Odoo Studio, meerdere bedrijven en API-toegang toe. Daarnaast is er de variant met één app gratis.</p>
+<p><strong>Exact Online Boekhouden</strong> rekent per pakket: Essentials €49 per maand met één gebruiker, één administratie en één bankkoppeling; Plus €99 met twee gebruikers en vijf bankkoppelingen; Professional €159 met onbeperkt bankkoppelingen; Premium vanaf €299 met meerdere bedrijven en Power BI-rapportage. Extra gebruikers en extra administraties kosten bij, oplopend van €20 tot €49 per maand per stuk.</p>
+<p>Je kunt die bedragen niet naast elkaar leggen. Vijf Odoo-gebruikers op Standard kosten ongeveer hetzelfde per maand als het Plus-pakket van Exact, maar in het ene geval koop je een ERP-systeem dat nog ingericht moet worden, en in het andere een administratie die morgen werkt.</p>
+<p>Daar zit de kostenpost die er echt toe doet: de implementatie. Een Odoo-traject vraagt om inrichting van rekeningschema, btw-instellingen, analytische structuur, koppelingen en processen. Dat is werk van een implementatiepartner en van iemand die de finance-kant bewaakt. Die kosten overtreffen het eerste jaar vrijwel altijd de licentiekosten, en ze staan op geen enkele prijspagina.</p>
+<p>Ik noem hier bewust geen bedragen of doorlooptijden. Die verschillen te sterk per bedrijf, aantal entiteiten, aantal koppelingen, hoe schoon je huidige data is, en een gemiddelde uit een blog helpt je niet bij je begroting. Wat ik wel kan zeggen: reken bij Odoo op een implementatiebudget, en bij Exact op inrichtingsuren. Wie alleen licentiekosten vergelijkt, komt bedrogen uit.</p>
+
+<h2 id="migratie">Migratie: openingsbalans en historie</h2>
+<p>Overstappen betekent in de praktijk twee dingen: je openingsbalans overzetten, en beslissen wat je met je historie doet.</p>
+<p>De openingsbalans is het overzichtelijke deel. Saldi per grootboekrekening, openstaande debiteuren en crediteuren, voorraad en onderhanden werk. Het werk zit niet in het overzetten maar in het aansluiten: kloppen de subadministraties met het grootboek, en zijn de verschillen verklaarbaar? Een overstap legt genadeloos bloot wat er in het oude systeem nooit is opgeruimd.</p>
+<p>De historie is de lastigere keuze. Volledige transactiehistorie meenemen naar een nieuw systeem is duur en levert zelden op wat mensen ervan verwachten. In de meeste trajecten is de verstandige route: openingsbalans over, historie raadpleegbaar houden in het oude systeem of in een export, en een jaar lang beide kunnen inzien. Dat is minder elegant dan een volledige migratie, en het is aanzienlijk goedkoper.</p>
+<p>Plan de overstap bovendien op een logisch moment. Per begin boekjaar is het rustigst; halverwege een jaar overstappen betekent dat je jaarrekening uit twee systemen komt.</p>
+<h2 id="exact-wint">Wanneer Exact Online de betere keuze is</h2>
+<p>Dit hoofdstuk is de reden dat ik dit stuk kan schrijven zonder mezelf tegen te spreken. In deze situaties adviseer ik Exact Online, of adviseer ik blijven waar je bent:</p>
+<div class="checklist-block">
+<h4>Kies Exact Online als</h4>
+<ul>
+<li><span><strong>Je alleen een boekhouding nodig hebt.</strong> Geen voorraad, geen projecten, geen productie. Odoo lost dan een probleem op dat je niet hebt, tegen inrichtingskosten die je niet terugverdient.</span></li>
+<li><span><strong>Je accountant of administratiekantoor in Exact werkt.</strong> De tijd die je daarmee wint bij de afsluiting weegt zwaarder dan het functionele verschil. Wil je toch over, betrek je accountant dan vóór het besluit.</span></li>
+<li><span><strong>RGS voor jou verplicht of belangrijk is.</strong> Exact heeft het ingebouwd; in Odoo is het inrichtingswerk.</span></li>
+<li><span><strong>Je geen implementatiebudget hebt.</strong> Odoo zonder behoorlijke inrichting levert een systeem op dat technisch draait en financieel rammelt. Dat is slechter dan het pakket dat je nu hebt.</span></li>
+<li><span><strong>Je organisatie net een grote verandering achter de rug heeft.</strong> Een ERP-implementatie kost aandacht van je hele team. Twee grote veranderingen tegelijk lopen zelden goed af.</span></li>
+<li><span><strong>Je btw-aangifte wilt versturen zonder gedoe.</strong> Zie het hoofdstuk hierboven: dat is bij Exact geregeld, bij Odoo een project op zich.</span></li>
+</ul>
+</div>
+<p>Er is nog een categorie die zelden wordt genoemd: bedrijven waarvan het huidige systeem prima werkt. Ontevredenheid over software komt vaak niet door de software, maar door processen die nooit zijn opgeruimd. Die processen verhuizen mee naar het nieuwe pakket.</p>
+<h2 id="odoo-wint">Wanneer Odoo de betere keuze is</h2>
+<div class="checklist-block">
+<h4>Kies Odoo als</h4>
+<ul>
+<li><span><strong>Je bedrijf uit losse systemen bestaat</strong> die je met exports en Excel aan elkaar knoopt. Dat is het probleem dat een ERP oplost.</span></li>
+<li><span><strong>Je stuurt op projecten, productie of voorraad</strong> en die stromen moeten aansluiten op je boekhouding zonder tussenstappen.</span></li>
+<li><span><strong>Je meerdere dimensies nodig hebt</strong> om je marge te begrijpen: per project én per klantgroep én per productlijn.</span></li>
+<li><span><strong>Je wilt kunnen aanpassen.</strong> Odoo is aan te passen aan je processen; standaardpakketten vragen dat je je processen aanpast aan de software.</span></li>
+<li><span><strong>Je groeit</strong> en voorziet dat je over drie jaar meer nodig hebt dan een boekhoudpakket met koppelingen.</span></li>
+</ul>
+</div>
+<p>Merk op dat er in dit rijtje geen enkel argument staat over de boekhouding zelf. Dat is niet toevallig. Als boekhouden je enige vraag is, is Odoo zelden het antwoord.</p>
+<h2 id="rammelt">Je koos al voor Odoo en het financiële deel rammelt</h2>
+<p>Dit is de tweede groep lezers, en in mijn praktijk de grootste. Odoo staat live, de operatie loopt, en dan blijkt de maandafsluiting niet rond te komen. Of het rekeningschema is één op één overgenomen uit het oude systeem. Of er is geen analytische structuur, waardoor je wel omzet ziet maar geen marge.</p>
+<p>Dat is geen reden om terug te gaan. Het is bijna altijd een inrichtingsprobleem, geen pakketprobleem, en inrichting is te repareren. De volgorde die in de meeste gevallen werkt: eerst vaststellen welke cijfers wél kloppen, dan de aansluitingen herstellen, dan pas de rapportage opnieuw opbouwen. Andersom beginnen is een bekende manier om drie maanden te verliezen.</p>
+<p>Wat je daarbij niet moet doen, is de implementatiepartner vragen het financiële ontwerp te maken. Die partijen zijn technisch sterk, maar rekeningschema, btw-flows en rapportagestructuur zijn controllerswerk. Daarover schreef ik eerder uitgebreider in <a href="blog/controller-bij-odoo-implementatie.html">de rol van een controller bij een Odoo-implementatie</a>.</p>
+<h2 id="hulp">Waar ik in beeld kom</h2>
+<p>Ik bouw Odoo niet en ik verkoop Exact niet. Waar ik van waarde ben: de keuze scherp krijgen vóór je hem maakt, of de financiële inrichting herstellen als de keuze al gemaakt is. Dat betekent meestal rekeningschema, btw-instellingen, analytische structuur en de rapportage waarop je stuurt.</p>
+<p>Twijfel je tussen beide pakketten, dan is een gesprek van een halfuur meestal genoeg om te bepalen welke kant het op moet, en soms is de uitkomst dat je moet blijven waar je bent.</p>
+<div class="article-cta">
+<h3>Even sparren over jouw keuze?</h3>
+<p>Dertig minuten, vrijblijvend. We kijken naar je huidige situatie en wat er nodig is. Ook als de conclusie is dat overstappen niet verstandig is.</p>
+<a class="btn" href="https://calendly.com/cees-ceesdecontroller/30min" rel="noopener" target="_blank">Plan een gratis intake</a>
+</div>
+<h2 id="bronnen">Bronnen en laatste controle</h2>
+<p>Prijzen, functies en licentievormen veranderen regelmatig. Alle feitelijke gegevens in dit stuk zijn opgezocht bij de leveranciers zelf en gecontroleerd op de datum hieronder. Controleer bedragen altijd op de actuele prijspagina voordat je een besluit neemt, en controleer functionaliteit tegen de versie die jij draait, bij Odoo verschilt dat aantoonbaar per versie.</p>
+<ul>
+<li>Odoo-prijzen: <a href="https://www.odoo.com/nl_NL/pricing" rel="noopener" target="_blank">odoo.com/nl_NL/pricing</a></li>
+<li>Odoo Nederlandse localisatie, btw en XAF: <a href="https://www.odoo.com/documentation/19.0/applications/finance/fiscal_localizations/netherlands.html" rel="noopener" target="_blank">Odoo-documentatie, versie 19</a> (en ter vergelijking versie 17 en 18)</li>
+<li>Exact Online-prijzen en pakketten: <a href="https://www.exact.com/nl/producten/boekhouden/features-en-prijzen" rel="noopener" target="_blank">exact.com/nl/producten/boekhouden</a></li>
+<li>PKIoverheid-certificaten voor Digipoort: <a href="https://www.logius.nl/onze-dienstverlening/toegang/pkioverheid/pkioverheidcertificaat-aanvragen" rel="noopener" target="_blank">Logius</a></li>
+</ul>
+<p class="soft">
+<strong>Laatst bijgewerkt:</strong> 26 augustus 2026. Feiten gecontroleerd bij de bron op die datum.
+          </p>
+</article>
+<aside class="sidebar">
+<div class="side-card">
+<h4>In dit artikel</h4>
+<ul class="toc">
+<li><a href="#kort-antwoord">Het korte antwoord</a></li>
+<li><a href="#scheidslijn">De echte scheidslijn</a></li>
+<li><a href="#rgs">Rekeningschema en RGS</a></li>
+<li><a href="#btw">Btw-aangifte</a></li>
+<li><a href="#kostenplaatsen">Kostenplaatsen</a></li>
+<li><a href="#rapportage">Managementrapportage</a></li>
+<li><a href="#accountant">Je accountant</a></li>
+<li><a href="#bank">Bankkoppelingen</a></li>
+<li><a href="#kosten">Wat het kost</a></li>
+<li><a href="#migratie">Migratie</a></li>
+<li><a href="#exact-wint">Wanneer Exact wint</a></li>
+<li><a href="#odoo-wint">Wanneer Odoo wint</a></li>
+<li><a href="#rammelt">Odoo draait al, maar rammelt</a></li>
+<li><a href="#hulp">Waar ik in beeld kom</a></li>
+<li><a href="#bronnen">Bronnen</a></li>
+</ul>
+</div>
+<div class="side-card">
+<h4>Odoo en finance</h4>
+<p>Grip op je cijfers vóór, tijdens en na een Odoo-implementatie.</p>
+<a class="link" href="odoo.html">Bekijk de aanpak</a>
+</div>
+<div class="side-card">
+<h4>Meer lezen</h4>
+<p>Controller bij een Odoo-implementatie: waar het vaak misgaat.</p>
+<a class="link" href="blog/controller-bij-odoo-implementatie.html">Lees verder</a>
+</div>
+<div class="side-card">
+<h4>Gratis intake</h4>
+<p>30 minuten, vrijblijvend. Video of telefoon.</p>
+<a class="btn" href="https://calendly.com/cees-ceesdecontroller/30min" rel="noopener" target="_blank">Plan via Calendly</a>
+</div>
+</aside>
+</div>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div>
+        <div class="name">Cees de Controller</div>
+        <p>Geen gedoe met cijfers, maar grip op je bedrijf.</p>
+        <p style="margin-top:0.75rem">Heuveloord 25 J, 3523 CK Utrecht<br />
+          <a href="mailto:cees@ceesdecontroller.nl">cees@ceesdecontroller.nl</a> · <a href="tel:+31640582472">06 40 58 24 72</a></p>
+      </div>
+      <ul>
+        <li><a href="diensten.html">Diensten</a></li>
+        <li><a href="quickscan.html">Grip-scan</a></li>
+        <li><a href="odoo.html">Odoo</a></li>
+        <li><a href="blog/index.html">Blog</a></li>
+        <li><a href="https://www.linkedin.com/in/cees-van-de-vendel-1344b727/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+      <ul>
+        <li><a href="privacy-statement.html">Privacy</a></li>
+        <li><a href="algemene-voorwaarden.html">Voorwaarden</a></li>
+        <li>KvK 95299238</li>
+        <li>Btw NL867078261B01</li>
+      </ul>
+    </div>
+  </footer>
+  <script>
+  (function () {
+    var b = document.getElementById('hamburger'), m = document.getElementById('mobile-menu');
+    if (b && m) b.addEventListener('click', function () {
+      var o = m.classList.toggle('open'); b.setAttribute('aria-expanded', String(o));
+    });
+  })();
+  </script>
+</body>
+</html>

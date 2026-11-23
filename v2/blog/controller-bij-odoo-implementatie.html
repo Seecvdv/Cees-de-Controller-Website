@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- v2 staat nog niet live: noindex weghalen bij livegang (zie v2/README.md) -->
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Odoo-implementatie? Betrek finance vanaf dag één</title>
+  <meta content="Bij een Odoo- of ERP-implementatie wordt finance te laat betrokken. Zo helpt een fractioneel controller je inrichten op sturing en voorkom je dure fouten." name="description"/>
+  <link href="https://ceesdecontroller.nl/blog/controller-bij-odoo-implementatie.html" rel="canonical"/>
+  <meta content="Odoo-implementatie? Betrek finance vanaf dag één" property="og:title"/>
+  <meta content="Bij een Odoo- of ERP-implementatie wordt finance te laat betrokken. Zo helpt een fractioneel controller je inrichten op sturing en voorkom je dure fouten." property="og:description"/>
+  <meta content="https://ceesdecontroller.nl/blog/controller-bij-odoo-implementatie.html" property="og:url"/>
+  <meta content="article" property="og:type"/>
+  <meta content="https://ceesdecontroller.nl/assets/og-image.png" property="og:image"/>
+  <meta content="1200" property="og:image:width"/>
+  <meta content="630" property="og:image:height"/>
+  <meta content="Cees de Controller, Fractioneel Controller &amp; CFO" property="og:image:alt"/>
+  <meta content="summary_large_image" name="twitter:card"/>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Waarom finance vroeg aan tafel moet bij je Odoo-implementatie",
+    "description": "Bij een Odoo- of ERP-implementatie wordt finance te laat betrokken. Zo helpt een fractioneel controller je inrichten op sturing en voorkom je dure fouten.",
+    "image": "https://ceesdecontroller.nl/assets/og-image.png",
+    "author": { "@type": "Person", "name": "Cees van de Vendel" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Cees de Controller B.V.",
+      "logo": { "@type": "ImageObject", "url": "https://ceesdecontroller.nl/assets/icon-512.png" }
+    },
+    "mainEntityOfPage": "https://ceesdecontroller.nl/blog/controller-bij-odoo-implementatie.html",
+    "datePublished": "2026-06-18",
+    "dateModified": "2026-06-18"
+  }
+  </script>
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png" />
+  <meta name="theme-color" content="#f3efe6" />
+  <link rel="preload" href="../assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="../assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="../assets/site.css" />
+</head>
+<body>
+  <a class="sr" href="#inhoud">Naar de inhoud</a>
+  <nav class="nav" aria-label="Hoofdnavigatie">
+    <div class="wrap">
+      <a href="../index.html" class="logo">Cees <i>de</i> Controller</a>
+      <ul><li><a href="../diensten.html">Diensten</a></li><li><a href="../odoo.html">Odoo</a></li><li><a href="../over-cees.html">Over</a></li><li><a href="../blog/index.html" aria-current="page">Blog</a></li><li><a href="../contact.html">Contact</a></li></ul>
+      <a class="btn" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een intake</a>
+      <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-menu">Menu</button>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobile-menu"><a href="../diensten.html">Diensten</a><a href="../odoo.html">Odoo</a><a href="../over-cees.html">Over</a><a href="../blog/index.html">Blog</a><a href="../contact.html">Contact</a><a class="btn" href="https://calendly.com/cees-ceesdecontroller/30min" target="_blank" rel="noopener">Plan een intake</a></div>
+  <main id="inhoud">
+
+    <div class="wrap">
+      <div class="article-layout">
+<article class="article-content">
+<a class="back-link" href="../blog/index.html">Terug naar de blog</a>
+<span class="meta-cat">Odoo &amp; ERP · 7 min lezen</span>
+<h1>Waarom finance vroeg aan tafel moet bij je Odoo-implementatie</h1>
+<p class="intro">De software is gekozen, de implementatiepartner staat klaar en de planning hangt aan de muur. En finance? Die hoort er meestal pas van als het systeem al "live" moet. Juist op dat moment ligt de duurste fout op de loer.</p>
+<p>Een Odoo- of ERP-implementatie is geen IT-project met een financieel randje, het is een finance-project met een IT-component. In dit artikel: wat een fractioneel controller in zo'n traject doet, en waarom vroege betrokkenheid het verschil maakt tussen een systeem dat draait en een systeem waarop je écht kunt sturen.</p>
+
+<h2 id="patroon">Het patroon: finance sluit pas aan als het systeem al staat</h2>
+<p>Bijna elke implementatie die ik van dichtbij zie, volgt hetzelfde stramien. De keuze voor het systeem wordt gedreven door operatie of IT: het moet de orderstroom aankunnen, koppelen met de webshop, de magazijnbonnen regelen. Logisch, dáár voelt de pijn het eerst. Finance schuift pas aan als de knoppen al gebouwd zijn en er "even naar de cijfers gekeken moet worden". En dan blijkt dat de fundamenten van je rapportage al gegoten zijn door iemand die er zelf nooit op hoeft te sturen.</p>
+<ul>
+<li><strong>De inrichting is al gemaakt.</strong> Het rekeningschema, de dagboeken en de btw-codes zijn opgezet door een technische partij, niet door iemand die er straks op moet rapporteren.</li>
+<li><strong>Niemand bewaakt de aansluiting.</strong> Sluiten verkoop, inkoop, voorraad en projecten naadloos aan op het grootboek? In de praktijk ontdekt niemand het gat tot de eerste keer dat de omzet in Odoo niet matcht met die in je administratie, en dan is het zoeken.</li>
+<li><strong>Rapportage komt als sluitstuk.</strong> Juist in de maanden rond go-live wil je scherp zien wat er gebeurt, maar dan wordt rapportage als laatste ingericht. Het management vaart maandenlang half blind terwijl het systeem nog volop verandert.</li>
+</ul>
+<h2 id="techniek">Een implementatiepartner bouwt de techniek, niet je sturing</h2>
+<p>Odoo-partners zijn technisch sterk: ze krijgen de software draaiend, koppelen modules en migreren data. Maar de vraag "hoe stuur ik mijn bedrijf straks met deze cijfers?" valt buiten hun scope, en vaak buiten hun expertise.</p>
+<p>Een partner levert een systeem op dat technisch klopt: de boekingen lopen door, de modules praten met elkaar. Maar "het werkt" is iets anders dan "ik kan ermee sturen". Of je straks per klant, project of productgroep je marge ziet, of je kostenplaatsen kloppen, en of je dimensies zó staan dat een rapportage in één klik sluit, dat zijn financiële keuzes, geen technische. Daar gaat mijn pagina over <a href="../odoo.html">finance-begeleiding bij een Odoo-implementatie</a> dieper op in.</p>
+<h2 id="rol">Wat een fractioneel controller in het traject doet</h2>
+<p>Ik zit in zo'n traject niet op de stoel van de implementatiepartner, maar ernaast, namens jou. Waar de partner bouwt wat gevraagd wordt, bepaal ik mét jou wát er vanuit finance gevraagd moet worden. Concreet:</p>
+<ul>
+<li><strong>Rekeningschema en rapportagestructuur ontwerpen.</strong> Afgestemd op hoe jij wilt sturen, niet op een standaardtemplate die toevallig in het pakket zit. Dit is de datalaag waarop al je latere rapportage rust.</li>
+<li><strong>Eisen vanuit finance vertalen naar de inrichting.</strong> Kostenplaatsen, projecten en dimensies, btw-codes, en, als je meerdere entiteiten hebt, consolidatie. Keuzes die je achteraf bijna niet meer netjes terugdraait.</li>
+<li><strong>De aansluiting tussen subadministraties en grootboek bewaken.</strong> Verkoop, inkoop en voorraad moeten hetzelfde verhaal vertellen als je administratie. Eén afwijkende klant- of artikelcodering en je analyses kloppen structureel niet.</li>
+<li><strong>Bruikbare managementrapportage opzetten.</strong> Stuurinformatie vanaf dag één, niet pas een kwartaal na go-live als de schade al zichtbaar is.</li>
+</ul>
+<h2 id="momenten">Vier momenten waarop finance het verschil maakt</h2>
+<ul>
+<li><strong>Vóór de selectie.</strong> Welke rapportages, dimensies en koppelingen heb je écht nodig? Door dit vooraf scherp te hebben voorkom je dat je een systeem kiest dat operationeel prima is, maar financieel knelt.</li>
+<li><strong>Tijdens de inrichting.</strong> Hier wordt de datalaag gegoten: rekeningschema, dimensies en de processen rond lastige posten als retouren, kortingen en creditnota's. Juist die posten vertekenen je omzet- en margebeeld het snelst.</li>
+<li><strong>Bij de datamigratie.</strong> Klopt de openingsbalans? Sluit de historische data aan op de oude administratie? Een migratie die er "ongeveer" goed uitziet, kost je later weken reconciliatie.</li>
+<li><strong>Na go-live.</strong> Rapportage scherpstellen, de eerste maandafsluiting bewaken en de inrichting borgen, zodat het systeem betrouwbaar blijft als jij of je partner straks weer op afstand staan.</li>
+</ul>
+<div class="callout">Een implementatie zonder finance aan de voorkant kost je geen software, die kost je een jaar aan onbetrouwbare cijfers. De inrichting bepaalt waarop je later kunt sturen; achteraf herstellen is altijd duurder dan vooraf meedenken.</div>
+<h2 id="kosten">Wat het kost om finance pas later te betrekken</h2>
+<p>"Dat fixen we later wel" klinkt goedkoop, maar later is bijna altijd duurder. Wat het je in de praktijk kost als finance pas ná de bouw aanschuift:</p>
+<ul>
+<li>Het rekeningschema achteraf herinrichten, inclusief alle boekingen die mee moeten en alle rapportages die je opnieuw moet opbouwen.</li>
+<li>Maanden zonder betrouwbare maand- of kwartaalcijfers, precies in de periode waarin je het meest wilt bijsturen.</li>
+<li>Handmatige correcties en een schaduwadministratie in Excel naast je gloednieuwe systeem, het tegenovergestelde van waarvoor je Odoo kocht.</li>
+</ul>
+<h2 id="aanpak">Hoe je het wél aanpakt</h2>
+<p>Het hoeft niet ingewikkeld. Betrek finance al bij de selectie, zodat de eisen vanaf het begin meewegen. Laat tijdens de inrichting iemand met een financiële bril meedraaien naast de implementatiepartner, niet om te micromanagen, maar om de keuzes rond rekeningschema, dimensies en aansluiting te bewaken. En toets de financiële inrichting vóór go-live, niet erna. Een fractioneel controller is daar bij uitstek geschikt voor: genoeg betrokken om het goed te doen, zonder dat je er een vaste finance-manager voor in dienst hoeft te nemen.</p>
+<h2 id="conclusie">Conclusie</h2>
+<p>Een Odoo-implementatie slaagt niet bij de technische oplevering, maar op het moment dat je erop kunt sturen. Betrek finance daarom vroeg, en laat een fractioneel controller de financiële inrichting bewaken náást je implementatiepartner. Het verschil tussen een systeem dat draait en een systeem waarop je stuurt, zit niet in de software, het zit in wie er vanaf het begin meekijkt.</p>
+<div class="article-cta">
+<h3>Staat er een Odoo- of ERP-traject op de planning?</h3>
+<p>Betrek finance vóór de inrichting vastligt. Plan een gratis intake, dan kijken we waar finance moet aanhaken.</p>
+<a class="btn" href="https://calendly.com/cees-ceesdecontroller/30min" rel="noopener" target="_blank">Plan een gratis intake</a>
+</div>
+</article>
+<aside class="sidebar">
+<div class="side-card">
+<h4>In dit artikel</h4>
+<ul class="toc">
+<li><a href="#patroon">Het patroon</a></li>
+<li><a href="#techniek">Techniek ≠ sturing</a></li>
+<li><a href="#rol">Rol van de controller</a></li>
+<li><a href="#momenten">Vier momenten</a></li>
+<li><a href="#kosten">Kosten van te laat</a></li>
+<li><a href="#aanpak">Hoe je het wél aanpakt</a></li>
+<li><a href="#conclusie">Conclusie</a></li>
+</ul>
+</div>
+<div class="side-card">
+<h4>Meer lezen</h4>
+<p>Finance-grip bij je Odoo-implementatie: vóór, tijdens en na go-live.</p>
+<a class="link" href="../odoo.html">Naar de Odoo-implementatiepagina</a>
+</div>
+<div class="side-card">
+<h4>Meer lezen</h4>
+<p>Processen opruimen tijdens je Odoo-implementatie: wat er boven water komt.</p>
+<a class="link" href="odoo-implementatie-procesoptimalisatie.html">Lees verder</a>
+</div>
+<div class="side-card">
+<h4>Meer lezen</h4>
+<p>Je hebt een controller aangenomen. Je data is nog steeds een chaos.</p>
+<a class="link" href="controller-aangenomen-data-chaos.html">Lees verder</a>
+</div>
+<div class="side-card">
+<h4>Gratis intake</h4>
+<p>30 minuten, vrijblijvend. Video of telefoon.</p>
+<a class="btn" href="https://calendly.com/cees-ceesdecontroller/30min" rel="noopener" target="_blank">Plan via Calendly</a>
+</div>
+</aside>
+</div>
+    </div>
+  </main>
+  <footer>
+    <div class="wrap">
+      <div>
+        <div class="name">Cees de Controller</div>
+        <p>Geen gedoe met cijfers, maar grip op je bedrijf.</p>
+        <p style="margin-top:0.75rem">Heuveloord 25 J, 3523 CK Utrecht<br />
+          <a href="mailto:cees@ceesdecontroller.nl">cees@ceesdecontroller.nl</a> · <a href="tel:+31640582472">06 40 58 24 72</a></p>
+      </div>
+      <ul>
+        <li><a href="../diensten.html">Diensten</a></li>
+        <li><a href="../quickscan.html">Grip-scan</a></li>
+        <li><a href="../odoo.html">Odoo</a></li>
+        <li><a href="../blog/index.html">Blog</a></li>
+        <li><a href="https://www.linkedin.com/in/cees-van-de-vendel-1344b727/" target="_blank" rel="noopener">LinkedIn</a></li>
+      </ul>
+      <ul>
+        <li><a href="../privacy-statement.html">Privacy</a></li>
+        <li><a href="../algemene-voorwaarden.html">Voorwaarden</a></li>
+        <li>KvK 95299238</li>
+        <li>Btw NL867078261B01</li>
+      </ul>
+    </div>
+  </footer>
+  <script>
+  (function () {
+    var b = document.getElementById('hamburger'), m = document.getElementById('mobile-menu');
+    if (b && m) b.addEventListener('click', function () {
+      var o = m.classList.toggle('open'); b.setAttribute('aria-expanded', String(o));
+    });
+  })();
+  </script>
+</body>
+</html>
