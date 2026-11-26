@@ -28,8 +28,8 @@ Alleen `404.html` gebruikt absolute paden (`/assets/...`). Die ziet er pas goed 
 
 ## Nog te checken of aan te vullen
 
-- **Positionering (november 2026).** Slogan: "Geen gedoe met cijfers, maar grip op je bedrijf." Inhoudelijk: controller naast de boekhouder, niet in plaats van. Drie diensten: Grip-scan, controller per maand, projecten. Geen jaarrekening, aangiften of accountantsverklaring meer als dienst, en geen tarieven op de site behalve de prijs van de quickscan.
-- **Prijs quickscan.** Zoek op `[PRIJS]` (in `diensten.html` en `quickscan.html`) en vul het bedrag in. Zet erbij of het inclusief of exclusief btw is.
+- Twee keuzes: een financiële opdracht of de Grip-scan. Maandelijkse inzet kan binnen een opdracht worden afgesproken.
+- Grip-scan: € 499 excl. btw, 90 minuten op locatie, één A4 en 30 minuten nabespreking. Komt er uit de scan een project dat ik voor je uitvoer? Dan trek ik de volledige € 499 af van de projectfactuur. Intern tijdsbudget: streef naar vier uur inclusief reistijd, maximaal vijf uur.
 - **Naam quickscan.** De werktitel is "Grip-scan". Andere naam? Zoek in de hele v2-map op `Grip-scan` en vervang overal (ook in title, meta, JSON-LD en de footer van alle pagina's). De bestandsnaam `quickscan.html` en de link `contact.html?onderwerp=quickscan` blijven hetzelfde.
 - **PDF van de checklist** (`assets/checklist-7-signalen.pdf`) is nog de oude tekst. Maak hem opnieuw vanuit `lead-magnet/checklist.html`.
 - **Odoo Accounting Partner** staat op home, odoo en over. Klopt dat nog?
